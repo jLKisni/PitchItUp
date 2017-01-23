@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PitchITup</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+  
+
+	.navbar{
+		background-color: #006666;
+		
+	}
+	
+	footer{
+		background-color: #006666;
+		height: 50px;
+		display: block;
+	}
+	
+	span.glyphicon-home, .glyphicon-list-alt, .glyphicon-th, .glyphicon-user{
+		font-size: 1.3em;
+	}
+	#text{
+		font-family: arial;
+		font-size: 20px;
+		margin-top: 250px;
+		margin-bottom: 300px;
+	}
+	#text2{
+		margin-bottom: 100px;
+		margin-top: 200px;
+	}
+	.progress{
+		margin-top: 100px;
+		margin-bottom: 300px;
+		margin-left: 300px;
+		width: 50%;
+	}
+	p{
+		margin-top: 100px;
+	}
+	
+  </style>
+</head>
+<body>
+	<nav class = "navbar navbar-inverse navbar-fixed-top">
+		<div class = "container-fluid">
+			<div class = "navbar-header">
+				<a class = "navbar-brand" href = "index.html">PitchITup</a>
+			</div>
+			<ul class = "nav navbar-nav navbar-right">
+				<!--<li><a href = "home.html" data-toggle="tooltip" data-placement="bottom" title = "home"><span class = "glyphicon glyphicon-home"></span></a></li>-->
+				<li><a href = "create.html" data-toggle="tooltip" data-placement="bottom" title = "create"><span class = "glyphicon glyphicon-list-alt"></span></a></li>
+				<li class = "dropdown">
+					<a href="thumbnail.html" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" data-placement="bottom" title = "menu"><span class="glyphicon glyphicon-th"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="myPresentation.html">My Presentation <span class="glyphicon glyphicon-duplicate pull-right"></span></a></li>
+						<li class="divider"></li>
+						<li><a href="myHistory.html">My History <span class="glyphicon glyphicon-time pull-right"></span></a></li>
+						<li class="divider"></li>
+						<li><a href="myDocu.html">My Documents <span class="glyphicon glyphicon-folder-open pull-right"></span></a></li>
+					</ul>
+				
+				</li>
+				<li class = "dropdown">
+				<a href="thumbnail.html" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" data-placement="bottom" title = "user"><span class="glyphicon glyphicon-user"></span></a>
+				<ul class="dropdown-menu">
+				<li><a href="myAccnt.html">Account Settings<span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+				<li class="divider"></li>
+				<li><a href="#">Images<span class="glyphicon glyphicon-film pull-right"></span></a></li>
+				<li class="divider"></li>
+				<li><a href="logout.html">Logout<span class="glyphicon glyphicon-off pull-right"></span></a></li>
+          </ul>
+				
+			</li>
+				
+				
+				
+			</ul>
+			<form class="navbar-form navbar-left">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search">
+						<div class="input-group-btn">
+							<button class="btn btn-default" type="submit">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+				</div>
+			</form>
+		</div>
+	</nav>
+	
+	<div class = "container">
+		<div class = "text-center">
+			<p class = "text-center">loading presentation...</p>
+			<div class="progress">
+				  <div class="progress-bar progress-bar-striped active" role="progressbar"
+				  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+					40%
+				  </div>
+				  
+			</div>
+			
+		</div>
+		
+		
+	</div>
+		
+	
+	
+	<!--footer-->
+	
+	<!--<footer class = "text-center">
+		<p>&#169; PitchITup 2016</p>
+	</footer>-->
+	<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+	
+
+</body>
+</html>
