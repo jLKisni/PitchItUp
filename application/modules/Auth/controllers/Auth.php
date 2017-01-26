@@ -8,108 +8,91 @@ class Auth extends MY_Controller{
     $this->load->helper('url');
   }
 
-  function register(){
 
-    $usertype = $this->input->post('usertype');
 
-    if($usertype == 1){
+  function signup(){
 
-      $customer = array(
-        'uname'=>$this->input->post('username'),
-        'pass'=>md5($this->input->post('password')),
-        'utype'=>$this->input->post('usertype'),
-        'email'=>$this->input->post('email'),
-        'fname'=>$this->input->post('fname'),
-        'lname'=>$this->input->post('lname'),
-        'address'=>$this->input->post('address'),
-        'user_image'=>'user.png'
+    $registerdata = $this->input->post();
+
+      $data = array(
+        'title'=>'Register Account'
       );
 
+    $details = array(
+      'firstname'=>$registerdata['firstname'],
+      'lastname'=>$registerdata['lastname'],
+      'username'=>$registerdata['username'],
+      'password'=>md5($registerdata['password'])
+      );
 
-      $success = $this->M_auth->register($usertype,$customer);
+    if($registerdata['password'] == $registerdata['repassword']){
+      $error_msg = array(
+        'error_msg'=>'<div class="alert alert-success" role="alert">Account Succefully Registered !</div>');
+      
+      $exist_msg = array(
+        'exist_msg'=>'<div class="alert alert-success" role="alert">Username is already exists !</div>');
+      
 
-      if($success == 'Username or email address exist ! Please Create Another One'){
-        $data = array(
-          'title'=>'Registration Form',
-          'notsuccess'=> $success
-        );
+      $success = $this->M_auth->signup($details);
 
-        $this->load->view('Default/header',$data);
-        $this->load->view('Web/register',$data);
-        $this->load->view('Default/footer');
+      if($success){
+
+      $this->load->view('Default/main_header',$data);
+      $this->load->view('Default/main_nav');
+      $this->load->view('Web/signup',$error_msg);
       }
-      else if($success == 'Login'){
-        redirect('Functions');
+      else{
+      $this->load->view('Default/main_header',$data);
+      $this->load->view('Default/main_nav');
+      $this->load->view('Web/signup',$exist_msg);
       }
+      
     }
-    else if($usertype == 2){
-      $salonadmin = array(
-        'uname'=>$this->input->post('username'),
-        'pass'=>md5($this->input->post('password')),
-        'utype'=>$this->input->post('usertype'),
-        'email'=>$this->input->post('salonemail'),
-        'salonname'=>$this->input->post('salonname'),
-        'contactnumber'=>$this->input->post('contactnumber'),
-        'salonaddress'=>$this->input->post('salonaddress'),
-        'salonowner'=>$this->input->post('salonowner'),
-        'salondetails'=>$this->input->post('salondetails'),
-        'long'=>$this->input->post('long'),
-        'lat'=>$this->input->post('lat'),
-        'user_image'=>'user.png'
+    else{
+
+      $data = array(
+        'title'=>'Register Account'
       );
 
-
-      $success = $this->M_auth->register($usertype,$salonadmin);
-
-      if($success == 'Username or email address exist ! Please Create Another One'){
-        $data = array(
-          'title'=>'Registration Form',
-          'notsuccess'=> $success
-        );
-
-        $this->load->view('Default/header',$data);
-        $this->load->view('Web/register',$data);
-        $this->load->view('Default/footer');
+      $success = $this->M_auth->signup($details);
+      $error_msg = array('error_msg'=>'<div class="alert alert-danger" role="alert">Password Mismatched !</div>');
+      
+      if($success){
+        $this->load->view('Default/main_header',$data);
+        $this->load->view('Default/main_nav');
+        $this->load->view('Web/signup',$error_msg);
       }
-      else if($success == 'Login'){
-        redirect('Functions');
-      }
-
     }
 
   }
+
 
   function login(){
-    $data = $this->input->post('data');
-
+    $usersdata = $this->input->post();
+    $data = array(
+        'title'=>'Login'
+      );
     $userdetails = array(
-      'username'=>$data['username'],
-      'password'=>md5($data['password'])
+      'username'=>$usersdata['username'],
+      'password'=>md5($usersdata['password'])
     );
+    $error_msg = array(
+        'error_msg'=>'<div class="alert alert-danger" role="alert">Incorrect Password !</div>');
+      
     $success = $this->M_auth->login($userdetails);
-    if($success == 'Login'){
-      echo $success;
+    if($success){
+       redirect('Web/wlcome_msg');
+      
     }else{
-      echo $success;
+    
+      $this->load->view('Default/main_header',$data);
+      $this->load->view('Default/login_nav');
+      $this->load->view('Web/login',$error_msg);
+  
     }
   }
 
-  function loginStaff(){
-
-    $data = $this->input->post('data');
-
-    $userdetails = array(
-      'username'=>$data['username'],
-      'password'=>md5($data['password'])
-    );
-    $success = $this->M_auth->loginSalonStaff($userdetails);
-
-    if($success == 'Login'){
-      echo $success;
-    }else{
-      echo $success;
-    }
-  }
+  
 
   function logout(){
         $this->session->sess_destroy();

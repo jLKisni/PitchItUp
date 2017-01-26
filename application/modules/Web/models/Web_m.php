@@ -7,6 +7,37 @@ class Web_m extends CI_Model{
   }
 
 
+
+function getAccount($userid){
+
+
+  $sql = "select * from startup_founder where sf_id = $userid"; 
+  $query = $this->db->query($sql);
+
+  if($query->num_rows()>0){
+
+      $row = $query->row();
+
+      return $row;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   function getManicure(){
 
     $this->db->select('*');

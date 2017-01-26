@@ -40,7 +40,7 @@
 							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="<?php echo base_url();?>">Logout<span ></span></a>
+								<a href="<?php echo base_url();?>Auth/logout">Logout<span ></span></a>
 							</li>
 						</ul>
 					

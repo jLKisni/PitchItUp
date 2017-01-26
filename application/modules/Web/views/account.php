@@ -12,25 +12,25 @@
 											<div id = "col-sm-6 pull-right">
 											<div class="col-xs-8 col-sm-8 col-md-12">
 												<div class = "form-group">
-													<input type = "text" name = "firstname" id = "firstname" class = "form-control input-sm" placeholder = "Firstname">
+													<input type = "text" name = "firstname" id = "firstname" class = "form-control input-sm" placeholder = "<?php echo $userdetails->FirstName;?>">
 												</div>
 											</div>
 											<div class="col-xs-8 col-sm-8 col-md-12">
 												<div class = "form-group">
 										
-													<input type = "text" name = "lastname" id = "lastname" class = "form-control input-sm" placeholder = "lastname">
+													<input type = "text" name = "lastname" id = "lastname" class = "form-control input-sm" placeholder = "<?php echo $userdetails->LastName;?>">
 												</div>
 											</div>
 											<div class="col-xs-8 col-sm-8 col-md-12">
 												<div class = "form-group">
 													
-													<input type = "text" name = "username" id = "username" class = "form-control input-sm" placeholder = "Username">
+													<input type = "text" name = "username" id = "username" class = "form-control input-sm" placeholder = "<?php echo $userdetails->username;?>">
 												</div>
 											</div>
 											<div class="col-xs-8 col-sm-8 col-md-12">
 												<div class = "form-group">
 													
-													<input type = "password" name = "password" id = "password" class = "form-control input-sm" placeholder = "Password">
+													<input type = "password" name = "password" id = "password" class = "form-control input-sm" value = "<?php echo $userdetails->password;?>">
 												</div>
 											</div>
 											<div class="col-xs-8 col-sm-8 col-md-12">

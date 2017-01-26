@@ -4,8 +4,10 @@ class Web extends MY_Controller{
 
     function __construct(){
       parent::__construct();
+
+      $this->load->model('Web/Web_m');
       // if($this->session->userdata('userid')){
-      //       redirect('Functions/Functions');
+      //       redirect('Web/wlcome_msg');
       // }
     }
 
@@ -169,9 +171,13 @@ class Web extends MY_Controller{
 
 
     function AccountSettings(){
-      $data = array(
-        'title'=>'My Documents'
+      
+       $userdetails = $this->Web_m->getAccount($this->session->userdata('userid'));
+        $data = array(
+        'title'=>'My Documents',
+        'userdetails'=>$userdetails
       );
+
       $this->load->view('Default/main_header',$data);
       $this->load->view('Default/create_nav');
       $this->load->view('account');

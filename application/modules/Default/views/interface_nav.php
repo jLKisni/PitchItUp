@@ -12,9 +12,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
 	
-					<li>
-						<img src = "<?php echo base_url();?>assets/img/user.png" height ="30px">
-                   </li>
+					
 					<li class = "dropdown">
 						<a href="thumbnail.html" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" data-placement="bottom" title = "menu"><span class="glyphicon glyphicon-th" style = "font-size: 1.2em;"></span></a>
 							<ul class="dropdown-menu">
