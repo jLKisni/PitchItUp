@@ -25,19 +25,6 @@ function getAccount($userid){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   function getManicure(){
 
     $this->db->select('*');

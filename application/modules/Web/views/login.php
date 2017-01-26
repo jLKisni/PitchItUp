@@ -16,13 +16,13 @@
 								<div class="col-xs-8 col-sm-8 col-md-12">
 									<div class = "form-group">
 										
-										<input type = "text" name = "username" class = "form-control input-sm" placeholder = "Username">
+										<input type = "text" name = "username" class = "form-control input-sm" placeholder = "Username" required>
 									</div>
 								</div>
 								<div class="col-xs-8 col-sm-8 col-md-12">
 									<div class = "form-group">
 										
-										<input type = "password" name = "password" class = "form-control input-sm" placeholder = "Password">
+										<input type = "password" name = "password" class = "form-control input-sm" placeholder = "Password" required>
 									</div>
 								</div>
 								

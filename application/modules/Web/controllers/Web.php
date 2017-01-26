@@ -174,7 +174,7 @@ class Web extends MY_Controller{
       
        $userdetails = $this->Web_m->getAccount($this->session->userdata('userid'));
         $data = array(
-        'title'=>'My Documents',
+        'title'=>'My Accounts',
         'userdetails'=>$userdetails
       );
 

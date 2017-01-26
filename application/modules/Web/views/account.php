@@ -7,40 +7,43 @@
 									<h3 class="panel-title">Account Settings</h3>
 							</div>
 							<div class = "panel-body">
-								<form role="form">
+
+								<?php if(isset($error_msg)){echo $error_msg;}?>
+								<?php if(isset($exist_msg)){echo $exist_msg;}?>
+								<form role="form" Account_management/updateAccount" method="post">
 									<div class = "row">
 											<div id = "col-sm-6 pull-right">
 											<div class="col-xs-8 col-sm-8 col-md-12">
 												<div class = "form-group">
-													<input type = "text" name = "firstname" id = "firstname" class = "form-control input-sm" placeholder = "<?php echo $userdetails->FirstName;?>">
+													<input type = "text" name = "firstname"  class = "form-control input-sm" value="<?php echo $userdetails->FirstName;?>" placeholder = "Firstname" required>
 												</div>
 											</div>
 											<div class="col-xs-8 col-sm-8 col-md-12">
 												<div class = "form-group">
 										
-													<input type = "text" name = "lastname" id = "lastname" class = "form-control input-sm" placeholder = "<?php echo $userdetails->LastName;?>">
+													<input type = "text" name = "lastname" class = "form-control input-sm" value="<?php echo $userdetails->LastName;?>" placeholder="Lastname" required>
 												</div>
 											</div>
 											<div class="col-xs-8 col-sm-8 col-md-12">
 												<div class = "form-group">
 													
-													<input type = "text" name = "username" id = "username" class = "form-control input-sm" placeholder = "<?php echo $userdetails->username;?>">
+													<input type = "text" name = "username" class = "form-control input-sm" value="<?php echo $userdetails->username;?>" placeholder = "Username" required>
 												</div>
 											</div>
 											<div class="col-xs-8 col-sm-8 col-md-12">
 												<div class = "form-group">
 													
-													<input type = "password" name = "password" id = "password" class = "form-control input-sm" value = "<?php echo $userdetails->password;?>">
+													<input type = "password" name = "password" class = "form-control input-sm" placeholder='Password' required>
 												</div>
 											</div>
 											<div class="col-xs-8 col-sm-8 col-md-12">
 												<div class = "form-group">
 													
-													<input type = "password" name = "password" id = "password" class = "form-control input-sm" placeholder = "Re-enter Password">
+													<input type = "password" name = "repassword" class = "form-control input-sm" placeholder = "Re-enter Password" required>
 												</div>
 											</div>
 											<div class="col-xs-8 col-sm-8 col-md-12">
-													<input type = "submit" value = "Update" class = "btn btn-danger btn-block">
+													<button type='submit' class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Update Account &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
 											</div>
 											
 											</div>

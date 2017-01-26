@@ -30,7 +30,7 @@ class Auth extends MY_Controller{
         'error_msg'=>'<div class="alert alert-success" role="alert">Account Succefully Registered !</div>');
       
       $exist_msg = array(
-        'exist_msg'=>'<div class="alert alert-success" role="alert">Username is already exists !</div>');
+        'exist_msg'=>'<div class="alert alert-danger" role="alert">Username is already exists !</div>');
       
 
       $success = $this->M_auth->signup($details);
