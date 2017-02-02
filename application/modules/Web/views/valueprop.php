@@ -15,23 +15,23 @@
 							<tbody>
 								<tr>
 									<td align = "center">Benefits</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
+									<td><textarea class = "form-control" rows= "3" id = "benefits" style = "resize: none;"></textarea></td>
 									<td align = "center">Wants</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
+									<td><textarea class = "form-control" rows= "3" id = "wants" style = "resize: none;"></textarea></td>
 								
 								</tr>	
 								<tr>
 									<td align = "center">Features</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
+									<td><textarea class = "form-control" rows= "3" id = "features" style = "resize: none;"></textarea></td>
 									<td align = "center">Needs</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
+									<td><textarea class = "form-control" rows= "3" id = "needs" style = "resize: none;"></textarea></td>
 									
 								</tr>
 								<tr>
 									<td align = "center">Experience</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
+									<td><textarea class = "form-control" rows= "3" id = "experience" style = "resize: none;"></textarea></td>
 									<td align = "center">Fears</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
+									<td><textarea class = "form-control" rows= "3" id = "fears" style = "resize: none;"></textarea></td>
 									
 								</tr>
 								
@@ -40,16 +40,16 @@
 						</table>
 				
 								<table align = "center">
-									<tr><td>Company:<textarea class = "form-control" rows= "1" style = "resize: none;"></textarea></td>
+									<tr><td>Company:<textarea class = "form-control" rows= "1" id="company" style = "resize: none;"></textarea></td>
 									<td></td>
 									<td></td>
-									<td>Product:<textarea class = "form-control" rows= "1" style = "resize: none;"></textarea></td></tr>
+									<td>Product:<textarea class = "form-control" rows= "1" id="product" style = "resize: none;"></textarea></td></tr>
 								</table>
 								<table align = "center">
-									<tr><td>Ideal customer:<textarea class = "form-control" rows= "1" style = "resize: none;"></textarea></td>
+									<tr><td>Ideal customer:<textarea class = "form-control" id="customer" rows= "1" style = "resize: none;"></textarea></td>
 									<td></td>
 									<td></td>
-									<td>Substitutes:<textarea class = "form-control" rows= "1" style = "resize: none;"></textarea></td></tr>
+									<td>Substitutes:<textarea class = "form-control" rows= "1" id="substitutes" style = "resize: none;"></textarea></td></tr>
 								</table>
 					</div>
 					
@@ -57,7 +57,7 @@
 		
 				<ul class = "pager">
 					<li class = "previous"><a href = "<?php echo base_url();?>Web/validationboard">Previous</li></a>
-					<li class = "next"><a href = "<?php echo base_url();?>Web/template">Next</li></a>
+					<li class = "next"><a href = "#" id="template">Next</li></a>
 				</ul>
 					
 			</div>

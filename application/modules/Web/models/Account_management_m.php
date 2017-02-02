@@ -17,9 +17,9 @@
 		    $query = $this->db->update('startup_founder');
 
 		    if($query){
-		      return 'True';
+		      return true;
 		    }else{
-		      return 'False';
+		      return false;
 		    }
 		}
 

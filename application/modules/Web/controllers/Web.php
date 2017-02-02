@@ -5,14 +5,15 @@ class Web extends MY_Controller{
     function __construct(){
       parent::__construct();
 
+      $this->load->model('Web/PitchDeck_view_m');
       $this->load->model('Web/Web_m');
-      // if($this->session->userdata('userid')){
-      //       redirect('Web/wlcome_msg');
-      // }
+      
     }
 
     function index(){
-
+      if($this->session->userdata('userid')){
+            redirect('Web/wlcome_msg');
+      } 
       $data = array(
         'title'=>'Main page'
       );
@@ -69,14 +70,32 @@ class Web extends MY_Controller{
     }
 
     function create(){
+      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('userid'));
 
-      $data = array(
+      if($ideadetails!=false){
+        $data = array(
+        'title'=>'Create idea Generation Board',
+        'ideagen'=>$ideadetails
+        );
+
+
+        $this->load->view('Default/main_header',$data);
+        $this->load->view('Default/create_nav');
+        $this->load->view('create');
+        $this->load->view('Default/templatefooter');
+
+      }
+      else{
+        $data2 = array(
         'title'=>'Create idea Generation Board'
-      );
-      $this->load->view('Default/main_header',$data);
-      $this->load->view('Default/create_nav');
-      $this->load->view('create');
-      $this->load->view('Default/templatefooter');
+        );
+        $this->load->view('Default/main_header',$data2);
+        $this->load->view('Default/create_nav');
+        $this->load->view('create');
+        $this->load->view('Default/templatefooter');
+        
+      }
+      
     }
 
     function BMC(){

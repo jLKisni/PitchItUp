@@ -7,10 +7,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="<?php echo base_url();?>assets/vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="<?php echo base_url();?>assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+      <!-- Create Idea Generation Board -->
+    <script type="text/javascript">
+  
+
+    </script>
+    <!--End Idea Generation Board-->
 
     <!-- Theme JavaScript -->
     <script src="<?php echo base_url();?>assets/js/creative.min.js"></script>
-
+    <!-- Javascript for template animation -->
     <script type="text/javascript">
     	$(function(){
 
@@ -35,7 +41,232 @@
 
     	});
     </script>
+    <!-- End Javascript for template animation -->
 
+    <!-- Idea Generation Board -->
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $('#ideagen').click(function(){
+
+
+            if($('#ideagen_id').val() !=0 ){
+                var problem = $('#problem').val();
+                var people = $('#people').val();
+                var behavior = $('#behavior').val();
+                var solution = $('#solution').val();
+                var idea_id = $('#ideagen_id').val();
+
+                var ideagen = {
+                    'problem': problem,
+                    'people' : people,
+                    'behavior':behavior,
+                    'solution':solution,
+                    'idea_id' : idea_id
+                };
+
+                    var url = "<?php echo base_url();?>Web/updatePitchDeck/updateIdeaGen/";
+                    $.post(url,{data:ideagen},function(result){
+                        console.log(result);
+                    });
+
+                    window.location.href = "<?php echo base_url()?>Web/BMC";
+                     
+             }   
+            else{
+                var problem = $('#problem').val();
+                var people = $('#people').val();
+                var behavior = $('#behavior').val();
+                var solution = $('#solution').val();
+                var idea_id = $('#ideagen_id').val();
+
+                var ideagen = {
+                    'problem': problem,
+                    'people' : people,
+                    'behavior':behavior,
+                    'solution':solution
+                };
+
+                var url = "<?php echo base_url();?>Web/PitchDeck/addIdeaGen";
+                $.post(url,{data:ideagen},function(result){
+                    console.log(result);
+                });
+
+                 //window.location.href = "<?php echo base_url()?>Web/BMC";
+                 
+            }
+    
+         });
+
+    });
+
+
+    </script>
+
+    <!-- Idea Generation Board -->
+
+
+    <script type="text/javascript">
+
+        $('#validationboard').click(function(){
+
+            var resources = $('#resources').val();
+            var channels = $('#channels').val();
+            var structure = $('#structure').val();
+            var streams = $('#streams').val();
+            var partners = $('#partners').val();
+            var activities = $('#activities').val();
+            var proposition = $('#proposition').val();
+            var relationship = $('#relationship').val();
+            var segment = $('#segment').val();
+
+            var bmc = {
+                'partners': partners,
+                'activities' : activities,
+                'proposition': proposition,
+                'relationship': relationship,
+                'segment': segment,
+                'resources': resources,
+                'channels' : channels,
+                'structure': structure,
+                'streams': streams
+            };
+
+            var url = "<?php echo base_url();?>Web/PitchDeck/addBMC";
+            $.post(url,{data:bmc},function(result){});
+            window.location.href = "<?php echo base_url()?>Web/validationboard";
+       
+    });
+
+    </script>
+  
+  <!--  Generation Board -->
+
+
+
+  <!-- validation board -->
+
+  <script type="text/javascript">
+
+    $(function(){
+
+        $('#valueprop').click(function(){
+
+            var cust_pivot1 = $('#cust_pivot1').val();
+            var cust_pivot2 = $('#cust_pivot2').val();
+            var cust_pivot3 = $('#cust_pivot3').val();
+            var cust_prob1 = $('#cust_prob1').val();
+            var cust_prob2 = $('#cust_prob2').val();
+            var cust_prob3 = $('#cust_prob3').val();
+            var cust_solution1 = $('#cust_solution1').val();
+            var cust_solution2 = $('#cust_solution2').val();
+            var cust_solution3 = $('#cust_solution3').val();
+            var risk_assump1 = $('#risk_assump1').val();
+            var risk_assump2 = $('#risk_assump2').val();
+            var risk_assump3 = $('#risk_assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3
+
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                // console.log(result);
+            });
+             window.location.href = "<?php echo base_url()?>Web/valueprop";
+
+
+        });
+
+    });
+
+  </script>
+
+  <!-- validation board -->
+
+
+
+  <!-- Value proposition -->
+<script type="text/javascript">
+
+    $(function(){
+
+        $('#template').click(function(){
+            var benefits = $('#benefits').val();
+            var wants = $('#wants').val();
+            var features = $('#features').val();
+            var needs = $('#needs').val();
+            var experience = $('#experience').val();
+            var fears = $('#fears').val();
+
+            var company = $('#company').val();
+            var product = $('#product').val();
+            var customer = $('#customer').val();
+            var substitutes = $('#substitutes').val();
+
+            var valueprop = {
+                'benefits':benefits,
+                'wants':wants,
+                'features':features,
+                'needs':needs,
+                'experience':experience,
+                'fears':fears,
+                'company':company,
+                'product':product,
+                'customer':customer,
+                'substitutes':substitutes
+            };
+
+            //console.log(valueprop);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+
+            $.post(url,{data:valueprop},function(result){
+                // console.log(result);
+            });
+
+             window.location.href = "<?php echo base_url()?>Web/template";
+        });
+
+    });
+
+
+</script>
+
+  <!-- Value proposition -->
 
 </body>
 
