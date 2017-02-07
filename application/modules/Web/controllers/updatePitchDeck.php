@@ -57,6 +57,35 @@
 			}
 
 		}
+
+
+
+		function updateValueProp(){
+
+			$valueprop = $this->input->post('data');
+
+			$details = array(
+				'wants'=>$valueprop['wants'],
+				'needs'=>$valueprop['needs'],
+				'fears'=>$valueprop['fears'],
+				'benefits'=>$valueprop['benefits'],
+				'experience'=>$valueprop['experience'],
+				'features'=>$valueprop['features'],
+				'company'=>$valueprop['company'],
+				'product'=>$valueprop['product'],
+				'ideal_cust'=>$valueprop['customer'],
+				'substitutes'=>$valueprop['substitutes'],
+				'valueprop_id'=>$valueprop['valueprop_id']
+				);
+
+			//echo json_encode($details);
+
+			$success = $this->updatePitchDeck_m->updateValueProp($details);
+
+			if($success){
+				redirect('Web/template');
+			}
+		}
 		
 
 

@@ -266,39 +266,90 @@
     $(function(){
 
         $('#template').click(function(){
-            var benefits = $('#benefits').val();
-            var wants = $('#wants').val();
-            var features = $('#features').val();
-            var needs = $('#needs').val();
-            var experience = $('#experience').val();
-            var fears = $('#fears').val();
 
-            var company = $('#company').val();
-            var product = $('#product').val();
-            var customer = $('#customer').val();
-            var substitutes = $('#substitutes').val();
 
-            var valueprop = {
-                'benefits':benefits,
-                'wants':wants,
-                'features':features,
-                'needs':needs,
-                'experience':experience,
-                'fears':fears,
-                'company':company,
-                'product':product,
-                'customer':customer,
-                'substitutes':substitutes
-            };
+            if($('#valueprop_id').val() != 0){
 
-            //console.log(valueprop);
-            var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
 
-            $.post(url,{data:valueprop},function(result){
-                // console.log(result);
-            });
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
 
-             window.location.href = "<?php echo base_url()?>Web/template";
+                var valueprop_id = $('#valueprop_id').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes,
+                    'valueprop_id':valueprop_id
+                };
+
+                //console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                     //console.log(result);
+                });
+
+                  window.location.href = "<?php echo base_url()?>Web/template";
+
+            }else{
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes
+                };
+
+                //console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                    // console.log(result);
+                });
+
+                 window.location.href = "<?php echo base_url()?>Web/template";
+
+
+
+
+            }
+
+
+            
         });
 
     });

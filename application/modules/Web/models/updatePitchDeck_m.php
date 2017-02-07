@@ -37,6 +37,17 @@
 
 		}
 
+
+		function updateValueProp($data){
+
+			$sql = "update value_prop set wants = ? , needs = ? , fears = ? , benefits = ? , experience = ? , features = ? , company = ? , product = ? , ideal_cust = ? , substitutes = ? where valueprop_id = ? ";
+			$sql = $this->db->query($sql,array($data['wants'],$data['needs'],$data['fears'],$data['benefits'],$data['experience'],$data['features'],$data['company'],$data['product'],$data['ideal_cust'],$data['substitutes'],$data['valueprop_id']));
+
+			if($query){
+				return true;
+			}
+		}
+
 	}
 
 ?>

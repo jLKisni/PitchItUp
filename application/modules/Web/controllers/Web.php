@@ -147,13 +147,37 @@ class Web extends MY_Controller{
 
      function valueprop(){
 
-      $data = array(
+      $valuepropdetails = $this->PitchDeck_view_m->viewValueProp($this->session->userdata('userid'));
+
+      //print_r($valuepropdetails);
+
+
+      if($valuepropdetails != false){
+
+         $data = array(
+        'title'=>'Update Value Proposition',
+        'valueprop'=>$valuepropdetails
+          );
+          $this->load->view('Default/main_header',$data);
+          $this->load->view('Default/create_nav');
+          $this->load->view('valueprop');
+          $this->load->view('Default/templatefooter');
+
+      }else{
+
+         $data2 = array(
         'title'=>'Create Value Proposition'
-      );
-      $this->load->view('Default/main_header',$data);
-      $this->load->view('Default/create_nav');
-      $this->load->view('valueprop');
-      $this->load->view('Default/templatefooter');
+          );
+
+          $this->load->view('Default/main_header',$data2);
+          $this->load->view('Default/create_nav');
+          $this->load->view('valueprop');
+          $this->load->view('Default/templatefooter');
+
+
+      }
+
+     
     }
 
     function template(){

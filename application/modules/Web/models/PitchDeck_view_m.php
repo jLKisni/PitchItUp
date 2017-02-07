@@ -52,6 +52,24 @@
 		}
 
 
+		function viewValueProp($userid){
+
+
+			$sql = "select * from value_prop where sf_id = ? ";
+			$query = $this->db->query($sql,array($userid));
+
+			if($query->num_rows()>0)
+			{
+				$row = $query->row();
+ 
+				return $row;
+			}
+			else{
+				return false;
+			}
+		}
+
+
 	}
 
 
