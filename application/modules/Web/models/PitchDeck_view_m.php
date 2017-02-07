@@ -21,6 +21,37 @@
 				return false;
 			}
 		}
+
+
+		function viewBMC($userid){
+			$sql = 'select * from bmc where sf_id = ?';
+			$query = $this->db->query($sql,array($userid));
+
+			if($query->num_rows()>0){
+
+				$row = $query->row();
+				return $row;
+			}
+			else{
+				return false;
+			}
+		}
+
+
+
+		function viewValidationBoard($userid){
+			$sql = 'select * from validation_board where sf_id = ? and pivot_num = ?';
+			$pivot = $this->db->query($sql,array($userid,1));
+
+			if($pivot->num_rows()>0){
+				$row = $pivot->row();
+
+				return $row;
+			}
+
+		}
+
+
 	}
 
 

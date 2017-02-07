@@ -100,17 +100,41 @@ class Web extends MY_Controller{
 
     function BMC(){
 
-      $data = array(
+      $bmcdetails = $this->PitchDeck_view_m->viewBMC($this->session->userdata('userid'));
+
+
+      if($bmcdetails!=false){
+
+        $data = array(
+        'title'=>'Create Business Model Canvass',
+        'bmc'=>$bmcdetails
+        );
+
+        $this->load->view('Default/main_header',$data);
+        $this->load->view('Default/create_nav');
+        $this->load->view('BMC');
+        $this->load->view('Default/templatefooter');
+
+      }
+      else{
+
+        $data2 = array(
         'title'=>'Create Business Model Canvass'
-      );
-      $this->load->view('Default/main_header',$data);
-      $this->load->view('Default/create_nav');
-      $this->load->view('BMC');
-      $this->load->view('Default/templatefooter');
+        );
+
+        $this->load->view('Default/main_header',$data2);
+        $this->load->view('Default/create_nav');
+        $this->load->view('BMC');
+        $this->load->view('Default/templatefooter');
+      }
+      
     }
 
 
     function validationboard(){
+
+      $validationboard = $this->PitchDeck_view_m->viewValidationBoard($this->session->userdata('userid'));
+      
 
       $data = array(
         'title'=>'Create Validation Board'

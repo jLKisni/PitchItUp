@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2017 at 02:22 PM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- Generation Time: Feb 07, 2017 at 10:58 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -36,9 +36,16 @@ CREATE TABLE `bmc` (
   `key_sources` varchar(255) NOT NULL,
   `key_partners` varchar(255) NOT NULL,
   `cost_structures` varchar(50) NOT NULL,
-  `revenue_sreams` varchar(100) NOT NULL,
-  `hist_id` int(11) NOT NULL
+  `revenue_streams` varchar(100) NOT NULL,
+  `sf_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bmc`
+--
+
+INSERT INTO `bmc` (`bmc_id`, `cust_segment`, `cust_relationship`, `channels`, `value_proposition`, `key_activities`, `key_sources`, `key_partners`, `cost_structures`, `revenue_streams`, `sf_id`) VALUES
+(2, 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'John Louise Gwapo', 'asd', 'John Louise Gwapo', 1);
 
 -- --------------------------------------------------------
 
@@ -82,6 +89,13 @@ CREATE TABLE `idea_genboard` (
   `sf_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `idea_genboard`
+--
+
+INSERT INTO `idea_genboard` (`idea_id`, `problem`, `people`, `behavior`, `solution`, `sf_id`) VALUES
+(3, 'john', 'berdida', 'gwapo ', 'louise', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -95,6 +109,13 @@ CREATE TABLE `startup_founder` (
   `username` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `startup_founder`
+--
+
+INSERT INTO `startup_founder` (`sf_id`, `FirstName`, `LastName`, `username`, `password`) VALUES
+(1, 'John', 'Berdida', 'jLKisni', 'f6fdffe48c908deb0f4c3bd36c032e72');
 
 -- --------------------------------------------------------
 
@@ -111,8 +132,18 @@ CREATE TABLE `validation_board` (
   `solution_criteria` varchar(255) NOT NULL,
   `results` varchar(255) NOT NULL,
   `learnings` varchar(255) NOT NULL,
-  `hist_id` int(11) NOT NULL
+  `pivot_num` int(11) NOT NULL,
+  `sf_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `validation_board`
+--
+
+INSERT INTO `validation_board` (`valid_id`, `customer`, `problem`, `solution`, `risk_assumpt`, `solution_criteria`, `results`, `learnings`, `pivot_num`, `sf_id`) VALUES
+(4, 'asd', 'kjhasdk', 'kasjdh', 'kasjdh', 'kajshd', 'kjhasdkjhasdkjh', 'kasjdh', 1, 1),
+(5, 'jhasdh', 'hkasjhd', 'kasjdh', 'kasjhd', 'kjashd', 'askdjh', 'kajshd', 2, 1),
+(6, 'kjashd', 'kaksjdh', 'kasjdh', 'kasjdh', 'kjahsd', 'aksjdh', 'kasjdh', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -132,8 +163,15 @@ CREATE TABLE `value_prop` (
   `product` varchar(255) NOT NULL,
   `ideal_cust` varchar(255) NOT NULL,
   `substitutes` varchar(255) NOT NULL,
-  `hist_id` int(11) NOT NULL
+  `sf_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `value_prop`
+--
+
+INSERT INTO `value_prop` (`valueprop_id`, `wants`, `needs`, `fears`, `benefits`, `experience`, `features`, `company`, `product`, `ideal_cust`, `substitutes`, `sf_id`) VALUES
+(1, 'lkajsdl', 'lkajsdl', 'lkasjdlk', 'laksjd', 'kjakdslj', 'kjaldskj', 'jlkajsdl', 'kjlasjdl', 'kjasdj', 'laksdjlkj', 1);
 
 --
 -- Indexes for dumped tables
@@ -189,7 +227,7 @@ ALTER TABLE `value_prop`
 -- AUTO_INCREMENT for table `bmc`
 --
 ALTER TABLE `bmc`
-  MODIFY `bmc_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `bmc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `gen_pitchdeck`
 --
@@ -204,22 +242,22 @@ ALTER TABLE `history`
 -- AUTO_INCREMENT for table `idea_genboard`
 --
 ALTER TABLE `idea_genboard`
-  MODIFY `idea_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idea_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `startup_founder`
 --
 ALTER TABLE `startup_founder`
-  MODIFY `sf_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sf_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `validation_board`
 --
 ALTER TABLE `validation_board`
-  MODIFY `valid_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `valid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `value_prop`
 --
 ALTER TABLE `value_prop`
-  MODIFY `valueprop_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `valueprop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

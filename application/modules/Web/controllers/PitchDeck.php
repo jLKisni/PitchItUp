@@ -24,12 +24,12 @@
 				'solution'=>$ideagen['solution']
 				);
 
-			echo json_encode($details);
-			// $success = $this->PitchDeck_m->addIdeaGen($details);
+			// echo json_encode($details);
+			$success = $this->PitchDeck_m->addIdeaGen($details);
 
-			// if($success){
-			// 	redirect('Web/BMC');
-			// }
+			if($success){
+				redirect('Web/BMC');
+			}
 		}
 		
 
