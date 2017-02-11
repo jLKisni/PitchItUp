@@ -193,7 +193,69 @@
 
         $('#valueprop').click(function(){
 
+
+            if($('#valid_id').val()!=0){
+
             var cust_pivot1 = $('#cust_pivot1').val();
+            var cust_pivot2 = $('#cust_pivot2').val();
+            var cust_pivot3 = $('#cust_pivot3').val();
+            var cust_prob1 = $('#cust_prob1').val();
+            var cust_prob2 = $('#cust_prob2').val();
+            var cust_prob3 = $('#cust_prob3').val();
+            var cust_solution1 = $('#cust_solution1').val();
+            var cust_solution2 = $('#cust_solution2').val();
+            var cust_solution3 = $('#cust_solution3').val();
+            var risk_assump1 = $('#risk_assump1').val();
+            var risk_assump2 = $('#risk_assump2').val();
+            var risk_assump3 = $('#risk_assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id
+
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                // console.log(result);
+            });
+             window.location.href = "<?php echo base_url()?>Web/valueprop";
+
+            }else{
+
+                var cust_pivot1 = $('#cust_pivot1').val();
             var cust_pivot2 = $('#cust_pivot2').val();
             var cust_pivot3 = $('#cust_pivot3').val();
             var cust_prob1 = $('#cust_prob1').val();
@@ -245,9 +307,12 @@
             var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
 
             $.post(url,{data:validationboard},function(result){
-                // console.log(result);
+                //console.log(result);
             });
-             window.location.href = "<?php echo base_url()?>Web/valueprop";
+             window.location.href = "<?php echo base_url()?>Web/valueprop";  
+            }
+
+            
 
 
         });

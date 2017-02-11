@@ -34,7 +34,9 @@
 
 		function addValidationBoard($data){
 
-			$query = $this->db->insert_batch('validation_board',$data);
+
+			$sql = "insert into validation_board (customer,problem,solution,risk_assumpt,solution_criteria,results,learnings,customer2,problem2,solution2,risk_assumpt2,solution_criteria2,results2,learnings2,customer3,problem3,solution3,risk_assumpt3,solution_criteria3,results3,learnings3,sf_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			$query = $this->db->query($sql,array($data['customer'],$data['problem'],$data['solution'],$data['risk_assumpt'],$data['solution_criteria'],$data['results'],$data['learnings'],$data['customer2'],$data['problem2'],$data['solution2'],$data['risk_assumpt2'],$data['solution_criteria2'],$data['results2'],$data['learnings2'],$data['customer3'],$data['problem3'],$data['solution3'],$data['risk_assumpt3'],$data['solution_criteria3'],$data['results3'],$data['learnings3'],$this->session->userdata('userid')));
 
 			if($query){
 				return true;

@@ -89,7 +89,6 @@
 			$validationboard = $this->input->post('data');
 
 			$details = array(
-					   array(
 					   		'customer' => $validationboard['cust_pivot1'],
 							'problem' => $validationboard['cust_prob1'],
 							'solution' => $validationboard['cust_solution1'],
@@ -97,36 +96,23 @@
 							'solution_criteria' => $validationboard['criterion1'],
 							'results' => $validationboard['discussion1'],
 							'learnings' => $validationboard['learning1'],
-							'pivot_num'=> 1,
-							'sf_id'=>$this->session->userdata('userid')
-					   	),
-					    array(
-					    	'customer' => $validationboard['cust_pivot2'],
-							'problem' => $validationboard['cust_prob2'],
-							'solution' => $validationboard['cust_solution2'],
-							'risk_assumpt' => $validationboard['risk_assump2'],
-							'solution_criteria' => $validationboard['criterion2'],
-							'results' => $validationboard['discussion2'],
-							'learnings' => $validationboard['learning2'],
-                			'pivot_num' => 2,
-							'sf_id' =>$this->session->userdata('userid')
-                			
-					    ),
-					    array(
-					    	'customer' => $validationboard['cust_pivot3'],
-							'problem' => $validationboard['cust_prob3'],
-							'solution' => $validationboard['cust_solution3'],
-							'risk_assumpt' =>$validationboard['risk_assump3'],
-							'solution_criteria' => $validationboard['criterion3'],
-							'results' => $validationboard['discussion3'],
-							'learnings' => $validationboard['learning3'],
-							'pivot_num'=> 3,
-							'sf_id'=>$this->session->userdata('userid')
-					    )
-                                     
+					    	'customer2' => $validationboard['cust_pivot2'],
+							'problem2' => $validationboard['cust_prob2'],
+							'solution2' => $validationboard['cust_solution2'],
+							'risk_assumpt2' => $validationboard['risk_assump2'],
+							'solution_criteria2' => $validationboard['criterion2'],
+							'results2' => $validationboard['discussion2'],
+							'learnings2' => $validationboard['learning2'],
+					    	'customer3' => $validationboard['cust_pivot3'],
+							'problem3' => $validationboard['cust_prob3'],
+							'solution3' => $validationboard['cust_solution3'],
+							'risk_assumpt3' =>$validationboard['risk_assump3'],
+							'solution_criteria3' => $validationboard['criterion3'],
+							'results3' => $validationboard['discussion3'],
+							'learnings3' => $validationboard['learning3']           
 				);
 
-			// echo json_encode($details);
+			 //echo json_encode($details);
 			$success = $this->PitchDeck_m->addValidationBoard($details);
 
 			if($success){

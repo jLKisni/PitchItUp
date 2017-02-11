@@ -40,8 +40,8 @@
 
 
 		function viewValidationBoard($userid){
-			$sql = 'select * from validation_board where sf_id = ? and pivot_num = ?';
-			$pivot = $this->db->query($sql,array($userid,1));
+			$sql = 'select * from validation_board where sf_id = ?';
+			$pivot = $this->db->query($sql,array($userid));
 
 			if($pivot->num_rows()>0){
 				$row = $pivot->row();

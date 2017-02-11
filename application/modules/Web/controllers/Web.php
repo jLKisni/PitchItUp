@@ -137,7 +137,8 @@ class Web extends MY_Controller{
       
 
       $data = array(
-        'title'=>'Create Validation Board'
+        'title'=>'Create Validation Board',
+        'validation'=>$validationboard
       );
       $this->load->view('Default/main_header',$data);
       $this->load->view('Default/create_nav');
