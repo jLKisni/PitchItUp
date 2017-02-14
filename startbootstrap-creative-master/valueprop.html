@@ -50,9 +50,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
 	
-					<li>
-						<a href = "create.html" data-toggle="tooltip" data-placement="bottom" title = "create"><span class = "glyphicon glyphicon-list-alt" style = "font-size: 1.2em;"></span></a>
-					</li>
 					<li class = "dropdown">
 						<a href="thumbnail.html" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" data-placement="bottom" title = "menu"><span class="glyphicon glyphicon-th" style = "font-size: 1.2em;"></span></a>
 							<ul class="dropdown-menu">
@@ -74,11 +71,11 @@
 						<a href="thumbnail.html" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" data-placement="bottom" title = "user"><span class="glyphicon glyphicon-user " style = "font-size: 1.2em;"></span></a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="myAccnt.html">Account Settings<span></span></a>
+								<a href="myAccnt.html">Account Settings<span ></span></a>
 							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="logout.html">Logout<span></span></a>
+								<a href="index.html">Logout<span ></span></a>
 							</li>
 						</ul>
 					
@@ -99,74 +96,120 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <header>
+	
+	<header>
         <div class="header-content">
             <div class="header-content-inner">
-               
-					<div class = "row">
-						<h2><b> Value Proposition </b></h2></br></br>
-						<table class = "table-bordered" align = "center">	
-							<thead>
-								<tr>
-									<th colspan = "2">Product</th>
-									<th colspan = "2">Customer</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td align = "center">Benefits</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
-									<td align = "center">Wants</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
-								
-								</tr>	
-								<tr>
-									<td align = "center">Features</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
-									<td align = "center">Needs</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
-									
-								</tr>
-								<tr>
-									<td align = "center">Experience</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
-									<td align = "center">Fears</td>
-									<td><textarea class = "form-control" rows= "3" id = "comment" style = "resize: none;"></textarea></td>
-									
-								</tr>
-								
-							</tbody>
-					
-						</table>
-				
-								<table align = "center">
-									<tr><td>Company:<textarea class = "form-control" rows= "1" style = "resize: none;"></textarea></td>
-									<td></td>
-									<td></td>
-									<td>Product:<textarea class = "form-control" rows= "1" style = "resize: none;"></textarea></td></tr>
-								</table>
-								<table align = "center">
-									<tr><td>Ideal customer:<textarea class = "form-control" rows= "1" style = "resize: none;"></textarea></td>
-									<td></td>
-									<td></td>
-									<td>Substitutes:<textarea class = "form-control" rows= "1" style = "resize: none;"></textarea></td></tr>
-								</table>
+
+            <div class="col-sm-4 text-center">
+                   
+                        <img src = "img/Valueprop.png" style = "width: 1000px; height: 550px;">
+
+                        <div class="col-md-2" style="position:absolute; left: 820px;
+   top: 180px; width: 170px; height: 100px;" >
+					<div class="form-group">
+					   <label for="fears" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Fears</font></label>
+					  <textarea class="form-control" rows="4" id="comment" style = "resize: none;"  ></textarea>
 					</div>
-					
-						
-		
-				<ul class = "pager">
-					<li class = "previous"><a href = "validation.html">Previous</li></a>
-					<li class = "next"><a href = "Template.html">Next</li></a>
-				</ul>
-					
+				</div>
+
+				   <div class="col-md-2" style="position:absolute; left: 650px;
+   top: 100px; width: 170px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Wants" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Wants</font></label>
+					  <textarea class="form-control" rows="4" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+			 <div class="col-md-2" style="position:absolute; left: 605px;
+   top: 264px; width: 170px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Needs" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Needs</font></label>
+					  <textarea class="form-control" rows="4" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+				<div class="col-md-2" style="position:absolute; left: 300px;
+   top: 105px; width: 170px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Experience" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Experience</font></label>
+					  <textarea class="form-control" rows="13" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+				<div class="col-md-2" style="position:absolute; left: 47px;
+   top: 105px; width: 210px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Benefits" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Benefits</font></label>
+					  <textarea class="form-control" rows="4" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+			<div class="col-md-2" style="position:absolute; left: 47px;
+   top: 280px; width: 210px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Features" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Features</font></label>
+					  <textarea class="form-control" rows="4" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+				 <div class="col-md-2" style="position:absolute; left: 528px;
+   top: 430px; width: 470px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Substitutes" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Substitutes</font></label>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+			<div class="col-md-2" style="position:absolute; left: 35px;
+   top: 430px; width: 160px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Company" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Company</font></label>
+					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+
+			<div class="col-md-2" style="position:absolute; left: 315px;
+   top: 430px; width: 160px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Product" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Product</font></label>
+					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+						<div class="col-md-2" style="position:absolute; left: 174px;
+   top: 455px; width: 160px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Ideal Custome" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Ideal Customer</font></label>
+					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+	<div style="position:absolute; left: 1000px;
+   top: 250px; width: 200px;"> 
+				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "BMC.html">Next</button>
 			</div>
-		</div>
-           
-    </header>
+
+			<div style="position:absolute; right: 330px;
+   top: 250px; width: 200px;"> 
+				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "Validation.html">Previous</button>
+			</div>
+
+
+</div>
+             </div>
+             </div>
+         </div>
+               
+
+  		
+				
+				
 	
+			</header>
+	
+	
+	<!--footer-->
 	
 	<script src="vendor/jquery/jquery.min.js"></script>
 
@@ -181,6 +224,13 @@
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
 
-</body>
+	
 
+	<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+</body>
 </html>
