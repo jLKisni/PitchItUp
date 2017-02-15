@@ -271,11 +271,13 @@ class Web extends MY_Controller{
           //load the download helper
           $this->load->helper('download');
           //set the textfile's content 
-          $data = 'Hello world! Codeigniter rocks!';
+         $data = file_get_contents(base_url('02presentation.pptx'));
           //set the textfile's name
-          $name = '02presentation.pptx';
+          $name = 'samplesir.pptx';
           //use this function to force the session/browser to download the created file
           force_download($name, $data);
+
+      // $this->load->view('pitchdeck');
 
     }
 

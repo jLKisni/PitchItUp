@@ -4,13 +4,15 @@
 error_reporting(E_ALL);
 
 /** Include path **/
-set_include_path(get_include_path() . PATH_SEPARATOR .base_url(). 'powerpoint/Classes/');
+set_include_path(get_include_path() . PATH_SEPARATOR .dirname(__FILE__));
 
+
+require_once dirname(__FILE__) . '/../PHPPowerPoint.php';
 /** PHPPowerPoint */
-include base_url().'powerpoint/Classes/PHPPowerPoint.php';
+//include base_url().'powerpoint/Classes/PHPPowerPoint.php';
 
 /** PHPPowerPoint_IOFactory */
-include base_url().'powerpoint/Classes/PHPPowerPoint/IOFactory.php';
+require_once dirname(__FILE__) .'/../PHPPowerPoint/IOFactory.php';
 
 // Create new PHPPowerPoint object
 echo date('H:i:s') . " Create new PHPPowerPoint object\n";

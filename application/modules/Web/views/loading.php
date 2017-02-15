@@ -39,7 +39,7 @@ $(function(){
         	);
 
     }
-    $bar.text($bar.width()/10+25+ "%");
+    $bar.text($bar.width()/10+ "%");
 
 }, 2000);
 
