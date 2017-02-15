@@ -11,9 +11,9 @@ class Web extends MY_Controller{
     }
 
     function index(){
-      if($this->session->userdata('userid')){
-            redirect('Web/wlcome_msg');
-      } 
+      // if($this->session->userdata('userid')){
+      //       redirect('Web/wlcome_msg');
+      // } 
       $data = array(
         'title'=>'Main page'
       );
@@ -70,22 +70,22 @@ class Web extends MY_Controller{
     }
 
     function create(){
-      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('userid'));
+      // $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('userid'));
 
-      if($ideadetails!=false){
-        $data = array(
-        'title'=>'Create idea Generation Board',
-        'ideagen'=>$ideadetails
-        );
+      // if($ideadetails!=false){
+      //   $data = array(
+      //   'title'=>'Create idea Generation Board',
+      //   'ideagen'=>$ideadetails
+      //   );
 
 
-        $this->load->view('Default/main_header',$data);
-        $this->load->view('Default/create_nav');
-        $this->load->view('create');
-        $this->load->view('Default/templatefooter');
+      //   $this->load->view('Default/main_header',$data);
+      //   $this->load->view('Default/create_nav');
+      //   $this->load->view('create');
+      //   $this->load->view('Default/templatefooter');
 
-      }
-      else{
+      // }
+      // else{
         $data2 = array(
         'title'=>'Create idea Generation Board'
         );
@@ -94,29 +94,29 @@ class Web extends MY_Controller{
         $this->load->view('create');
         $this->load->view('Default/templatefooter');
         
-      }
+      // }
       
     }
 
     function BMC(){
 
-      $bmcdetails = $this->PitchDeck_view_m->viewBMC($this->session->userdata('userid'));
+      // $bmcdetails = $this->PitchDeck_view_m->viewBMC($this->session->userdata('userid'));
 
 
-      if($bmcdetails!=false){
+      // if($bmcdetails!=false){
 
-        $data = array(
-        'title'=>'Create Business Model Canvass',
-        'bmc'=>$bmcdetails
-        );
+      //   $data = array(
+      //   'title'=>'Create Business Model Canvass',
+      //   'bmc'=>$bmcdetails
+      //   );
 
-        $this->load->view('Default/main_header',$data);
-        $this->load->view('Default/create_nav');
-        $this->load->view('BMC');
-        $this->load->view('Default/templatefooter');
+      //   $this->load->view('Default/main_header',$data);
+      //   $this->load->view('Default/create_nav');
+      //   $this->load->view('BMC');
+      //   $this->load->view('Default/templatefooter');
 
-      }
-      else{
+      // }
+      // else{
 
         $data2 = array(
         'title'=>'Create Business Model Canvass'
@@ -126,19 +126,19 @@ class Web extends MY_Controller{
         $this->load->view('Default/create_nav');
         $this->load->view('BMC');
         $this->load->view('Default/templatefooter');
-      }
+      // }
       
     }
 
 
     function validationboard(){
 
-      $validationboard = $this->PitchDeck_view_m->viewValidationBoard($this->session->userdata('userid'));
+      // $validationboard = $this->PitchDeck_view_m->viewValidationBoard($this->session->userdata('userid'));
       
 
       $data = array(
-        'title'=>'Create Validation Board',
-        'validation'=>$validationboard
+        'title'=>'Create Validation Board'
+        // 'validation'=>$validationboard
       );
       $this->load->view('Default/main_header',$data);
       $this->load->view('Default/create_nav');
@@ -148,23 +148,23 @@ class Web extends MY_Controller{
 
      function valueprop(){
 
-      $valuepropdetails = $this->PitchDeck_view_m->viewValueProp($this->session->userdata('userid'));
+      // $valuepropdetails = $this->PitchDeck_view_m->viewValueProp($this->session->userdata('userid'));
 
-      //print_r($valuepropdetails);
+      // //print_r($valuepropdetails);
 
 
-      if($valuepropdetails != false){
+      // if($valuepropdetails != false){
 
-         $data = array(
-        'title'=>'Update Value Proposition',
-        'valueprop'=>$valuepropdetails
-          );
-          $this->load->view('Default/main_header',$data);
-          $this->load->view('Default/create_nav');
-          $this->load->view('valueprop');
-          $this->load->view('Default/templatefooter');
+      //    $data = array(
+      //   'title'=>'Update Value Proposition',
+      //   'valueprop'=>$valuepropdetails
+      //     );
+      //     $this->load->view('Default/main_header',$data);
+      //     $this->load->view('Default/create_nav');
+      //     $this->load->view('valueprop');
+      //     $this->load->view('Default/templatefooter');
 
-      }else{
+      // }else{
 
          $data2 = array(
         'title'=>'Create Value Proposition'
@@ -176,7 +176,7 @@ class Web extends MY_Controller{
           $this->load->view('Default/templatefooter');
 
 
-      }
+      // }
 
      
     }

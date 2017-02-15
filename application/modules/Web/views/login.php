@@ -32,7 +32,8 @@
 								</div>
 								
 								<div class="col-xs-8 col-sm-8 col-md-12">
-										<a href = "#">Forgot Password?</a>
+									<br>                                                                                            
+										<a href = "<?php echo base_url();?>">Back to main page</a>
 								</div>
 								</div>
 						</div>

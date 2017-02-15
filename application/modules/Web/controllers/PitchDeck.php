@@ -115,9 +115,7 @@
 			 //echo json_encode($details);
 			$success = $this->PitchDeck_m->addValidationBoard($details);
 
-			if($success){
-				redirect('Web/validationboard');
-			}
+			echo $success;
 		}
 
 	}

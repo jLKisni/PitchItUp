@@ -12,56 +12,13 @@ class Auth extends MY_Controller{
 
   function signup(){
 
-    $registerdata = $this->input->post();
+    $registerdata = $this->input->post('data');
 
-      $data = array(
-        'title'=>'Register Account'
-      );
+    //echo json_encode($registerdata);
+   $success = $this->M_auth->signup($registerdata);
 
-    $details = array(
-      'firstname'=>$registerdata['firstname'],
-      'lastname'=>$registerdata['lastname'],
-      'username'=>$registerdata['username'],
-      'password'=>md5($registerdata['password'])
-      );
-
-    if($registerdata['password'] == $registerdata['repassword']){
-      $error_msg = array(
-        'error_msg'=>'<div class="alert alert-success" role="alert">Account Succefully Registered !</div>');
-      
-      $exist_msg = array(
-        'exist_msg'=>'<div class="alert alert-danger" role="alert">Username is already exists !</div>');
-      
-
-      $success = $this->M_auth->signup($details);
-
-      if($success){
-
-      $this->load->view('Default/main_header',$data);
-      $this->load->view('Default/main_nav');
-      $this->load->view('Web/signup',$error_msg);
-      }
-      else{
-      $this->load->view('Default/main_header',$data);
-      $this->load->view('Default/main_nav');
-      $this->load->view('Web/signup',$exist_msg);
-      }
-      
-    }
-    else{
-
-      $data = array(
-        'title'=>'Register Account'
-      );
-
-      $success = $this->M_auth->signup($details);
-      $error_msg = array('error_msg'=>'<div class="alert alert-danger" role="alert">Password Mismatched !</div>');
-      
-      if($success){
-        $this->load->view('Default/main_header',$data);
-        $this->load->view('Default/main_nav');
-        $this->load->view('Web/signup',$error_msg);
-      }
+    if($success){
+      echo $success;
     }
 
   }

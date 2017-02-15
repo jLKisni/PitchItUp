@@ -1,4 +1,3 @@
-<script src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -90,7 +89,7 @@
 
                 var url = "<?php echo base_url();?>Web/PitchDeck/addIdeaGen";
                 $.post(url,{data:ideagen},function(result){
-                    //console.log(result);
+                    console.log(result);
                 });
 
                  window.location.href = "<?php echo base_url()?>Web/BMC";
@@ -249,13 +248,16 @@
             var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
 
             $.post(url,{data:validationboard},function(result){
-                // console.log(result);
+              
+                 if(result==1 || result == '1'){
+                    window.location.href = "<?php echo base_url()?>Web/valueprop"; 
+                }
             });
-             window.location.href = "<?php echo base_url()?>Web/valueprop";
+             
 
             }else{
 
-                var cust_pivot1 = $('#cust_pivot1').val();
+            var cust_pivot1 = $('#cust_pivot1').val();
             var cust_pivot2 = $('#cust_pivot2').val();
             var cust_pivot3 = $('#cust_pivot3').val();
             var cust_prob1 = $('#cust_prob1').val();
@@ -307,12 +309,11 @@
             var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
 
             $.post(url,{data:validationboard},function(result){
-                //console.log(result);
+                alert('haha');
+                
             });
-             window.location.href = "<?php echo base_url()?>Web/valueprop";  
+              
             }
-
-            
 
 
         });

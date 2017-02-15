@@ -1,68 +1,110 @@
-   <header>
+<header>
         <div class="header-content">
             <div class="header-content-inner">
-               <input type="hidden" id="valueprop_id" value="<?php if(isset($valueprop)){ echo $valueprop->valueprop_id;}else{echo 0;}?>"/>
-			
-					<div class = "row">
-						<h2><b> Value Proposition </b></h2></br></br>
-						<table class = "table-bordered" align = "center">	
-							<thead>
-								<tr>
-									<th colspan = "2">Product</th>
-									<th colspan = "2">Customer</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td align = "center">Benefits</td>
-									<td><textarea class = "form-control" rows= "3" id = "benefits" style = "resize: none;"><?php if(isset($valueprop)){echo $valueprop->benefits;}?></textarea></td>
-									<td align = "center">Wants</td>
-									<td><textarea class = "form-control" rows= "3" id = "wants" style = "resize: none;"><?php if(isset($valueprop)){echo $valueprop->wants;}?></textarea></td>
-								
-								</tr>	
-								<tr>
-									<td align = "center">Features</td>
-									<td><textarea class = "form-control" rows= "3" id = "features" style = "resize: none;"><?php if(isset($valueprop)){echo $valueprop->features;}?></textarea></td>
-									<td align = "center">Needs</td>
-									<td><textarea class = "form-control" rows= "3" id = "needs" style = "resize: none;"><?php if(isset($valueprop)){echo $valueprop->needs;}?></textarea></td>
-									
-								</tr>
-								<tr>
-									<td align = "center">Experience</td>
-									<td><textarea class = "form-control" rows= "3" id = "experience" style = "resize: none;"><?php if(isset($valueprop)){echo $valueprop->experience;}?></textarea></td>
-									<td align = "center">Fears</td>
-									<td><textarea class = "form-control" rows= "3" id = "fears" style = "resize: none;"><?php if(isset($valueprop)){echo $valueprop->fears;}?></textarea></td>
-									
-								</tr>
-								
-							</tbody>
-					
-						</table>
-				
-								<table align = "center">
-									<tr><td>Company:<textarea class = "form-control" rows= "1" id="company" style = "resize: none;"><?php if(isset($valueprop)){echo $valueprop->company;}?></textarea></td>
-									<td></td>
-									<td></td>
-									<td>Product:<textarea class = "form-control" rows= "1" id="product" style = "resize: none;"><?php if(isset($valueprop)){echo $valueprop->product;}?></textarea></td></tr>
-								</table>
-								<table align = "center">
-									<tr><td>Ideal customer:<textarea class = "form-control" id="customer" rows= "1" style = "resize: none;"><?php if(isset($valueprop)){echo $valueprop->ideal_cust;}?></textarea></td>
-									<td></td>
-									<td></td>
-									<td>Substitutes:<textarea class = "form-control" rows= "1" id="substitutes" style = "resize: none;"><?php if(isset($valueprop)){echo $valueprop->substitutes;}?></textarea></td></tr>
-								</table>
+
+            <div class="col-sm-4 text-center">
+                   
+                        <img src = "<?php echo base_url();?>assets/img/Valueprop.png" style = "width: 1000px; height: 550px;">
+
+                        <div class="col-md-2" style="position:absolute; left: 820px;
+   top: 180px; width: 170px; height: 100px;" >
+					<div class="form-group">
+					   <label for="fears" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Fears</font></label>
+					  <textarea class="form-control" rows="4" id="comment" style = "resize: none;"  ></textarea>
 					</div>
-					
-						
-		
-				<ul class = "pager">
-					<li class = "previous"><a href = "<?php echo base_url();?>Web/validationboard">Previous</li></a>
-					<li class = "next"><a href = "#" id="template">Next</li></a>
-				</ul>
-					
+				</div>
+
+				   <div class="col-md-2" style="position:absolute; left: 650px;
+   top: 100px; width: 170px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Wants" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Wants</font></label>
+					  <textarea class="form-control" rows="4" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+			 <div class="col-md-2" style="position:absolute; left: 605px;
+   top: 264px; width: 170px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Needs" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Needs</font></label>
+					  <textarea class="form-control" rows="4" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+				<div class="col-md-2" style="position:absolute; left: 300px;
+   top: 105px; width: 170px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Experience" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Experience</font></label>
+					  <textarea class="form-control" rows="13" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+				<div class="col-md-2" style="position:absolute; left: 47px;
+   top: 105px; width: 210px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Benefits" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Benefits</font></label>
+					  <textarea class="form-control" rows="4" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+			<div class="col-md-2" style="position:absolute; left: 47px;
+   top: 280px; width: 210px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Features" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Features</font></label>
+					  <textarea class="form-control" rows="4" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+				 <div class="col-md-2" style="position:absolute; left: 528px;
+   top: 430px; width: 470px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Substitutes" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Substitutes</font></label>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+			<div class="col-md-2" style="position:absolute; left: 35px;
+   top: 430px; width: 160px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Company" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Company</font></label>
+					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+
+			<div class="col-md-2" style="position:absolute; left: 315px;
+   top: 430px; width: 160px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Product" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Product</font></label>
+					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+						<div class="col-md-2" style="position:absolute; left: 174px;
+   top: 455px; width: 160px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Ideal Custome" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Ideal Customer</font></label>
+					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea>
+					</div>
+				</div>
+
+	<div style="position:absolute; left: 1000px;
+   top: 250px; width: 200px;"> 
+				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "#"id="template">Next</button>
 			</div>
-		</div>
-           
-    </header>
+
+			<div style="position:absolute; right: 330px;
+   top: 250px; width: 200px;"> 
+				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "<?php echo base_url();?>Web/validationboard">Previous</button>
+			</div>
+
+
+</div>
+             </div>
+             </div>
+         </div>
+               
+
+  		
+				
+				
 	
+			</header>

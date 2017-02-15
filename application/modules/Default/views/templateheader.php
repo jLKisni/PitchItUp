@@ -31,6 +31,8 @@
     	}
 
     </style>
+    <script src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
+
     
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

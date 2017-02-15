@@ -4,7 +4,8 @@
                 <h1 id="homeHeading">PitchITup</h1>
                 <hr>
                 <p>Start using PitchITup for your pitch decks!</p>
-                <a href="<?php echo base_url();?>Web/signup" class="btn btn-primary btn-xl page-scroll">Sign-up now</a>
+                <a href="<?php echo base_url();?>Web/signup" class="btn btn-primary btn-xl page-scroll">Register as a new team</a>
+                <a href="<?php echo base_url();?>Web/signup" class="btn btn-primary btn-xl page-scroll">Register as a member</a>
             </div>
         </div>
     </header>

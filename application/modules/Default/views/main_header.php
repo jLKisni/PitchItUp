@@ -25,8 +25,26 @@
     <!-- Theme CSS -->
     <link href="<?php echo base_url();?>assets/css/creative.min.css" rel="stylesheet">
 
-  
+    <style type="text/css">
+        body{
+            width:100%;
+            margin: 0;
+            min-height: auto;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            background: url(<?php echo base_url();?>assets/img/header.jpg) center center;
+            
+        }
+
+
+    </style>
+    <script src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
+
 
 </head>
 
 <body id="page-top">
+
+    

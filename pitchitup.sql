@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2017 at 07:09 PM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- Generation Time: Feb 15, 2017 at 11:01 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -37,16 +37,15 @@ CREATE TABLE `bmc` (
   `key_partners` varchar(255) NOT NULL,
   `cost_structures` varchar(50) NOT NULL,
   `revenue_streams` varchar(100) NOT NULL,
-  `sf_id` int(11) NOT NULL
+  `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bmc`
 --
 
-INSERT INTO `bmc` (`bmc_id`, `cust_segment`, `cust_relationship`, `channels`, `value_proposition`, `key_activities`, `key_sources`, `key_partners`, `cost_structures`, `revenue_streams`, `sf_id`) VALUES
-(2, 'asd', 'asd', 'asd', 'asd', 'lablabtig nawng', 'asd', 'HAHAHA', 'asd', 'HAHAHA', 1),
-(3, 'sldhglsd', 'fsdshd', 'sdlvhsd', 'ee', 'bb', 'ldhgl', 'aaa', 'fsdlb', 'aaa', 2);
+INSERT INTO `bmc` (`bmc_id`, `cust_segment`, `cust_relationship`, `channels`, `value_proposition`, `key_activities`, `key_sources`, `key_partners`, `cost_structures`, `revenue_streams`, `team_id`) VALUES
+(5, 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 37);
 
 -- --------------------------------------------------------
 
@@ -87,36 +86,81 @@ CREATE TABLE `idea_genboard` (
   `people` varchar(255) NOT NULL,
   `behavior` varchar(255) NOT NULL,
   `solution` varchar(255) NOT NULL,
-  `sf_id` int(11) NOT NULL
+  `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `idea_genboard`
 --
 
-INSERT INTO `idea_genboard` (`idea_id`, `problem`, `people`, `behavior`, `solution`, `sf_id`) VALUES
-(4, 'Angel okay', 'asdadfsf', 'safafa', 'dgsgsgd', 2);
+INSERT INTO `idea_genboard` (`idea_id`, `problem`, `people`, `behavior`, `solution`, `team_id`) VALUES
+(5, 'asd', 'asd', 'asd', 'asd', 37);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `startup_founder`
+-- Table structure for table `members`
 --
 
-CREATE TABLE `startup_founder` (
-  `sf_id` int(11) NOT NULL,
+CREATE TABLE `members` (
+  `mem_id` int(11) NOT NULL,
   `FirstName` varchar(60) NOT NULL,
   `LastName` varchar(60) NOT NULL,
+  `role` varchar(30) NOT NULL,
   `username` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `startup_founder`
+-- Dumping data for table `members`
 --
 
-INSERT INTO `startup_founder` (`sf_id`, `FirstName`, `LastName`, `username`, `password`) VALUES
-(2, 'Angelica', 'Cantiveros', 'angelbelove', '202cb962ac59075b964b07152d234b70');
+INSERT INTO `members` (`mem_id`, `FirstName`, `LastName`, `role`, `username`, `password`, `team_id`) VALUES
+(41, 'zxczxc', 'qweasd', 'Hipster', 'jLkisni', 'f6fdffe48c908deb0f4c3bd36c032e72', 37);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member_registration`
+--
+
+CREATE TABLE `member_registration` (
+  `memreg_id` int(11) NOT NULL,
+  `mem_firstname` varchar(100) NOT NULL,
+  `mem_lastname` varchar(100) NOT NULL,
+  `mem_role` varchar(30) NOT NULL,
+  `team_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `member_registration`
+--
+
+INSERT INTO `member_registration` (`memreg_id`, `mem_firstname`, `mem_lastname`, `mem_role`, `team_id`) VALUES
+(16, 'qweasd', 'asdsa', 'Hipster', 37),
+(17, 'asdsa', 'asd', 'Hustler', 37),
+(18, 'qweasd', 'asdsad', 'Hipster', 37);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `team`
+--
+
+CREATE TABLE `team` (
+  `team_id` int(11) NOT NULL,
+  `team_name` varchar(100) NOT NULL,
+  `size` int(11) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `team`
+--
+
+INSERT INTO `team` (`team_id`, `team_name`, `size`, `status`) VALUES
+(37, 'asdsad', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -147,15 +191,15 @@ CREATE TABLE `validation_board` (
   `solution_criteria3` varchar(255) DEFAULT NULL,
   `results3` varchar(255) DEFAULT NULL,
   `learnings3` varchar(255) DEFAULT NULL,
-  `sf_id` int(11) NOT NULL
+  `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `validation_board`
 --
 
-INSERT INTO `validation_board` (`valid_id`, `customer`, `problem`, `solution`, `risk_assumpt`, `solution_criteria`, `results`, `learnings`, `customer2`, `problem2`, `solution2`, `risk_assumpt2`, `solution_criteria2`, `results2`, `learnings2`, `customer3`, `problem3`, `solution3`, `risk_assumpt3`, `solution_criteria3`, `results3`, `learnings3`, `sf_id`) VALUES
-(35, 'booom', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 'kjh', 2);
+INSERT INTO `validation_board` (`valid_id`, `customer`, `problem`, `solution`, `risk_assumpt`, `solution_criteria`, `results`, `learnings`, `customer2`, `problem2`, `solution2`, `risk_assumpt2`, `solution_criteria2`, `results2`, `learnings2`, `customer3`, `problem3`, `solution3`, `risk_assumpt3`, `solution_criteria3`, `results3`, `learnings3`, `team_id`) VALUES
+(42, 'asdkj', '', 'kjh', 'jkh', 'jkh', 'jkhjkhk', 'hk', 'hjkhjk', 'hkjh', 'kj', 'hkjh', 'jk', 'hjk', 'hk', 'jhjkhkjh', 'kj', 'hjkh', 'kjh', 'jkh', 'kjh', 'jkhjk', 37);
 
 -- --------------------------------------------------------
 
@@ -175,15 +219,8 @@ CREATE TABLE `value_prop` (
   `product` varchar(255) NOT NULL,
   `ideal_cust` varchar(255) NOT NULL,
   `substitutes` varchar(255) NOT NULL,
-  `sf_id` int(11) NOT NULL
+  `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `value_prop`
---
-
-INSERT INTO `value_prop` (`valueprop_id`, `wants`, `needs`, `fears`, `benefits`, `experience`, `features`, `company`, `product`, `ideal_cust`, `substitutes`, `sf_id`) VALUES
-(5, 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 2);
 
 --
 -- Indexes for dumped tables
@@ -214,10 +251,22 @@ ALTER TABLE `idea_genboard`
   ADD PRIMARY KEY (`idea_id`);
 
 --
--- Indexes for table `startup_founder`
+-- Indexes for table `members`
 --
-ALTER TABLE `startup_founder`
-  ADD PRIMARY KEY (`sf_id`);
+ALTER TABLE `members`
+  ADD PRIMARY KEY (`mem_id`);
+
+--
+-- Indexes for table `member_registration`
+--
+ALTER TABLE `member_registration`
+  ADD PRIMARY KEY (`memreg_id`);
+
+--
+-- Indexes for table `team`
+--
+ALTER TABLE `team`
+  ADD PRIMARY KEY (`team_id`);
 
 --
 -- Indexes for table `validation_board`
@@ -239,7 +288,7 @@ ALTER TABLE `value_prop`
 -- AUTO_INCREMENT for table `bmc`
 --
 ALTER TABLE `bmc`
-  MODIFY `bmc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `bmc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `gen_pitchdeck`
 --
@@ -254,17 +303,27 @@ ALTER TABLE `history`
 -- AUTO_INCREMENT for table `idea_genboard`
 --
 ALTER TABLE `idea_genboard`
-  MODIFY `idea_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idea_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `startup_founder`
+-- AUTO_INCREMENT for table `members`
 --
-ALTER TABLE `startup_founder`
-  MODIFY `sf_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `members`
+  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+--
+-- AUTO_INCREMENT for table `member_registration`
+--
+ALTER TABLE `member_registration`
+  MODIFY `memreg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT for table `team`
+--
+ALTER TABLE `team`
+  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT for table `validation_board`
 --
 ALTER TABLE `validation_board`
-  MODIFY `valid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `valid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT for table `value_prop`
 --
