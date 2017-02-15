@@ -17,6 +17,7 @@ class Account_management extends MY_Controller{
 			$userinput = $this->input->post();
 
 			$userdata = array(
+				'teamname'=> $userinput['teamname'],
 				'firstname'=>$userinput['firstname'],
 			      'lastname'=>$userinput['lastname'],
 			      'username'=>$userinput['username'],

@@ -248,12 +248,8 @@
             var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
 
             $.post(url,{data:validationboard},function(result){
-              
-                 if(result==1 || result == '1'){
-                    window.location.href = "<?php echo base_url()?>Web/valueprop"; 
-                }
             });
-             
+                window.location.href = "<?php echo base_url()?>Web/valueprop"; 
 
             }else{
 
@@ -309,7 +305,9 @@
             var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
 
             $.post(url,{data:validationboard},function(result){
-                alert('haha');
+                   if(result==1 || result == '1'){
+                    window.location.href = "<?php echo base_url()?>Web/valueprop"; 
+                }
                 
             });
               
@@ -371,7 +369,7 @@
                      //console.log(result);
                 });
 
-                  window.location.href = "<?php echo base_url()?>Web/template";
+                  window.location.href = "<?php echo base_url()?>Web/loading";
 
             }else{
 
@@ -407,7 +405,7 @@
                     // console.log(result);
                 });
 
-                 window.location.href = "<?php echo base_url()?>Web/template";
+                 window.location.href = "<?php echo base_url()?>Web/loading";
 
 
 

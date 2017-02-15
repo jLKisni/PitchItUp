@@ -11,9 +11,14 @@ class Web_m extends CI_Model{
 function getAccount($userid){
 
 
-  $sql = "select * from startup_founder where sf_id = $userid"; 
-  $query = $this->db->query($sql);
+  // $sql = "select * from members where mem_id = $userid"; 
+  // $query = $this->db->query($sql);
 
+   $this->db->select('*');
+   $this->db->from('members');
+   $this->db->join('team','team.team_id = members.team_id');
+   $this->db->where('members.mem_id',$userid);
+   $query = $this->db->get();
   if($query->num_rows()>0){
 
       $row = $query->row();

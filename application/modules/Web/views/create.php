@@ -16,7 +16,7 @@
    top: 68px; width: 500px; " >
 					<div class="form-group">
 					  <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">Problem</font></label>
-					  <textarea class="form-control" rows="9" id="problem" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="9" id="problem" style = "resize: none;"  ><?php if(isset($ideagen)){echo $ideagen->problem;}?></textarea>
 					</div>
 				</div>
 
@@ -24,7 +24,7 @@
    top: 68px; width: 500px;" >
 					<div class="form-group">
 					 <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">People</font></label>
-					  <textarea class="form-control" rows="9" id="people" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="9" id="people" style = "resize: none;"  ><?php if(isset($ideagen)){echo $ideagen->people;}else{}?></textarea>
 					</div>
 				</div>
 
@@ -32,7 +32,7 @@
    top: 305px; width: 500px; " >
 					<div class="form-group">
 					<label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">Behavior</font></label>
-					  <textarea class="form-control" rows="9" id="behavior" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="9" id="behavior" style = "resize: none;"  ><?php if(isset($ideagen)){echo $ideagen->behavior;}?></textarea>
 					</div>
 				</div>
 
@@ -40,7 +40,7 @@
    top: 305px; width: 500px; " >
 					<div class="form-group">
 					<label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">Solution</font></label>
-					  <textarea class="form-control" rows="9" id="solution" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="9" id="solution" style = "resize: none;"  ><?php if(isset($ideagen)){echo $ideagen->solution;}?></textarea>
 					</div>
 				</div>
 

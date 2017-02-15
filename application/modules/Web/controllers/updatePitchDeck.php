@@ -52,9 +52,7 @@
 
 			$success = $this->updatePitchDeck_m->updateBMC($details);
 			//echo json_encode($success);
-			if($success){
-				redirect('Web/validationboard');
-			}
+			echo $success;
 
 		}
 

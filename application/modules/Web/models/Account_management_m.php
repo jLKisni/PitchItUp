@@ -13,11 +13,22 @@
 			$this->db->set('LastName',$data['lastname']);
 			$this->db->set('username',$data['username']);
 			$this->db->set('password',$data['password']);
-		    $this->db->where('sf_id',$this->session->userdata('userid'));
-		    $query = $this->db->update('startup_founder');
+		    $this->db->where('mem_id',$this->session->userdata('userid'));
+		    $query = $this->db->update('members');
+
 
 		    if($query){
-		      return true;
+		      $this->db->set('team_name',$data['teamname']);
+		      $this->db->where('team_id',$this->session->userdata('team_id'));
+		      $query1 = $this->db->update('team');
+
+		      if($query1){
+		      	return true;
+		      }
+		      else{
+		      	return false;
+		      }
+
 		    }else{
 		      return false;
 		    }

@@ -72,13 +72,13 @@
 				'product'=>$valueprop['product'],
 				'ideal_cust'=>$valueprop['customer'],
 				'substitutes'=>$valueprop['substitutes'],
-				'sf_id'=>$this->session->userdata('userid')
+				'team_id'=>$this->session->userdata('team_id')
 				);
 
 
 			
 			$success = $this->PitchDeck_m->addValueProp($details);
-			echo json_encode($details);
+			echo $success;
 			// if($success){
 			// 	redirect('Web/template');
 			// }

@@ -8,10 +8,10 @@
 		}
 
 
-		function viewIdeaGen($userid){
+		function viewIdeaGen($team_id){
 
-			$sql = 'select * from idea_genboard where sf_id = ?';
-			$query = $this->db->query($sql,array($userid));
+			$sql = 'select * from idea_genboard where team_id = ?';
+			$query = $this->db->query($sql,array($team_id));
 
 			if($query->num_rows()>0){
 				$row = $query->row();
@@ -23,9 +23,9 @@
 		}
 
 
-		function viewBMC($userid){
-			$sql = 'select * from bmc where sf_id = ?';
-			$query = $this->db->query($sql,array($userid));
+		function viewBMC($team_id){
+			$sql = 'select * from bmc where team_id = ?';
+			$query = $this->db->query($sql,array($team_id));
 
 			if($query->num_rows()>0){
 
@@ -39,9 +39,9 @@
 
 
 
-		function viewValidationBoard($userid){
-			$sql = 'select * from validation_board where sf_id = ?';
-			$pivot = $this->db->query($sql,array($userid));
+		function viewValidationBoard($team_id){
+			$sql = 'select * from validation_board where team_id = ?';
+			$pivot = $this->db->query($sql,array($team_id));
 
 			if($pivot->num_rows()>0){
 				$row = $pivot->row();
@@ -52,11 +52,11 @@
 		}
 
 
-		function viewValueProp($userid){
+		function viewValueProp($team_id){
 
 
-			$sql = "select * from value_prop where sf_id = ? ";
-			$query = $this->db->query($sql,array($userid));
+			$sql = "select * from value_prop where team_id = ? ";
+			$query = $this->db->query($sql,array($team_id));
 
 			if($query->num_rows()>0)
 			{

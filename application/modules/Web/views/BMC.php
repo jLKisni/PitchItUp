@@ -13,7 +13,7 @@
    top: 70px; width: 205px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Customer Segments" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Customer Segments</font></label>
-					  <textarea class="form-control" rows="13" id="segment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="13" id="segment" style = "resize: none;"  ><?php if(isset($bmc)){echo $bmc->cust_segment;}?></textarea>
 					</div>
 				</div>
 
@@ -21,7 +21,7 @@
    top: 70px; width: 205px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Customer Relationship" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Customer Relationship</font></label>
-					  <textarea class="form-control" rows="5" id="relationship" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="5" id="relationship" style = "resize: none;"  ><?php if(isset($bmc)){echo $bmc->cust_relationship;}?></textarea>
 					</div>
 				</div>
 
@@ -29,7 +29,7 @@
    top: 70px; width: 205px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Value Proposition" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Value Proposition</font></label>
-					  <textarea class="form-control" rows="13" id="proposition" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="13" id="proposition" style = "resize: none;"  ><?php if(isset($bmc)){echo $bmc->value_proposition;}?></textarea>
 					</div>
 				</div>
 
@@ -37,7 +37,7 @@
    top: 70px; width: 205px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Key Activities" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Key Activities</font></label>
-					  <textarea class="form-control" rows="5" id="activities" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="5" id="activities" style = "resize: none;"  ><?php if(isset($bmc)){echo $bmc->key_activities;}?></textarea>
 					</div>
 				</div>
 
@@ -45,7 +45,7 @@
    top: 70px; width: 205px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Key Partners" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Key Partners</font></label>
-					  <textarea class="form-control" rows="13" id="partners" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="13" id="partners" style = "resize: none;"  ><?php if(isset($bmc)){echo $bmc->key_partners;}?></textarea>
 					</div>
 				</div>
 
@@ -53,7 +53,7 @@
    top: 231px; width: 205px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Key Resources" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Key Resources</font></label>
-					  <textarea class="form-control" rows="5" id="resources" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="5" id="resources" style = "resize: none;"  ><?php if(isset($bmc)){echo $bmc->key_sources;}?></textarea>
 					</div>
 				</div>
 
@@ -61,7 +61,7 @@
    top: 231px; width: 205px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Channels" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Channels</font></label>
-					  <textarea class="form-control" rows="5" id="channels" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="5" id="channels" style = "resize: none;"  ><?php if(isset($bmc)){echo $bmc->channels;}?></textarea>
 					</div>
 				</div>
 
@@ -69,7 +69,7 @@
    top: 390px; width: 490px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Revenue Streams" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Revenue Streams</font></label>
-					  <textarea class="form-control" rows="4" id="streams" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="4" id="streams" style = "resize: none;"  ><?php if(isset($bmc)){echo $bmc->revenue_streams;}?></textarea>
 					</div>
 				</div>
 			
@@ -77,7 +77,7 @@
    top: 390px; width: 490px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Cost Structure" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Cost Structure</font></label>
-					  <textarea class="form-control" rows="4" id="structure" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="4" id="structure" style = "resize: none;"  ><?php if(isset($bmc)){echo $bmc->cost_structures;}?></textarea>
 					</div>
 				</div>
 

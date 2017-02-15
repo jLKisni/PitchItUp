@@ -30,15 +30,18 @@ $(function(){
     if ($bar.width()==1000) {
         clearInterval(progress);
         $('.progress-bar').removeClass('active');
+
+        window.location.href = "<?php echo base_url();?>Web/Web/pitchdeck"
         
     } else {
 
-        $bar.width($bar.width()+250);
+        $bar.width($bar.width()+250
+        	);
 
     }
     $bar.text($bar.width()/10+25+ "%");
 
-}, 2500);
+}, 2000);
 
 
 });
