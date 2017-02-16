@@ -24,6 +24,34 @@ class Auth extends MY_Controller{
   }
 
 
+  function signupmember(){
+    $members = $this->input->post();
+
+    if($members['password'] == $members['repassword']){
+
+        $success = $this->M_auth->signupmember($members);
+
+        echo $success;
+    }
+    else{
+
+     
+      $data = array(
+        'title'=>'Register Member Account'
+      );
+      $this->load->view('Default/main_header',$data);
+      $this->load->view('Default/main_nav');
+      $this->load->view('signupmember');
+   
+    }
+
+    
+
+
+
+  }
+
+
   function login(){
     $usersdata = $this->input->post();
     $data = array(

@@ -70,7 +70,7 @@
                         console.log(result);
                     });
 
-                    window.location.href = "<?php echo base_url()?>Web/BMC";
+                    window.location.href = "<?php echo base_url()?>Web/validationboard";
                      
              }   
             else{
@@ -92,7 +92,7 @@
                     console.log(result);
                 });
 
-                 window.location.href = "<?php echo base_url()?>Web/BMC";
+                 window.location.href = "<?php echo base_url()?>Web/validationboard";
                  
             }
     
@@ -140,7 +140,7 @@
                     var url = "<?php echo base_url();?>Web/updatePitchDeck/updateBMC";
                     $.post(url,{data:bmc},function(result){
                     });
-                    window.location.href = "<?php echo base_url()?>Web/validationboard";
+                    window.location.href = "<?php echo base_url()?>Web/loading";
 
 
 
@@ -170,7 +170,7 @@
 
                     var url = "<?php echo base_url();?>Web/PitchDeck/addBMC";
                     $.post(url,{data:bmc},function(result){});
-                    window.location.href = "<?php echo base_url()?>Web/validationboard";
+                    window.location.href = "<?php echo base_url()?>Web/loading";
 
              }
 
@@ -369,7 +369,7 @@
                      //console.log(result);
                 });
 
-                  window.location.href = "<?php echo base_url()?>Web/loading";
+                  window.location.href = "<?php echo base_url()?>Web/bmc";
 
             }else{
 
@@ -405,7 +405,7 @@
                     // console.log(result);
                 });
 
-                 window.location.href = "<?php echo base_url()?>Web/loading";
+                 window.location.href = "<?php echo base_url()?>Web/bmc";
 
 
 

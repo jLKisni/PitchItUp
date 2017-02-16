@@ -98,26 +98,40 @@ class M_auth extends CI_Model{
 
   }
 
-  function loginSalonStaff($data){
+  
+  function signupmember($members){
 
-    $sql = "select * from staff_users where userName = ? and password = ?";
-    $query = $this->db->query($sql,array($data['username'],$data['password']));
-    if($query->num_rows()>0){
-        $row = $query->row();
-        $session = array(
-          'userid'=>$row->suID,
-          'username'=>$row->userName,
-          'salonid'=>$row->salonID
-        );
-        $this->session->set_userdata($session);
+      $sql = "select * from team where team_name = ? and status = ?";
+      $query = $this->db->query($sql,array($members['teamname'],0));
 
-        return 'Login';
+      if($query->num_rows()>0){
 
-    }
-    else{
-         return 'false';
+          $row = $query->row();
 
-     }
+          $sql1 = "select * from member_registration where team_id = ? and mem_firstname = ? and mem_lastname = ?";
+          $query1 = $this->db->query($sql1,array($row->team_id,$members['firstname'],$members['lastname']));
+
+          if($query1->num_rows()>0){
+            
+            $sql2 = "insert into members (FirstName,LastName,role,username,password,team_id) values (?,?,?,?,?,?)";
+            $query2 = $this->db->query($sql2,array($members['firstname'],$members['lastname'],$members['role'],$members['username'],md5($members['password']),$row->team_id));
+
+            if($query2){
+              return 'Member Successfully Registered!';
+            }
+            else{
+              return 'Error Registering . Contact pinakagwapo nga developer';
+            }
+          }
+          else
+          {
+            return 'Your name has no permission to join on this team';
+          }
+
+      }
+      else{
+        return 'Team not yet existed. Please create another one!';
+      }
 
   }
 

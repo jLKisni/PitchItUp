@@ -112,7 +112,7 @@
 
 			<div style="position:absolute; right: 330px;
    top: 250px; width: 200px;"> 
-				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "<?php echo base_url();?>Web/create">Previous</button>
+				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "<?php echo base_url();?>Web/valueprop">Previous</button>
 			</div>
 	</div>
 

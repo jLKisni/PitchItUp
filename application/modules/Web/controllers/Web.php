@@ -36,6 +36,17 @@ class Web extends MY_Controller{
    
     }
 
+    function signupmember(){
+
+      $data = array(
+        'title'=>'Register Member Account'
+      );
+      $this->load->view('Default/main_header',$data);
+      $this->load->view('Default/main_nav');
+      $this->load->view('signupmember');
+   
+    }
+
 
     function login(){
 
@@ -277,7 +288,7 @@ class Web extends MY_Controller{
           //use this function to force the session/browser to download the created file
           force_download($name, $data);
 
-      // $this->load->view('pitchdeck');
+      //$this->load->view('pitchdeck');
 
     }
 
