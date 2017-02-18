@@ -76,7 +76,7 @@ class Web extends MY_Controller{
         'title'=>'Login'
       );
       $this->load->view('Default/main_header',$data);
-      $this->load->view('Default/interface_nav');
+      $this->load->view('Default/create_nav');
       $this->load->view('interface');
       $this->load->view('Default/templatefooter');
     }

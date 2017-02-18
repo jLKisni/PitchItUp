@@ -38,7 +38,7 @@
 							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="<?php echo base_url();?>">Logout<span class="glyphicon glyphicon-off pull-right"></span></a>
+								<a href="<?php echo base_url();?>Auth/logout">Logout<span class="glyphicon glyphicon-off pull-right"></span></a>
 							</li>
 						</ul>
 					

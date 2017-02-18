@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2017 at 09:54 AM
+-- Generation Time: Feb 18, 2017 at 04:39 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -40,13 +40,6 @@ CREATE TABLE IF NOT EXISTS `bmc` (
   `team_id` int(11) NOT NULL,
   PRIMARY KEY (`bmc_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `bmc`
---
-
-INSERT INTO `bmc` (`bmc_id`, `cust_segment`, `cust_relationship`, `channels`, `value_proposition`, `key_activities`, `key_sources`, `key_partners`, `cost_structures`, `revenue_streams`, `team_id`) VALUES
-(5, 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 37);
 
 -- --------------------------------------------------------
 
@@ -91,14 +84,14 @@ CREATE TABLE IF NOT EXISTS `idea_genboard` (
   `solution` varchar(255) NOT NULL,
   `team_id` int(11) NOT NULL,
   PRIMARY KEY (`idea_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `idea_genboard`
 --
 
 INSERT INTO `idea_genboard` (`idea_id`, `problem`, `people`, `behavior`, `solution`, `team_id`) VALUES
-(5, 'asd', 'asd', 'asd', 'asd', 37);
+(7, 'haha', 'Ako', 'akshdksah', 'asdsad', 39);
 
 -- --------------------------------------------------------
 
@@ -116,14 +109,16 @@ CREATE TABLE IF NOT EXISTS `members` (
   `team_id` int(11) NOT NULL,
   `timestamp` timestamp NOT NULL,
   PRIMARY KEY (`mem_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
 --
 -- Dumping data for table `members`
 --
 
 INSERT INTO `members` (`mem_id`, `FirstName`, `LastName`, `role`, `username`, `password`, `team_id`, `timestamp`) VALUES
-(43, 'Louise', 'John', 'Hustler', 'jLkisni', 'f6fdffe48c908deb0f4c3bd36c032e72', 38, '0000-00-00 00:00:00');
+(44, 'Louise', 'John', 'Hustler', 'jLkisni', 'f6fdffe48c908deb0f4c3bd36c032e72', 39, '2017-02-18 03:38:04'),
+(48, 'Angelica', 'Cantiveros', 'Hipster', 'angellove', 'f6fdffe48c908deb0f4c3bd36c032e72', 39, '2017-02-18 14:47:28'),
+(49, 'Admin', 'Admin', 'Admin', 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72', 0, '2017-02-18 14:47:28');
 
 -- --------------------------------------------------------
 
@@ -139,16 +134,16 @@ CREATE TABLE IF NOT EXISTS `member_registration` (
   `mem_status` int(11) NOT NULL COMMENT '0 - not registered | 1 registered',
   `team_id` int(11) NOT NULL,
   PRIMARY KEY (`memreg_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `member_registration`
 --
 
 INSERT INTO `member_registration` (`memreg_id`, `mem_firstname`, `mem_lastname`, `mem_role`, `mem_status`, `team_id`) VALUES
-(19, 'Angelica', 'Cantiveros', 'Hipster', 0, 38),
-(20, 'Shamcy', 'Supsup', 'Hipster', 0, 38),
-(21, 'Sheerlen', 'Golisao', 'Hacker', 0, 38);
+(22, 'Angelica', 'Cantiveros', 'Hipster', 1, 39),
+(23, 'Shamcy', 'Supsup', 'Hipster', 0, 39),
+(24, 'Sherleen', 'Golisao', 'Hacker', 0, 39);
 
 -- --------------------------------------------------------
 
@@ -162,14 +157,14 @@ CREATE TABLE IF NOT EXISTS `team` (
   `size` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`team_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
 
 --
 -- Dumping data for table `team`
 --
 
 INSERT INTO `team` (`team_id`, `team_name`, `size`, `status`) VALUES
-(38, 'teambangan', 0, 0);
+(39, 'teambangan', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -204,13 +199,6 @@ CREATE TABLE IF NOT EXISTS `validation_board` (
   PRIMARY KEY (`valid_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
---
--- Dumping data for table `validation_board`
---
-
-INSERT INTO `validation_board` (`valid_id`, `customer`, `problem`, `solution`, `risk_assumpt`, `solution_criteria`, `results`, `learnings`, `customer2`, `problem2`, `solution2`, `risk_assumpt2`, `solution_criteria2`, `results2`, `learnings2`, `customer3`, `problem3`, `solution3`, `risk_assumpt3`, `solution_criteria3`, `results3`, `learnings3`, `team_id`) VALUES
-(42, 'asdkj', '', 'kjh', 'jkh', 'jkh', 'jkhjkhk', 'hk', 'hjkhjk', 'hkjh', 'kj', 'hkjh', 'jk', 'hjk', 'hk', 'jhjkhkjh', 'kj', 'hjkh', 'kjh', 'jkh', 'kjh', 'jkhjk', 37);
-
 -- --------------------------------------------------------
 
 --
@@ -232,13 +220,6 @@ CREATE TABLE IF NOT EXISTS `value_prop` (
   `team_id` int(11) NOT NULL,
   PRIMARY KEY (`valueprop_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Dumping data for table `value_prop`
---
-
-INSERT INTO `value_prop` (`valueprop_id`, `wants`, `needs`, `fears`, `benefits`, `experience`, `features`, `company`, `product`, `ideal_cust`, `substitutes`, `team_id`) VALUES
-(6, '', '', '', '', '', '', '', '', '', '', 37);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

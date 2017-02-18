@@ -79,8 +79,17 @@ class M_auth extends CI_Model{
       if($query->num_rows()>0){
           $row = $query->row();
 
+          if($row->role == 'Admin'){
+            $session = array(
+            'userid'=>$row->mem_id,
+            'logged_in'=>1
+          );
+          $this->session->set_userdata($session);
+            return 'Admin';
 
-          $session = array(
+          }
+          else{
+             $session = array(
             'userid'=>$row->mem_id,
             'team_id'=>$row->team_id,
             'username'=>$row->username,
@@ -88,7 +97,13 @@ class M_auth extends CI_Model{
           );
           $this->session->set_userdata($session);
 
-          return true;
+          $sql1 = "update members set timestamp = ? where mem_id = ? ";
+          $query1 = $this->db->query($sql1,array(date('Y-m-d h:i:s'),$row->mem_id));
+
+          return 'Users';
+          }
+
+         
 
       }
       else{
@@ -129,8 +144,6 @@ class M_auth extends CI_Model{
                   
                 $sql4 = "update member_registration set mem_status = ? where memreg_id = ?";
                 $query4 = $this->db->query($sql4,array(1,$mem_id->memreg_id));
-
-
 
                     $sql2 = "insert into members (FirstName,LastName,role,username,password,team_id,timestamp) values (?,?,?,?,?,?,?)";
                     $query2 = $this->db->query($sql2,array($members['firstname'],$members['lastname'],$members['role'],$members['username'],md5($members['password']),$row->team_id,date('Y-m-d h:i:s')));

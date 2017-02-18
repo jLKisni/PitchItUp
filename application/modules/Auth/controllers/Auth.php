@@ -102,10 +102,14 @@ class Auth extends MY_Controller{
         'error_msg'=>'<div class="alert alert-danger" role="alert">Incorrect Password !</div>');
       
     $success = $this->M_auth->login($userdetails);
-    if($success){
+    if($success == 'Users'){
        redirect('Web/wlcome_msg');
       
-    }else{
+    }
+    else if($success == 'Admin'){
+      redirect('Web/Administrator/');
+    }
+    else{
     
       $this->load->view('Default/main_header',$data);
       $this->load->view('Default/login_nav');
@@ -134,7 +138,7 @@ class Auth extends MY_Controller{
 
   function logout(){
         $this->session->sess_destroy();
-        redirect('Web');
+        redirect('Web/');
   }
 
   function deactivate(){
