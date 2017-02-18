@@ -31,17 +31,45 @@ class Auth extends MY_Controller{
 
         $success = $this->M_auth->signupmember($members);
 
-        echo $success;
+        if($success == 'Member Successfully Registered!'){
+              $error_msg = array(
+                'error_msg'=>'<div class="alert alert-success" role="alert">Member Successfully Registered!</div>');
+      
+              $data = array(
+                'title'=>'Register Member Account'
+              );
+              $this->load->view('Default/main_header',$data);
+              $this->load->view('Default/main_nav');
+              $this->load->view('Web/signupmember',$error_msg);
+
+        }
+        else if($success == 'Your name has no permission to join on this team'){
+              $error_msg = array(
+                'error_msg'=>'<div class="alert alert-danger" role="alert">Your name has no permission to join on this team !</div>');
+      
+              $data = array(
+                'title'=>'Register Member Account'
+              );
+              $this->load->view('Default/main_header',$data);
+              $this->load->view('Default/main_nav');
+              $this->load->view('Web/signupmember',$error_msg);
+
+        }
+        else if($success){
+          echo $success;
+        }
     }
     else{
-
+      $error_msg = array(
+                'error_msg'=>'<div class="alert alert-danger" role="alert">Password didn\'t matched.</div>');
+      
      
       $data = array(
         'title'=>'Register Member Account'
       );
       $this->load->view('Default/main_header',$data);
       $this->load->view('Default/main_nav');
-      $this->load->view('signupmember');
+      $this->load->view('Web/signupmember',$error_msg);
    
     }
 
@@ -76,6 +104,22 @@ class Auth extends MY_Controller{
   
     }
   }
+
+
+  function getRole($teamname){
+
+    $success = $this->M_auth->getRole($teamname);
+
+    echo $success;
+  }
+
+  function getTeam($teamname){
+
+    $success = $this->M_auth->getTeam($teamname);
+
+    echo $success;
+  }
+
 
   
 

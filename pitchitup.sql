@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2017 at 11:01 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Feb 18, 2017 at 09:54 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `pitchitup`
@@ -26,8 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `bmc`
 --
 
-CREATE TABLE `bmc` (
-  `bmc_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `bmc` (
+  `bmc_id` int(11) NOT NULL AUTO_INCREMENT,
   `cust_segment` varchar(255) NOT NULL,
   `cust_relationship` varchar(255) NOT NULL,
   `channels` varchar(255) NOT NULL,
@@ -37,8 +37,9 @@ CREATE TABLE `bmc` (
   `key_partners` varchar(255) NOT NULL,
   `cost_structures` varchar(50) NOT NULL,
   `revenue_streams` varchar(100) NOT NULL,
-  `team_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `team_id` int(11) NOT NULL,
+  PRIMARY KEY (`bmc_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `bmc`
@@ -53,13 +54,14 @@ INSERT INTO `bmc` (`bmc_id`, `cust_segment`, `cust_relationship`, `channels`, `v
 -- Table structure for table `gen_pitchdeck`
 --
 
-CREATE TABLE `gen_pitchdeck` (
-  `pitchdeck_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `gen_pitchdeck` (
+  `pitchdeck_id` int(11) NOT NULL AUTO_INCREMENT,
   `num_pitchdeck` int(11) NOT NULL,
   `idea_id` int(11) NOT NULL,
   `valid_id` int(11) NOT NULL,
-  `bmc_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `bmc_id` int(11) NOT NULL,
+  PRIMARY KEY (`pitchdeck_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -67,12 +69,13 @@ CREATE TABLE `gen_pitchdeck` (
 -- Table structure for table `history`
 --
 
-CREATE TABLE `history` (
-  `hist_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `history` (
+  `hist_id` int(11) NOT NULL AUTO_INCREMENT,
   `date_LastViewed` date NOT NULL,
   `date_LastModified` date NOT NULL,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`hist_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -80,14 +83,15 @@ CREATE TABLE `history` (
 -- Table structure for table `idea_genboard`
 --
 
-CREATE TABLE `idea_genboard` (
-  `idea_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `idea_genboard` (
+  `idea_id` int(11) NOT NULL AUTO_INCREMENT,
   `problem` varchar(255) NOT NULL,
   `people` varchar(255) NOT NULL,
   `behavior` varchar(255) NOT NULL,
   `solution` varchar(255) NOT NULL,
-  `team_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `team_id` int(11) NOT NULL,
+  PRIMARY KEY (`idea_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `idea_genboard`
@@ -102,22 +106,24 @@ INSERT INTO `idea_genboard` (`idea_id`, `problem`, `people`, `behavior`, `soluti
 -- Table structure for table `members`
 --
 
-CREATE TABLE `members` (
-  `mem_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `members` (
+  `mem_id` int(11) NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(60) NOT NULL,
   `LastName` varchar(60) NOT NULL,
   `role` varchar(30) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `team_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `team_id` int(11) NOT NULL,
+  `timestamp` timestamp NOT NULL,
+  PRIMARY KEY (`mem_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
 
 --
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`mem_id`, `FirstName`, `LastName`, `role`, `username`, `password`, `team_id`) VALUES
-(41, 'zxczxc', 'qweasd', 'Hipster', 'jLkisni', 'f6fdffe48c908deb0f4c3bd36c032e72', 37);
+INSERT INTO `members` (`mem_id`, `FirstName`, `LastName`, `role`, `username`, `password`, `team_id`, `timestamp`) VALUES
+(43, 'Louise', 'John', 'Hustler', 'jLkisni', 'f6fdffe48c908deb0f4c3bd36c032e72', 38, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -125,22 +131,24 @@ INSERT INTO `members` (`mem_id`, `FirstName`, `LastName`, `role`, `username`, `p
 -- Table structure for table `member_registration`
 --
 
-CREATE TABLE `member_registration` (
-  `memreg_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `member_registration` (
+  `memreg_id` int(11) NOT NULL AUTO_INCREMENT,
   `mem_firstname` varchar(100) NOT NULL,
   `mem_lastname` varchar(100) NOT NULL,
   `mem_role` varchar(30) NOT NULL,
-  `team_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `mem_status` int(11) NOT NULL COMMENT '0 - not registered | 1 registered',
+  `team_id` int(11) NOT NULL,
+  PRIMARY KEY (`memreg_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `member_registration`
 --
 
-INSERT INTO `member_registration` (`memreg_id`, `mem_firstname`, `mem_lastname`, `mem_role`, `team_id`) VALUES
-(16, 'qweasd', 'asdsa', 'Hipster', 37),
-(17, 'asdsa', 'asd', 'Hustler', 37),
-(18, 'qweasd', 'asdsad', 'Hipster', 37);
+INSERT INTO `member_registration` (`memreg_id`, `mem_firstname`, `mem_lastname`, `mem_role`, `mem_status`, `team_id`) VALUES
+(19, 'Angelica', 'Cantiveros', 'Hipster', 0, 38),
+(20, 'Shamcy', 'Supsup', 'Hipster', 0, 38),
+(21, 'Sheerlen', 'Golisao', 'Hacker', 0, 38);
 
 -- --------------------------------------------------------
 
@@ -148,19 +156,20 @@ INSERT INTO `member_registration` (`memreg_id`, `mem_firstname`, `mem_lastname`,
 -- Table structure for table `team`
 --
 
-CREATE TABLE `team` (
-  `team_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `team` (
+  `team_id` int(11) NOT NULL AUTO_INCREMENT,
   `team_name` varchar(100) NOT NULL,
   `size` int(11) NOT NULL,
-  `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `status` int(11) NOT NULL,
+  PRIMARY KEY (`team_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
 
 --
 -- Dumping data for table `team`
 --
 
 INSERT INTO `team` (`team_id`, `team_name`, `size`, `status`) VALUES
-(37, 'asdsad', 0, 0);
+(38, 'teambangan', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -168,8 +177,8 @@ INSERT INTO `team` (`team_id`, `team_name`, `size`, `status`) VALUES
 -- Table structure for table `validation_board`
 --
 
-CREATE TABLE `validation_board` (
-  `valid_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `validation_board` (
+  `valid_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer` varchar(100) DEFAULT NULL,
   `problem` varchar(255) DEFAULT NULL,
   `solution` varchar(255) DEFAULT NULL,
@@ -191,8 +200,9 @@ CREATE TABLE `validation_board` (
   `solution_criteria3` varchar(255) DEFAULT NULL,
   `results3` varchar(255) DEFAULT NULL,
   `learnings3` varchar(255) DEFAULT NULL,
-  `team_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `team_id` int(11) NOT NULL,
+  PRIMARY KEY (`valid_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 --
 -- Dumping data for table `validation_board`
@@ -207,8 +217,8 @@ INSERT INTO `validation_board` (`valid_id`, `customer`, `problem`, `solution`, `
 -- Table structure for table `value_prop`
 --
 
-CREATE TABLE `value_prop` (
-  `valueprop_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `value_prop` (
+  `valueprop_id` int(11) NOT NULL AUTO_INCREMENT,
   `wants` varchar(255) NOT NULL,
   `needs` varchar(255) NOT NULL,
   `fears` varchar(255) NOT NULL,
@@ -219,116 +229,17 @@ CREATE TABLE `value_prop` (
   `product` varchar(255) NOT NULL,
   `ideal_cust` varchar(255) NOT NULL,
   `substitutes` varchar(255) NOT NULL,
-  `team_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `team_id` int(11) NOT NULL,
+  PRIMARY KEY (`valueprop_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `value_prop`
 --
 
---
--- Indexes for table `bmc`
---
-ALTER TABLE `bmc`
-  ADD PRIMARY KEY (`bmc_id`);
+INSERT INTO `value_prop` (`valueprop_id`, `wants`, `needs`, `fears`, `benefits`, `experience`, `features`, `company`, `product`, `ideal_cust`, `substitutes`, `team_id`) VALUES
+(6, '', '', '', '', '', '', '', '', '', '', 37);
 
---
--- Indexes for table `gen_pitchdeck`
---
-ALTER TABLE `gen_pitchdeck`
-  ADD PRIMARY KEY (`pitchdeck_id`);
-
---
--- Indexes for table `history`
---
-ALTER TABLE `history`
-  ADD PRIMARY KEY (`hist_id`);
-
---
--- Indexes for table `idea_genboard`
---
-ALTER TABLE `idea_genboard`
-  ADD PRIMARY KEY (`idea_id`);
-
---
--- Indexes for table `members`
---
-ALTER TABLE `members`
-  ADD PRIMARY KEY (`mem_id`);
-
---
--- Indexes for table `member_registration`
---
-ALTER TABLE `member_registration`
-  ADD PRIMARY KEY (`memreg_id`);
-
---
--- Indexes for table `team`
---
-ALTER TABLE `team`
-  ADD PRIMARY KEY (`team_id`);
-
---
--- Indexes for table `validation_board`
---
-ALTER TABLE `validation_board`
-  ADD PRIMARY KEY (`valid_id`);
-
---
--- Indexes for table `value_prop`
---
-ALTER TABLE `value_prop`
-  ADD PRIMARY KEY (`valueprop_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `bmc`
---
-ALTER TABLE `bmc`
-  MODIFY `bmc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `gen_pitchdeck`
---
-ALTER TABLE `gen_pitchdeck`
-  MODIFY `pitchdeck_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `history`
---
-ALTER TABLE `history`
-  MODIFY `hist_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `idea_genboard`
---
-ALTER TABLE `idea_genboard`
-  MODIFY `idea_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `members`
---
-ALTER TABLE `members`
-  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
---
--- AUTO_INCREMENT for table `member_registration`
---
-ALTER TABLE `member_registration`
-  MODIFY `memreg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
---
--- AUTO_INCREMENT for table `team`
---
-ALTER TABLE `team`
-  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
---
--- AUTO_INCREMENT for table `validation_board`
---
-ALTER TABLE `validation_board`
-  MODIFY `valid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
---
--- AUTO_INCREMENT for table `value_prop`
---
-ALTER TABLE `value_prop`
-  MODIFY `valueprop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -29,8 +29,8 @@ class M_auth extends CI_Model{
           $sql4 = "insert into team (team_name,status) values (?,?)";
           $query4 = $this->db->query($sql4,array($data['teamname'],0));
           $teamid = $this->db->insert_id();
-          $sql = "insert into members (FirstName,LastName,role,username,password,team_id) values (?,?,?,?,?,?)";
-          $query = $this->db->query($sql,array($data['firstname'],$data['lastname'],$data['role'],$data['username'],md5($data['password']),$this->db->insert_id()));
+          $sql = "insert into members (FirstName,LastName,role,username,password,team_id,timestamp) values (?,?,?,?,?,?,?)";
+          $query = $this->db->query($sql,array($data['firstname'],$data['lastname'],$data['role'],$data['username'],md5($data['password']),$this->db->insert_id(),date('Y-m-d h:i:s')));
 
                         $teamdetails = array(
                                       array(
@@ -113,8 +113,8 @@ class M_auth extends CI_Model{
 
           if($query1->num_rows()>0){
             
-            $sql2 = "insert into members (FirstName,LastName,role,username,password,team_id) values (?,?,?,?,?,?)";
-            $query2 = $this->db->query($sql2,array($members['firstname'],$members['lastname'],$members['role'],$members['username'],md5($members['password']),$row->team_id));
+            $sql2 = "insert into members (FirstName,LastName,role,username,password,team_id,timestamp) values (?,?,?,?,?,?,?)";
+            $query2 = $this->db->query($sql2,array($members['firstname'],$members['lastname'],$members['role'],$members['username'],md5($members['password']),$row->team_id,date('Y-m-d h:i:s')));
 
             if($query2){
               return 'Member Successfully Registered!';
@@ -130,7 +130,7 @@ class M_auth extends CI_Model{
 
       }
       else{
-        return 'Team not yet existed. Please create another one!';
+        return false;
       }
 
   }
@@ -146,6 +146,51 @@ class M_auth extends CI_Model{
       return 'False';
     }
   }
+
+
+  function getRole($teamname){
+
+    $sql = "select * from team where team_name = ? and status = ?";
+    $query = $this->db->query($sql,array($teamname,0));
+
+    if($query->num_rows()>0){
+
+        $row = $query->row();
+
+        $sql1 = "select role from members where team_id = ? and role = ? ";
+        $query1 = $this->db->query($sql1,array($row->team_id,'Hustler'));
+
+        if($query1->num_rows()>0){
+
+          return true;
+        }
+        else{
+          return false;
+        }
+    }
+    else{
+      return false;
+    }
+
+  }
+
+
+  function getTeam($teamname){
+
+     $sql = "select * from team where team_name = ?";
+     $query = $this->db->query($sql,array($teamname));
+
+     if($query->num_rows()>0){
+        return true;
+     }
+     else{
+        return 'false';
+     }
+
+
+  }
+
+
 
 }
 

@@ -12,6 +12,7 @@
                               <div class="panel-heading">Registration Form</div>
                               <div class="panel-body">
                                 <?php if(isset($error_msg)){ echo $error_msg; }?>
+                                <div class="alert alert-danger" role="alert" hidden id="message"></div>
                                 <form role="form" action="<?php echo base_url();?>Auth/signupmember" method="post">
 
 
@@ -24,7 +25,7 @@
                                                 </div>
                                                 
                                                 <div class="col-md-8">
-                                                    <input type="text" class="form-control" placeholder='Ex. Teambangan' name="teamname" required>
+                                                    <input type="text" class="form-control" placeholder='Ex. Teambangan' name="teamname" id="teamname" required>
                                                 </div>
                                                 
                                               </div>
@@ -58,7 +59,7 @@
                                                 </div>
                                                 
                                                 <div class="col-md-8">
-                                                    <select class="form-control" name="role" required>
+                                                    <select class="form-control" name="role" id="role" required>
                                                       <option>Hustler</option>
                                                       <option>Hipster</option>
                                                       <option>Hacker</option>
@@ -134,4 +135,51 @@
 
 
     </div>
+
+    <script type="text/javascript">
+
+    $('#teamname').on('change',function(){
+
+      var teamname = $('#teamname').val();
+
+      var url1 = "<?php echo base_url();?>Auth/getTeam/"+teamname;
+
+      $.getJSON(url1,function(data){
+        
+        if(data != 1){
+            $('#submit').hide();
+            $('#message').show();
+            $('#message').html('Team "'+teamname+'" not yet existed. Please create another one!');
+            $('#teamname').val('');
+            $('#teamname').focus();
+        }else{
+          $('#message').hide();
+          $('#submit').show();
+        }
+
+      });
+
+
+
+      var url = "<?php echo base_url();?>Auth/getRole/"+teamname;
+
+      $.getJSON(url,function(result){
+        
+        if(result == 1){
+          $('#role').empty();
+
+          $('#role').append(
+              '<option>Hipster</option>'+
+              '<option>Hacker</option>'
+            );
+        }
+
+      });
+
+    });
+
+
+
+
+    </script>
     
