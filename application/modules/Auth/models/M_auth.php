@@ -106,26 +106,44 @@ class M_auth extends CI_Model{
 
       if($query->num_rows()>0){
 
-          $row = $query->row();
+          $row = $query->row(); 
 
-          $sql1 = "select * from member_registration where team_id = ? and mem_firstname = ? and mem_lastname = ?";
-          $query1 = $this->db->query($sql1,array($row->team_id,$members['firstname'],$members['lastname']));
+          $sql3 = "select * from member_registration where team_id = ? and mem_firstname = ? and mem_lastname = ? and mem_status = ? ";
+          $query3 = $this->db->query($sql3,array($row->team_id,$members['firstname'],$members['lastname'],0));
 
-          if($query1->num_rows()>0){
-            
-            $sql2 = "insert into members (FirstName,LastName,role,username,password,team_id,timestamp) values (?,?,?,?,?,?,?)";
-            $query2 = $this->db->query($sql2,array($members['firstname'],$members['lastname'],$members['role'],$members['username'],md5($members['password']),$row->team_id,date('Y-m-d h:i:s')));
+          if($query3->num_rows()>0){
 
-            if($query2){
-              return 'Member Successfully Registered!';
-            }
-            else{
-              return 'Error Registering . Contact pinakagwapo nga developer';
-            }
+              $sql1 = "select * from member_registration where team_id = ? and mem_firstname = ? and mem_lastname = ?";
+              $query1 = $this->db->query($sql1,array($row->team_id,$members['firstname'],$members['lastname']));
+              $teamid = $row->team_id;
+
+              if($query1->num_rows()>0){
+                  
+                $mem_id = $query1->row();
+
+                $sql4 = "update members set mem_status = ? where mem_id = ?";
+                $query4 = $this->db->query($sql4,array(1,$mem_id->mem_id));
+
+
+                $sql2 = "insert into members (FirstName,LastName,role,username,password,team_id,timestamp) values (?,?,?,?,?,?,?)";
+                $query2 = $this->db->query($sql2,array($members['firstname'],$members['lastname'],$members['role'],$members['username'],md5($members['password']),$team_id,date('Y-m-d h:i:s')));
+
+                  if($query2){
+                    return 'Member Successfully Registered!';
+                  }
+                  else{
+                    return 'Error Registering . Contact pinakagwapo nga developer';
+                  }
+              }
+              else
+              {
+                return 'Your name has no permission to join on this team';
+              }
+
+
           }
-          else
-          {
-            return 'Your name has no permission to join on this team';
+          else{
+              return 'Member is already registered!';
           }
 
       }
@@ -157,7 +175,7 @@ class M_auth extends CI_Model{
 
         $row = $query->row();
 
-        $sql1 = "select role from members where team_id = ? and role = ? ";
+        $sql1 = "select * from members where team_id = ? and role = ? ";
         $query1 = $this->db->query($sql1,array($row->team_id,'Hustler'));
 
         if($query1->num_rows()>0){
