@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2017 at 04:50 PM
+-- Generation Time: Feb 18, 2017 at 05:24 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -108,6 +108,7 @@ CREATE TABLE IF NOT EXISTS `members` (
   `password` varchar(255) NOT NULL,
   `team_id` int(11) NOT NULL,
   `timestamp` timestamp NOT NULL,
+  `member_status` int(11) NOT NULL COMMENT '0 - Active | 1 Not active',
   PRIMARY KEY (`mem_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
@@ -115,10 +116,10 @@ CREATE TABLE IF NOT EXISTS `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`mem_id`, `FirstName`, `LastName`, `role`, `username`, `password`, `team_id`, `timestamp`) VALUES
-(44, 'Louise', 'John', 'Hustler', 'jLkisni', 'f6fdffe48c908deb0f4c3bd36c032e72', 39, '2017-02-18 03:38:04'),
-(48, 'Angelica', 'Cantiveros', 'Hipster', 'angellove', 'f6fdffe48c908deb0f4c3bd36c032e72', 39, '2017-02-18 14:47:28'),
-(49, 'Admin', 'Admin', 'Admin', 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72', 0, '2017-02-18 14:47:28');
+INSERT INTO `members` (`mem_id`, `FirstName`, `LastName`, `role`, `username`, `password`, `team_id`, `timestamp`, `member_status`) VALUES
+(44, 'Louise', 'John', 'Hustler', 'jLkisni', 'f6fdffe48c908deb0f4c3bd36c032e72', 39, '2017-02-18 03:38:04', 0),
+(48, 'Angelica', 'Cantiveros', 'Hipster', 'angellove', 'f6fdffe48c908deb0f4c3bd36c032e72', 39, '2017-02-18 14:47:28', 0),
+(49, 'Admin', 'Admin', 'Admin', 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72', 0, '2017-02-18 14:47:28', 0);
 
 -- --------------------------------------------------------
 

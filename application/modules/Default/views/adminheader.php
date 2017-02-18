@@ -11,8 +11,6 @@
         
         <link href="<?php echo base_url();?>assets/css/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url();?>assets/css/AdminLTE.css" rel="stylesheet" type="text/css" />
-        <script src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
-
 
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

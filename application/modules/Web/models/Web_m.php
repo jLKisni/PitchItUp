@@ -47,6 +47,20 @@ function getAccounts(){
 
 
 
+function deactivateAccount($id){
+
+  $sql = "update members set member_status = ? where mem_id = ?";
+  $query = $this->db->query($sql,array(1,$id));
+
+  if($query){
+    return true;
+  }
+  else{
+    return false;
+  }
+
+}
+
 
 
  

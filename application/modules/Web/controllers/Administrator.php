@@ -29,6 +29,12 @@ class Administrator extends MY_Controller{
 	}
 
 
+	function deactivateAccount($id){
+
+		$success = $this->Web_m->deactivateAccount($id);
+		echo $success;
+	}
+
 }
 
 
