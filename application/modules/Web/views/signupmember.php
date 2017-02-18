@@ -1,3 +1,11 @@
+<script type="text/javascript">
+
+  window.onload = function(){
+
+    $('#alert').empty();
+
+  }
+</script>
  <div style='margin-top:5%;'></div>
         <div class="container" >
 

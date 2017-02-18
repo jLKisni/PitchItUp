@@ -43,9 +43,9 @@ class Auth extends MY_Controller{
               $this->load->view('Web/signupmember',$error_msg);
 
         }
-        else if($success == 'Your name has no permission to join on this team'){
+        else if($success == 'Your name has no permission to join on this team or Member is already registered'){
               $error_msg = array(
-                'error_msg'=>'<div class="alert alert-danger" role="alert">Your name has no permission to join on this team !</div>');
+                'error_msg'=>'<div class="alert alert-danger" role="alert">Your name has no permission to join on this team or Member is already registered ! </div>');
       
               $data = array(
                 'title'=>'Register Member Account'
@@ -54,9 +54,18 @@ class Auth extends MY_Controller{
               $this->load->view('Default/main_nav');
               $this->load->view('Web/signupmember',$error_msg);
 
+
         }
-        else if($success){
-          echo $success;
+        else if($success == 'Username exist. Please try again another one.'){
+          $error_msg = array(
+                'error_msg'=>'<div class="alert alert-danger" role="alert">Username exist. Please try again another one.</div>');
+      
+              $data = array(
+                'title'=>'Register Member Account'
+              );
+              $this->load->view('Default/main_header',$data);
+              $this->load->view('Default/main_nav');
+              $this->load->view('Web/signupmember',$error_msg);
         }
     }
     else{
