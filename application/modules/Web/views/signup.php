@@ -11,6 +11,7 @@
                             <div class="panel panel-default">
                               <div class="panel-heading">Registration Form</div>
                               <div class="panel-body">
+                                <div class="alert alert-danger" role="alert" hidden id="message"></div>
                                 <div id="teamdetails">
                                     <center> <h4><b>Team Information</b> </h4></center>
                                     <hr>
@@ -60,7 +61,7 @@
 
                                             <center> <h4><b>User Information</b> </h4></center>
                                     
-
+                                            <div class="alert alert-danger" role="alert" hidden id="message1">Registered name not on member list. Fuck your self.</div>
                                             <div id="userinfo">
 
                                                 
@@ -108,8 +109,32 @@
 
                 $(function(){
 
-                    $('#teamnext').click(function(){
 
+
+                    // team name script
+                    $('#teamname').on('change',function(){
+                       var teamname = $('#teamname').val();
+
+                       var url1 = "<?php echo base_url();?>Auth/getTeam/"+teamname;
+
+                          $.getJSON(url1,function(data){
+                            
+                            if(data == 1){
+                                
+                                $('#message').show();
+                                $('#message').html('Team "'+teamname+'" already existed. Please create another one!');
+                                $('#teamname').val('');
+                                $('#teamname').focus();
+
+                            }
+                          });
+
+                    });
+                    // team name script
+
+                    $('#teamnext').click(function(){
+                        $('#message').empty();
+                        $('#message').hide();
                         var teamname = $('#teamname').val();
                         var teamsize = $('#teamsize').val();
 
@@ -256,10 +281,7 @@
                                                 
                                                 '<div class="col-md-8">'+
                                                     '<select class="form-control" id="role">'+
-                                                        '<option selected disabled>--Please Select a role--</option>'+
-                                                        '<option>Hustler</option>'+
-                                                        '<option>Hipster</option>'+
-                                                        '<option>Hacker</option>'+
+                                                        
                                                     '</select>'+
                                                 '</div>'+
                                                 
@@ -304,6 +326,24 @@
                                               '<br><br>'
                                         );
 
+                                 $('#lastname').on('change',function(){
+                                    $('#role').empty();
+                                    var firstname = $('#firstname').val();
+                                    var lastname = $('#lastname').val();
+                                        for(var x = 1; x<=$('#teamsize').val(); x++){
+
+
+                                            if($('#firstname'+x).val() == firstname && $('#lastname').val() == lastname){
+                                                $('#role').append(
+                                                    '<option>'+$('#roles'+x).val()+'</option>'
+                                                    );
+
+                                            }
+                                        }
+
+
+                                    });
+
 
                             });
 
@@ -312,7 +352,7 @@
                     });
 
 
-                    $('#')
+                  
 
                 });
 
@@ -399,7 +439,13 @@
 
                         $.post(url,{data:registration},function(result){
                             alert(result);
-                            // location.reload();
+
+                            if(result == 'Successfully Registered'){
+                                window.location.href = "<?php echo base_url();?>Web/login";    
+                            }
+                            else{
+                                location.reload();
+                            }
                         });
 
 

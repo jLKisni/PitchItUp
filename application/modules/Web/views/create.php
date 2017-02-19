@@ -15,16 +15,16 @@
 					<div class="col-md-5" style="position:absolute; left: 504px;
    top: 68px; width: 500px; " >
 					<div class="form-group">
-					  <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">People</font></label>
-					  <textarea class="form-control" rows="9" id="people" style = "resize: none;" disabled><?php if(isset($ideagen)){echo $ideagen->problem;}?></textarea>
+					  <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">Problem</font></label>
+					  <textarea class="form-control" rows="9" id="problem" style = "resize: none;"  ><?php if(isset($ideagen)){echo $ideagen->people;}else{}?></textarea>
 					</div>
 				</div>
 
 					<div class=" col-md-5" style="position:absolute; left: 21px;
    top: 68px; width: 500px;" >
 					<div class="form-group">
-					 <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">Problem</font></label>
-					  <textarea class="form-control" rows="9" id="problem" style = "resize: none;"  ><?php if(isset($ideagen)){echo $ideagen->people;}else{}?></textarea>
+					 <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">People</font></label>
+					  <textarea class="form-control" rows="9" id="people" style = "resize: none;" placeholder ="Ex. Startup founder" disabled><?php if(isset($ideagen)){echo $ideagen->problem;}?></textarea>
 					</div>
 				</div>
 
