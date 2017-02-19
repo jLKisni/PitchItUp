@@ -67,7 +67,7 @@
    top: 430px; width: 160px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Company" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Company</font></label>
-					  <textarea class="form-control" rows="1" id="company" style = "resize: none;"  ><?php if(isset($valueprop)){echo $valueprop->company;}?></textarea>
+					  <textarea class="form-control" rows="1" id="company" style = "resize: none;text-align:center;"  disabled><?php echo ucfirst($team->team_name);?></textarea>
 					</div>
 				</div>
 
@@ -76,14 +76,14 @@
    top: 430px; width: 160px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Product" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Product</font></label>
-					  <textarea class="form-control" rows="1" id="product" style = "resize: none;"  ><?php if(isset($valueprop)){echo $valueprop->product;}?></textarea>
+					  <textarea class="form-control" rows="1" id="product" style = "resize: none; text-align:center;"  disabled><?php echo ucfirst($ideagen->solution);?></textarea>
 					</div>
 				</div>
 						<div class="col-md-2" style="position:absolute; left: 174px;
    top: 455px; width: 160px; height: 100px;" >
 					<div class="form-group">
 					  <label for="Ideal Custome" data-toggle="tooltip" data-placement="bottom" title = "Example"><font color="Black">Ideal Customer</font></label>
-					  <textarea class="form-control" rows="1" id="customer" style = "resize: none;"  ><?php if(isset($valueprop)){echo $valueprop->ideal_cust;}?></textarea>
+					  <textarea class="form-control" rows="1" id="customer" style = "resize: none; text-align:center;"  disabled><?php echo ucfirst($ideagen->people);?></textarea>
 					</div>
 				</div>
 

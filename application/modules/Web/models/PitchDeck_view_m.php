@@ -22,6 +22,20 @@
 			}
 		}
 
+		function viewTeam($team_id){
+			$sql = 'select * from team where team_id = ?';
+			$query = $this->db->query($sql,array($team_id));
+
+			if($query->num_rows()>0){
+
+				$row = $query->row();
+				return $row;
+			}
+			else{
+				return false;
+			}
+		}
+
 
 		function viewBMC($team_id){
 			$sql = 'select * from bmc where team_id = ?';

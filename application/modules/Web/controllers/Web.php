@@ -113,13 +113,15 @@ class Web extends MY_Controller{
     function BMC(){
 
       $bmcdetails = $this->PitchDeck_view_m->viewBMC($this->session->userdata('team_id'));
-
+      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
+      
 
       if($bmcdetails!=false){
 
         $data = array(
         'title'=>'Create Business Model Canvass',
-        'bmc'=>$bmcdetails
+        'bmc'=>$bmcdetails,
+        'ideagen'=>$ideadetails
         );
 
         $this->load->view('Default/main_header',$data);
@@ -131,7 +133,8 @@ class Web extends MY_Controller{
       else{
 
         $data2 = array(
-        'title'=>'Create Business Model Canvass'
+        'title'=>'Create Business Model Canvass',
+        'ideagen'=>$ideadetails
         );
 
         $this->load->view('Default/main_header',$data2);
@@ -144,13 +147,14 @@ class Web extends MY_Controller{
 
 
     function validationboard(){
-
+      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
       $validationboard = $this->PitchDeck_view_m->viewValidationBoard($this->session->userdata('team_id'));
       
       if($validationboard!=false){
           $data = array(
             'title'=>'Create Validation Board',
-            'validation'=>$validationboard
+            'validation'=>$validationboard,
+            'ideagen'=>$ideadetails
           );
           $this->load->view('Default/main_header',$data);
           $this->load->view('Default/create_nav');
@@ -159,7 +163,8 @@ class Web extends MY_Controller{
       }
       else{
          $data = array(
-            'title'=>'Create Validation Board'
+            'title'=>'Create Validation Board',
+            'ideagen'=>$ideadetails
           );
           $this->load->view('Default/main_header',$data);
           $this->load->view('Default/create_nav');
@@ -172,7 +177,8 @@ class Web extends MY_Controller{
      function valueprop(){
 
       $valuepropdetails = $this->PitchDeck_view_m->viewValueProp($this->session->userdata('team_id'));
-
+      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
+      $team = $this->PitchDeck_view_m->viewTeam($this->session->userdata('team_id'));
       //print_r($valuepropdetails);
 
 
@@ -180,7 +186,9 @@ class Web extends MY_Controller{
 
          $data = array(
         'title'=>'Update Value Proposition',
-        'valueprop'=>$valuepropdetails
+        'valueprop'=>$valuepropdetails,
+        'ideagen'=>$ideadetails,
+        'team'=>$team
           );
           $this->load->view('Default/main_header',$data);
           $this->load->view('Default/create_nav');
@@ -190,7 +198,9 @@ class Web extends MY_Controller{
       }else{
 
          $data2 = array(
-        'title'=>'Create Value Proposition'
+        'title'=>'Create Value Proposition',
+        'ideagen'=>$ideadetails,
+        'team'=>$team
           );
 
           $this->load->view('Default/main_header',$data2);

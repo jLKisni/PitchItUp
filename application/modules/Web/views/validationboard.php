@@ -289,7 +289,7 @@
    top: 30px; width: 220px; " >
 					<div class="form-group">
 					   <label for="Problem" data-toggle="tooltip" data-placement="bottom"  504 title = "example"><font color="Black">Startup Idea </font></label>
-					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;text-align:center; font-style:bold"  disabled><?php echo " \" ".ucfirst($ideagen->solution)." \" ";?></textarea>
 					</div>
 				</div>
 

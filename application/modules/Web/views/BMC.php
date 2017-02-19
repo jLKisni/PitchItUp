@@ -86,7 +86,7 @@
    top: 14px; width: 250px;" >
 					<div class="form-group">
 					<!--   <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Key Partners</font></label> -->
-					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="1" id="comment" style = "resize: none; text-align:center;"  disabled><?php echo ucfirst($ideagen->solution);?></textarea>
 					</div>
 				</div>
 
@@ -94,7 +94,7 @@
    top: 14px; width: 200px;" >
 					<div class="form-group">
 					<!--   <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Key Partners</font></label> -->
-					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;text-align:center;"  disabled><?php echo date('M. d , Y');?></textarea>
 					</div>
 				</div>
 
