@@ -8,30 +8,41 @@
 			
   			<div class="col-sm-4 text-center">
                    
-                        <img src = "<?php echo base_url();?>assets/img/idea.png" style = " width: 1000px; height: 550px;  ">
+                        <img src = "<?php echo base_url();?>assets/img/ideagen.png" style = " width: 1000px; height: 550px;  ">
+
+                        	<div class="col-md-2" style="position:absolute; right: 20px;
+   top: 1px; width: 350px; height: 100px;" >
+					<div class="form-group">
+					  <label for="Idea Generation" data-toggle="tooltip" data-placement="bottom" title = "The process of constructing through the idea, innovating the concept, developing the process, and bringing the concept to reality."><font color="Black">
+					  	<h3><b>Idea Generation</b></h3></font></label>
+					</div>
+				</div>
 
 				
 				
 					<div class="col-md-5" style="position:absolute; left: 504px;
    top: 68px; width: 500px; " >
 					<div class="form-group">
-					  <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">Problem</font></label>
-					  <textarea class="form-control" rows="9" id="problem" style = "resize: none;"  ><?php if(isset($ideagen)){echo $ideagen->people;}else{}?></textarea>
+					  <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "What problem you have recognized needs solving?">
+					  <font color="Black">Problem</font></label>
+					  <textarea class="form-control" rows="9" id="problem" style = "resize: none;"><?php if(isset($ideagen)){echo $ideagen->problem;}else{}?></textarea>
 					</div>
 				</div>
 
 					<div class=" col-md-5" style="position:absolute; left: 21px;
    top: 68px; width: 500px;" >
 					<div class="form-group">
-					 <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">People</font></label>
-					  <textarea class="form-control" rows="9" id="people" style = "resize: none;" placeholder ="Ex. Startup founder" disabled><?php if(isset($ideagen)){echo $ideagen->problem;}?></textarea>
+					 <label for="people" data-toggle="tooltip" data-placement="bottom" title = "Who are the people involved in the problem?">
+					 <font color="Black">People</font></label>
+					  <textarea class="form-control" rows="9" id="people" style = "resize: none;" placeholder ="Ex. Startup founder" disabled><?php if(isset($ideagen)){echo $ideagen->people;}?></textarea>
 					</div>
 				</div>
 
 				    <div class=" col-md-5" style="position:absolute; left: 21px;
    top: 305px; width: 500px; " >
 					<div class="form-group">
-					<label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">Behavior</font></label>
+					<label for="behavior" data-toggle="tooltip" data-placement="bottom" title = "What are the behavior of the people who encounter the problem?">
+					<font color="Black">Behavior</font></label>
 					  <textarea class="form-control" rows="9" id="behavior" style = "resize: none;"  disabled><?php if(isset($ideagen)){echo $ideagen->behavior;}?></textarea>
 					</div>
 				</div>
@@ -39,7 +50,8 @@
 				<div class="col-md-5" style="position:absolute; left: 504px;
    top: 305px; width: 500px; " >
 					<div class="form-group">
-					<label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "this is where you put the problem of your idea"><font color="Black">Solution</font></label>
+					<label for="solution" data-toggle="tooltip" data-placement="bottom" title = "What belief must you have that can solve the problem?">
+					<font color="Black">Solution</font></label>
 					  <textarea class="form-control" rows="9" id="solution" style = "resize: none;"  disabled><?php if(isset($ideagen)){echo $ideagen->solution;}?></textarea>
 					</div>
 				</div>

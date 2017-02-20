@@ -57,7 +57,7 @@ class M_auth extends CI_Model{
                                   $query5 = $this->db->insert_batch('member_registration', $teamdetails);
 
                                  if($query5){
-                                  return 'Successfully Registered ';
+                                  return 'Successfully Registered';
                                  }
                                  else{
                                   return 'Error in insertbatch ';
