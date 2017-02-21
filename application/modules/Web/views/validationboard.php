@@ -21,48 +21,50 @@
                     <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="cust_pivot1" style = "resize: none;" ><?php if(isset($validation)){ echo $validation->customer;}?></textarea>
+					  <input class="form-control" id="cust1" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
+					  																						<!-- 	if(isset($array)){echo nimo kung naay sod ;}else{echo '';} -->
+					  																						<!--  value="<?php if(isset($arr)){echo $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); }else{echo ' ';}?>"
+ -->
 					</div>
 				</div>
 
 				   <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-
-					  <textarea class="form-control" rows="2" id="cust_prob1" style = "resize: none;" ><?php if(isset($validation)){ echo $validation->problem;}?></textarea>
+					 <input class="form-control" id="prob1" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->problem;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="cust_solution1" style = "resize: none;" ><?php if(isset($validation)){ echo $validation->solution;}?></textarea>
+					  <input class="form-control" id="solution1" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 
 		     <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="risk_assump1" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->risk_assumpt;}?></textarea>
+					  <textarea class="form-control" rows="2" id="assump1" style = "resize: none;" disabled ><?php if(isset($validation)){ echo $validation->risk_assumpt;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="criterion1" style = "resize: none;" ><?php if(isset($validation)){ echo $validation->solution_criteria;}?></textarea>
+					  <textarea class="form-control" rows="2" id="criterion1" style = "resize: none;" disabled><?php if(isset($validation)){ echo $validation->solution_criteria;}?></textarea>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="discussion1" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->results;}?></textarea>
+					  <textarea class="form-control" rows="2" id="discussion1" style = "resize: none;"  disabled><?php if(isset($validation)){ echo $validation->results;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning1" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->learnings;}?></textarea>
+					  <textarea class="form-control" rows="2" id="learning1" style = "resize: none;"  disabled><?php if(isset($validation)){ echo $validation->learnings;}?></textarea>
 					</div>
 				</div>
 
@@ -70,47 +72,47 @@
   <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="cust_pivot2" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->customer2;}?></textarea>
-					</div>disabled
+					  <input class="form-control" id="cust2" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[1]); ?>" disabled>
+					</div>
 				</div>
 
 				   <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="cust_prob2" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->problem2;}?></textarea>
+					   <input class="form-control" id="prob2" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->problem;$arr = explode(' ',trim($word));echo ucfirst($arr[1]); ?>" disabled>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="cust_solution2" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->solution2;}?></textarea>
+					  <input class="form-control" id="solution2" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 
 		     <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="risk_assump2" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->risk_assumpt2;}?></textarea>
+					  <textarea class="form-control" rows="2" id="assump2" style = "resize: none;"  disabled><?php if(isset($validation)){ echo $validation->risk_assumpt2;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="criterion2" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->solution_criteria2;}?></textarea>
+					  <textarea class="form-control" rows="2" id="criterion2" style = "resize: none;" disabled ><?php if(isset($validation)){ echo $validation->solution_criteria2;}?></textarea>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="discussion2" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->results2;}?></textarea>
+					  <textarea class="form-control" rows="2" id="discussion2" style = "resize: none;"  disabled><?php if(isset($validation)){ echo $validation->results2;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning2" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->learnings2;}?></textarea>
+					  <textarea class="form-control" rows="2" id="learning2" style = "resize: none;" disabled ><?php if(isset($validation)){ echo $validation->learnings2;}?></textarea>
 					</div>
 				</div>
 
@@ -119,47 +121,47 @@
   <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="cust_pivot3" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->customer3;}?></textarea>
+					  <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[2]); ?>" disabled>
 					</div>
 				</div>
 
 				   <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="cust_prob3" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->problem3;}?></textarea>
+					   <input class="form-control" id="prob3" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->problem;$arr = explode(' ',trim($word));echo ucfirst($arr[2]); ?>" disabled>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="cust_solution3" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->solution3;}?></textarea>
+					  <input class="form-control" id="solution3" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 
 		     <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="risk_assump3" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->risk_assumpt3;}?></textarea>
+					  <textarea class="form-control" rows="2" id="assump3" style = "resize: none;" disabled ><?php if(isset($validation)){ echo $validation->risk_assumpt3;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="criterion3" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->solution_criteria3;}?></textarea>
+					  <textarea class="form-control" rows="2" id="criterion3" style = "resize: none;" disabled ><?php if(isset($validation)){ echo $validation->solution_criteria3;}?></textarea>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="discussion3" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->results3;}?></textarea>
+					  <textarea class="form-control" rows="2" id="discussion3" style = "resize: none;" disabled ><?php if(isset($validation)){ echo $validation->results3;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning3" style = "resize: none;"  ><?php if(isset($validation)){ echo $validation->learnings3;}?></textarea>
+					  <textarea class="form-control" rows="2" id="learning3" style = "resize: none;" disabled ><?php if(isset($validation)){ echo $validation->learnings3;}?></textarea>
 					</div>
 				</div>
 
@@ -167,8 +169,8 @@
 			<div class="col-md-5" style="position:absolute; left: 665px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					 
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+						<textarea class="form-control" rows="2" id="comment" style = "resize: none;" disabled ></textarea>
+					    <!-- <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[3]); ?>" disabled> -->
 					</div>
 				</div>
 
@@ -176,7 +178,7 @@
    top: 186px; width: 175px; " >
 					<div class="form-group">
 					 
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;" disabled ></textarea>
 					</div>
 				</div>
 
@@ -184,7 +186,7 @@
    top: 244px; width: 175px; " >
 					<div class="form-group">
 					 
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;" ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"disabled ></textarea>
 					</div>
 				</div>
 
@@ -192,26 +194,26 @@
    top: 302px; width: 175px; " >
 					<div class="form-group">
 					 
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;" disabled ></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 665px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  disabled></textarea>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 665px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;" disabled ></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 665px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  disabled></textarea>
 					</div>
 				</div>
 
@@ -219,21 +221,21 @@
 			<div class="col-md-5" style="position:absolute; left: 823px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  disabled></textarea>
 					</div>
 				</div>
 
 								<div class="col-md-5" style="position:absolute; left: 823px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  disabled></textarea>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 823px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  disabled></textarea>
 					</div>
 				</div>
 
@@ -241,13 +243,13 @@
    top: 302px; width: 175px; " >
 					<div class="form-group">
 
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;" disabled ></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 823px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  disabled></textarea>
 					</div>
 				</div>
 			
@@ -255,14 +257,14 @@
    top: 417px; width: 175px; " >
 					<div class="form-group">
 
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;" disabled ></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 823px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
 
-					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;"  ></textarea>
+					  <textarea class="form-control" rows="2" id="comment" style = "resize: none;" disabled ></textarea>
 					</div>
 				</div>
 <!--next-->
@@ -271,37 +273,178 @@
 				<div class="col-md-5" style="position:absolute; left: 290px; 
    top: 15px; width: 220px; " >
 					<div class="form-group">
-					   <font color="Black">Startup Idea </font></label>
-					  <textarea class="form-control" rows="1" id="comment" style = "resize: none;text-align:center; font-style:bold"  disabled><?php echo " \" ".ucfirst($ideagen->solution)." \" ";?></textarea>
+					   <font color="Black">Startup Idea </font>
+					  					  <input class="form-control" rows="1" id="comment" style = "resize: none; text-align:center;" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 
 						<div class="col-md-5" style="position:absolute; left: 500px; 
    top: 15px; width: 100px; " >
 					<div class="form-group">
-					<font color="Black">Stage#</font></label>
-					<input type="number" name="stage" class="form-control" rows="1" id="comment" style = "resize: none;" placeholder="1"><?php if(isset($validation)){ echo $validation->stage;}?>
+					<font color="Black">Stage#</font>
+					<input type="number" name="stage" min="1" max="5"class="form-control" rows="1" id="stage" style = "resize: none;" placeholder="1"><?php if(isset($validation)){ echo $validation->stage;}?>
 					  <!-- <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea> -->
 					</div>
 				</div>
 
 
+<!-- <div style="position:absolute; left: 85%;
+   top: 250px; width: 200px;"> 
+				<button  type="button" style="color:black; width: 100px; height:50px; display:none;" id="ideagen">Next</button>
+			</div> -->
 
 	<div style="position:absolute; left: 1000px;
    top: 250px; width: 200px;"> 
-				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "#" id="valueprop">Next</button>
+				<button  type="button" style="color:black; width: 100px; height:50px; " id="validationboard">Next</button>
 			</div>
 
-			<div style="position:absolute; right: 330px;
+	<div style="position:absolute; right: 330px;
    top: 250px; width: 200px;"> 
-				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "<?php echo base_url();?>Web/create">Previous</button>
+				<button  type="button"  onclick="window.location.href='<?php echo base_url();?>Web/create'" style="color:black; width: 100px; height:50px;">Previous</button>
 			</div>
 
 	</div>
 
              </div>
-         </div>
+         </div
          </div>
          
 		</header>
+
+<script type="text/javascript">
+window.onload = function (){
+
+
+				var stage = $('#stage').val();
+				var cust1 = $('#cust1').val();
+				var prob1 = $('#prob1').val();
+				var solution1 = $('#solution1').val();
+				var assump1 = $('#assump1').val();
+				var criterion1 = $('#criterion1').val();
+				var discussion1 = $('#discussion1').val();
+				var learning1 = $('#learning1').val();
+
+				//next
+				var assump2 = $('#assump2').val();
+				var criterion2 = $('#criterion2').val();
+				var discussion2 = $('#discussion2').val();
+				var learning2 = $('#learning2').val();
+				//next
+				var assump3 = $('#assump2').val();
+				var criterion3 = $('#criterion2').val();
+				var discussion3 = $('#discussion2').val();
+				var learning3 = $('#learning2').val();
+
+
+				if(stage != '' || assump1 != '' || criterion1!='' || discussion1!='' || learning1!='' 
+							   || assump2 != '' || criterion2!='' || discussion2!='' || learning2!=''
+							   || assump3 != '' || criterion3!='' || discussion3!='' || learning3!=''){
+
+					$('#assump1').prop("disabled",false);
+					$('#criterion1').prop("disabled",false);
+					$('#discussion1').prop("disabled",false);
+					$('#learning1').prop("disabled",false);
+					//next
+					$('#assump2').prop("disabled",false);
+					$('#criterion2').prop("disabled",false);
+					$('#discussion2').prop("disabled",false);
+					$('#learning2').prop("disabled",false);
+					//next
+					$('#assump3').prop("disabled",false);
+					$('#criterion3').prop("disabled",false);
+					$('#discussion3').prop("disabled",false);
+					$('#learning3').prop("disabled",false);
+					$('#validation').show();
+				}
+			};
+
+			$('#stage').focus();
+			
+			$('#stage').on('change',function(){
+				
+				$('#assump1').prop("disabled",false);
+				$('#assump1').focus();
+			});
+
+			$('#assump1').on('change',function(){
+
+				$('#criterion1').prop("disabled",false);
+				$('#criterion1').focus();
+			});
+
+			$('#criterion1').on('change',function(){
+				
+				$('#discussion1').prop("disabled",false);
+				$('#discussion1').focus();
+			 });
+
+			$('#discussion1').on('change',function(){
+
+	//-------------------------------------------------------------//
+
+				$('#learning1').prop("disabled",false);
+				$('#learning1').focus();
+			});
+
+			$('#learning1').on('change',function(){
+
+				$('#assump2').prop("disabled",false);
+				$('#assump2').focus();
+			});
+
+			$('#assump2').on('change',function(){
+
+				$('#criterion2').prop("disabled",false);
+				$('#criterion2').focus();
+			});
+
+			$('#criterion2').on('change',function(){
+
+				$('#discussion2').prop("disabled",false);
+				$('#discussion2').focus();
+			});
+
+			$('#discussion2').on('change',function(){
+
+				$('#learning2').prop("disabled",false);
+				$('#learning2').focus();
+			});
+///-----------------------------------------------------------------------------------///
+
+			$('#learning2').on('change',function(){
+
+				$('#assump3').prop("disabled",false);
+				$('#assump3').focus();
+			});
+
+			$('#assump3').on('change',function(){
+
+				$('#criterion3').prop("disabled",false);
+				$('#criterion3').focus();
+			});
+
+			$('#criterion3').on('change',function(){
+				
+				$('#discussion3').prop("disabled",false);
+				$('#discussion3').focus();
+			 });
+
+			$('#discussion3').on('change',function(){
+
+				$('#learning3').prop("disabled",false);
+				$('#learning3').focus();
+			});
+
+//--------------------------------------------------------------------------------//////
+
+
+
+
+			$('#learning3').on('focus',function(){
+				
+				$('#validation').show();
+			});
+
+</script>
+
 		

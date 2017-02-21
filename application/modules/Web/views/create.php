@@ -92,7 +92,6 @@
 			$('#problem').focus();
 			
 			$('#problem').on('change',function(){
-				
 				$('#people').prop("disabled",false);
 				$('#people').focus();
 			});

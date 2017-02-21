@@ -21,7 +21,7 @@
 					<div class="form-group">
 					  <label for="Customer Segments" data-toggle="tooltip" data-placement="bottom" title = "This element provides the knowledge that the company has on users. It also provides information about their preferences, tastes, expectations and makes it possible to decide whether it is focused on a majority or a specific audience.">
 					  <font color="Black">Customer Segments</font></label>
-					  <textarea class="form-control" rows="13" id="segment" style = "resize: none;"  disabled><?php if(isset($bmc)){echo $bmc->cust_segment;}?></textarea>
+					  <textarea class="form-control" rows="13" id="segment" style = "resize: none;"  disabled><?php if(isset($bmc)){echo $ideagen->people;}?></textarea>
 					</div>
 				</div>
 
@@ -102,7 +102,7 @@
    top: 14px; width: 250px;" >
 					<div class="form-group">
 					<!--   <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Key Partners</font></label> -->
-					  <textarea class="form-control" rows="1" id="comment" style = "resize: none; text-align:center;"  disabled><?php echo ucfirst($ideagen->solution);?></textarea>
+					  <input class="form-control" rows="1" id="comment" style = "resize: none; text-align:center;" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 
@@ -118,18 +118,18 @@
    top: 14px; width:90px;" >
 					<div class="form-group">
 					<!--   <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Key Partners</font></label> -->
-					<input type="number" name="iteration" class="form-control" rows="1" id="iteration"  style = "resize: none;" placeholder ="1" required><?php if(isset($bmc)){echo $bmc->key_sources;}else{}?>
+					<input type="number" min="1" max="5" name="iteration" class="form-control" rows="1" id="iteration"  style = "resize: none;" placeholder ="1" required><?php if(isset($bmc)){echo $bmc->key_sources;}else{}?>
 					</div>
 				</div>
 
 <div style="position:absolute; left: 1000px;
    top: 250px; width: 200px;"> 
-				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "#" id="validationboard">Next</button>
+				<button  type="button" style="color:black; width: 100px; height:50px; display:none;" id="bmc" >Next</button>
 			</div>
 
 			<div style="position:absolute; right: 330px;
    top: 250px; width: 200px;"> 
-				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "<?php echo base_url();?>Web/valueprop">Previous</button>
+				<button  type="button"  onclick="window.location.href='<?php echo base_url();?>Web/valueprop'"  style="color:black; width: 100px; height:50px; ">Previous</button>
 			</div>
 	</div>
 
@@ -144,7 +144,6 @@
 window.onload = function (){
 
 				var iteration = $('#iteration').val();
-				var segment = $('#segment').val();
 				var proposition = $('#proposition').val();
 				var channels = $('#channels').val();
 				var relationship = $('#relationship').val();
@@ -154,8 +153,7 @@ window.onload = function (){
 				var partners = $('#partners').val();
 				var structure = $('#structure').val();
 
-				if(iteration != '' || segment != '' || proposition != '' || channels!='' || relationship != '' || streams!='' || resources!='' || activities!='' || partners!='' || structure!=''){
-					$('#segment').prop("disabled",false);
+				if(iteration != ''  || proposition != '' || channels!='' || relationship != '' || streams!='' || resources!='' || activities!='' || partners!='' || structure!=''){
 					$('#proposition').prop("disabled",false);
 					$('#channels').prop("disabled",false);
 					$('#relationship').prop("disabled",false);
@@ -169,14 +167,8 @@ window.onload = function (){
 			};
 
 			$('#iteration').focus();
-			
+
 			$('#iteration').on('change',function(){
-
-				$('#segment').prop("disabled",false);
-				$('#segment').focus();
-			});
-
-			$('#segment').on('change',function(){
 				
 				$('#proposition').prop("disabled",false);
 				$('#proposition').focus();

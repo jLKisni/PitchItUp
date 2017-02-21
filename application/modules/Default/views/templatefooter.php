@@ -42,7 +42,7 @@
     </script>
     <!-- End Javascript for template animation -->
 
-    <!-- Idea Generation Board -->
+    <!-- Open Idea Generation Board -->
     <script type="text/javascript">
 
     $(document).ready(function(){
@@ -103,94 +103,15 @@
 
     </script>
 
-    <!-- Idea Generation Board -->
+    <!-- Close Idea Generation Board -->
 
-
-    <script type="text/javascript">
-
-        $('#validationboard').click(function(){
-
-
-             if($('#bmc_id').val() !=0 ){
-                    var resources = $('#resources').val();
-                    var channels = $('#channels').val();
-                    var structure = $('#structure').val();
-                    var streams = $('#streams').val();
-                    var partners = $('#partners').val();
-                    var activities = $('#activities').val();
-                    var proposition = $('#proposition').val();
-                    var relationship = $('#relationship').val();
-                    var segment = $('#segment').val();
-                    var bmc_id = $('#bmc_id').val();
-
-                    var bmc = {
-                        'partners': partners,
-                        'activities' : activities,
-                        'proposition': proposition,
-                        'relationship': relationship,
-                        'segment': segment,
-                        'resources': resources,
-                        'channels' : channels,
-                        'structure': structure,
-                        'streams': streams,
-                        'bmc_id': bmc_id
-                    };
-
-                    // console.log(bmc);
-                    var url = "<?php echo base_url();?>Web/updatePitchDeck/updateBMC";
-                    $.post(url,{data:bmc},function(result){
-                    });
-                    window.location.href = "<?php echo base_url()?>Web/loading";
-
-
-
-             }else{
-
-                    var resources = $('#resources').val();
-                    var channels = $('#channels').val();
-                    var structure = $('#structure').val();
-                    var streams = $('#streams').val();
-                    var partners = $('#partners').val();
-                    var activities = $('#activities').val();
-                    var proposition = $('#proposition').val();
-                    var relationship = $('#relationship').val();
-                    var segment = $('#segment').val();
-
-                    var bmc = {
-                        'partners': partners,
-                        'activities' : activities,
-                        'proposition': proposition,
-                        'relationship': relationship,
-                        'segment': segment,
-                        'resources': resources,
-                        'channels' : channels,
-                        'structure': structure,
-                        'streams': streams
-                    };
-
-                    var url = "<?php echo base_url();?>Web/PitchDeck/addBMC";
-                    $.post(url,{data:bmc},function(result){});
-                    window.location.href = "<?php echo base_url()?>Web/loading";
-
-             }
-
-           
-       
-    });
-
-    </script>
-  
-  <!--  Generation Board -->
-
-
-
-  <!-- validation board -->
+    <!-- Open validation board -->
 
   <script type="text/javascript">
 
     $(function(){
 
-        $('#valueprop').click(function(){
+        $('#validationboard').click(function(){
 
 
             if($('#valid_id').val()!=0){
@@ -244,10 +165,12 @@
 
             };
 
+
             // console.log(validationboard);
             var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
 
             $.post(url,{data:validationboard},function(result){
+                   console.log(result);
             });
                 window.location.href = "<?php echo base_url()?>Web/valueprop"; 
 
@@ -306,6 +229,7 @@
 
             $.post(url,{data:validationboard},function(result){
                    if(result==1 || result == '1'){
+                    console.log(result);
                     window.location.href = "<?php echo base_url()?>Web/valueprop"; 
                 }
                 
@@ -320,16 +244,15 @@
 
   </script>
 
-  <!-- validation board -->
+  <!-- Close validation board -->
 
 
-
-  <!-- Value proposition -->
+  <!--Open Value proposition -->
 <script type="text/javascript">
 
     $(function(){
 
-        $('#template').click(function(){
+        $('#valueprop').click(function(){
 
 
             if($('#valueprop_id').val() != 0){
@@ -366,7 +289,7 @@
                 var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValueProp"; 
 
                 $.post(url,{data:valueprop},function(result){
-                     //console.log(result);
+                      console.log(result);
                 });
 
                   window.location.href = "<?php echo base_url()?>Web/bmc";
@@ -402,7 +325,7 @@
                 var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
 
                 $.post(url,{data:valueprop},function(result){
-                    // console.log(result);
+                    console.log(result);
                 });
 
                  window.location.href = "<?php echo base_url()?>Web/bmc";
@@ -421,7 +344,89 @@
 
 </script>
 
-  <!-- Value proposition -->
+  <!-- close Value proposition -->
+
+
+  <!-- open bmc board -->
+    <script type="text/javascript">
+
+        $('#bmc').click(function(){
+
+
+             if($('#bmc_id').val() !=0 ){
+                    var resources = $('#resources').val();
+                    var channels = $('#channels').val();
+                    var structure = $('#structure').val();
+                    var streams = $('#streams').val();
+                    var partners = $('#partners').val();
+                    var activities = $('#activities').val();
+                    var proposition = $('#proposition').val();
+                    var relationship = $('#relationship').val();
+                    var segment = $('#segment').val();
+                    var bmc_id = $('#bmc_id').val();
+
+                    var bmc = {
+                        'partners': partners,
+                        'activities' : activities,
+                        'proposition': proposition,
+                        'relationship': relationship,
+                        'segment': segment,
+                        'resources': resources,
+                        'channels' : channels,
+                        'structure': structure,
+                        'streams': streams,
+                        'bmc_id': bmc_id
+                    };
+
+                    // console.log(bmc);
+                    var url = "<?php echo base_url();?>Web/updatePitchDeck/updateBMC";
+                    $.post(url,{data:bmc},function(result){
+                    console.log(result);
+                    });
+                    window.location.href = "<?php echo base_url()?>Web/loading";
+
+
+
+             }else{
+
+                    var resources = $('#resources').val();
+                    var channels = $('#channels').val();
+                    var structure = $('#structure').val();
+                    var streams = $('#streams').val();
+                    var partners = $('#partners').val();
+                    var activities = $('#activities').val();
+                    var proposition = $('#proposition').val();
+                    var relationship = $('#relationship').val();
+                    var segment = $('#segment').val();
+
+                    var bmc = {
+                        'partners': partners,
+                        'activities' : activities,
+                        'proposition': proposition,
+                        'relationship': relationship,
+                        'segment': segment,
+                        'resources': resources,
+                        'channels' : channels,
+                        'structure': structure,
+                        'streams': streams
+                    };
+
+                    var url = "<?php echo base_url();?>Web/PitchDeck/addBMC";
+                    $.post(url,{data:bmc},function(result){
+                         console.log(result);
+                    });
+                    window.location.href = "<?php echo base_url()?>Web/loading";
+
+             }
+
+           
+       
+    });
+
+    </script>
+  
+  <!--  close bmc-->
+
 
 </body>
 

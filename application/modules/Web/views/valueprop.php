@@ -93,25 +93,25 @@
    top: 430px; width: 160px; height: 100px;" >
 					<div class="form-group">
 					 <font color="Black">Product</font></label>
-					  <textarea class="form-control" rows="1" id="product" style = "resize: none; text-align:center;"  disabled><?php echo ucfirst($ideagen->solution);?></textarea>
+					  <input class="form-control" id="idealcust" style = "resize: none; text-align:center; height:40px" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 						<div class="col-md-2" style="position:absolute; left: 174px;
    top: 455px; width: 160px; height: 100px;" >
 					<div class="form-group">
 					 <font color="Black">Ideal Customer</font></label>
-					  <textarea class="form-control" rows="1" id="customer" style = "resize: none; text-align:center;"  disabled><?php echo ucfirst($ideagen->people);?></textarea>
+					 <input class="form-control" id="idealcust" style = "resize: none; text-align:center; height:40px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 
 	<div style="position:absolute; left: 1000px;
    top: 250px; width: 200px;"> 
-				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "#"id="template">Next</button>
+				<button  type="button" style="color:black; width: 100px; height:50px; display:none;" id="valueprop">Next</button>
 			</div>
 
 			<div style="position:absolute; right: 330px;
    top: 250px; width: 200px;"> 
-				<button  type="button" style="color:black; width: 100px; height:50px; "><a href = "<?php echo base_url();?>Web/validationboard">Previous</button>
+				<button  type="button" onclick="window.location.href='<?php echo base_url();?>Web/validationboard'" style="color:black; width: 100px; height:50px; ">Previous</button>
 			</div>
 
 

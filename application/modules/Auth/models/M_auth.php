@@ -74,8 +74,8 @@ class M_auth extends CI_Model{
 
 
   function login($data){
-      $sql = "select * from members where username = ? and password = ?";
-      $query = $this->db->query($sql,array($data['username'],$data['password']));
+      $sql = "select * from members where username = ? and password = ? and member_status = ?";
+      $query = $this->db->query($sql,array($data['username'],$data['password'],0));
       if($query->num_rows()>0){
           $row = $query->row();
 
