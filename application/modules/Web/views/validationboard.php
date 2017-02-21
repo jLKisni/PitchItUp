@@ -126,7 +126,7 @@
 				   <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					   <input class="form-control" id="prob3" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);}  }?>" disabled>
+					   <input class="form-control" id="prob3" style = "resize: none; text-align:center; height:54px" value="<?php  if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);}  }?>" disabled>
 					</div>
 				</div>
 
