@@ -21,24 +21,22 @@
                     <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="cust1" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
-					  																						<!-- 	if(isset($array)){echo nimo kung naay sod ;}else{echo '';} -->
-					  																						<!--  value="<?php if(isset($arr)){echo $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); }else{echo ' ';}?>"
- -->
+					  <input class="form-control" id="cust1" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?>" disabled>
+					  																						
 					</div>
 				</div>
 
 				   <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					 <input class="form-control" id="prob1" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->problem;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
+					 <input class="form-control" id="prob1" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?>" disabled>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="solution1" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
+					  <input class="form-control" id="solution1" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->solution;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?>" disabled>
 					</div>
 				</div>
 
@@ -72,21 +70,21 @@
   <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="cust2" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[1]); ?>" disabled>
+					  <input class="form-control" id="cust2" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);}  }?>" disabled>
 					</div>
 				</div>
 
 				   <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					   <input class="form-control" id="prob2" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->problem;$arr = explode(' ',trim($word));echo ucfirst($arr[1]); ?>" disabled>
+					   <input class="form-control" id="prob2" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);}  }?>" disabled>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="solution2" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
+					  <input class="form-control" id="solution2" style = "resize: none; text-align:center; height:54px" value="" disabled>
 					</div>
 				</div>
 
@@ -121,21 +119,21 @@
   <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[2]); ?>" disabled>
+					  <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);}  }?>" disabled>
 					</div>
 				</div>
 
 				   <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					   <input class="form-control" id="prob3" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->problem;$arr = explode(' ',trim($word));echo ucfirst($arr[2]); ?>" disabled>
+					   <input class="form-control" id="prob3" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);}  }?>" disabled>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="solution3" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
+					  <input class="form-control" id="solution3" style = "resize: none; text-align:center; height:54px" value="" disabled>
 					</div>
 				</div>
 
@@ -170,7 +168,7 @@
    top: 128px; width: 175px; " >
 					<div class="form-group">
 						<textarea class="form-control" rows="2" id="comment" style = "resize: none;" disabled ></textarea>
-					    <!-- <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[3]); ?>" disabled> -->
+					    <!-- <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen))$word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[3]); ?>" disabled> -->
 					</div>
 				</div>
 
