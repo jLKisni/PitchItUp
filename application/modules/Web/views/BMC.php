@@ -21,7 +21,7 @@
 					<div class="form-group">
 					  <label for="Customer Segments" data-toggle="tooltip" data-placement="bottom" title = "This element provides the knowledge that the company has on users. It also provides information about their preferences, tastes, expectations and makes it possible to decide whether it is focused on a majority or a specific audience.">
 					  <font color="Black">Customer Segments</font></label>
-					  <textarea class="form-control" rows="13" id="segment" style = "resize: none;"  disabled><?php if(isset($bmc)){echo $ideagen->people;}?></textarea>
+					  <textarea class="form-control" rows="13" id="segment" style = "resize: none;"  disabled><?php if(isset($ideagen)){echo $ideagen->people;}?></textarea>
 					</div>
 				</div>
 

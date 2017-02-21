@@ -29,14 +29,14 @@
 				   <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					 <input class="form-control" id="prob1" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?>" disabled>
+					 <textarea class="form-control" id="prob1" style = "resize: none; text-align:center; height:54px" disabled><?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?></textarea>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="solution1" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->solution;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?>" disabled>
+					  <textarea class="form-control" id="solution1" style = "resize: none; text-align:center; height:54px" disabled><?php if(isset($ideagen)){$word = $ideagen->solution;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?> </textarea>
 					</div>
 				</div>
 
@@ -70,21 +70,21 @@
   <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="cust2" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);}  }?>" disabled>
+					  <input class="form-control" id="cust2" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);} }?>" disabled>
 					</div>
 				</div>
 
 				   <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					   <input class="form-control" id="prob2" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);}  }?>" disabled>
+					   <textarea class="form-control" id="prob2" style = "resize: none; text-align:center; height:54px" disabled><?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);}  }?></textarea>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="solution2" style = "resize: none; text-align:center; height:54px" value="" disabled>
+					  <textarea class="form-control" id="solution2" style = "resize: none; text-align:center; height:54px" value="" disabled><?php if(isset($ideagen)){$word = $ideagen->solution;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);}  }?></textarea>
 					</div>
 				</div>
 
@@ -119,22 +119,21 @@
   <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);}  }?>" disabled>
+					  <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);} }?>" disabled>
 					</div>
 				</div>
 
 				   <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					   <input class="form-control" id="prob3" style = "resize: none; text-align:center; height:54px" value="<?php  if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);}  }?>" disabled>
+					   <textarea class="form-control" id="prob3" style = "resize: none; text-align:center; height:54px" value="" disabled><?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);} }?></textarea>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="solution3" style = "resize: none; text-align:center; height:54px" value="" disabled>
-					</div>
+					  <textarea class="form-control" id="solution3" style = "resize: none; text-align:center; height:54px" value="" disabled><?php if(isset($ideagen)){$word = $ideagen->solution;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);}  }?></textarea></div>
 				</div>
 
 		     <div class="col-md-5" style="position:absolute; left: 506px; 
@@ -440,14 +439,105 @@ window.onload = function (){
 
 //--------------------------------------------------------------------------------//////
 
-
-
-
 			$('#learning3').on('focus',function(){
 				
 				$('#validation').show();
 			});
 
+//--------------------------------------------------------//
+
+		$('#discussion1').on('change',function(){
+			
+			var criteria = $('#criterion1').val();
+			var discussion = $('#discussion1').val();
+
+			//alert(ParseInt(criteria));
+			if(parseInt(criteria)>parseInt(discussion)){
+			 $('#cust2').prop("disabled",false);
+				}
+			 });
+
+		$('#cust2').on('change',function(){
+			$('#prob2').focus();
+			$('#prob2').prop("disabled",false);
+			$('#solution2').prop("disabled",false);
+			$('#assump2').prop("disabled",false);
+			$('#criterion2').prop("disabled",false);
+			$('#discussion2').prop("disabled",false);
+			$('#learning2').prop("disabled",false);
+
+		});
+
+		$('#discussion2').on('change',function(){
+			
+			var criteria = $('#criterion2').val();
+			var discussion = $('#discussion2').val();
+
+			//alert(ParseInt(criteria));
+			if(parseInt(criteria)>parseInt(discussion)){
+			 $('#cust3').prop("disabled",false);
+				}
+			 });
+
+		$('#cust3').on('change',function(){
+			$('#prob3').focus();
+			$('#prob3').prop("disabled",false);
+			$('#solution3').prop("disabled",false);
+			$('#assump3').prop("disabled",false);
+			$('#criterion3').prop("disabled",false);
+			$('#discussion3').prop("disabled",false);
+			$('#learning3').prop("disabled",false);
+
+		});
+
+
+		$('#discussion3').on('change',function(){
+			
+			var criteria = $('#criterion3').val();
+			var discussion = $('#discussion3').val();
+
+			//alert(ParseInt(criteria));
+			if(parseInt(criteria)>parseInt(discussion)){
+			 $('#cust4').prop("disabled",false);
+				}
+			 });
+
+		$('#cust4').on('change',function(){
+			$('#prob4').focus();
+			$('#prob4').prop("disabled",false);
+			$('#solution4').prop("disabled",false);
+			$('#assump4').prop("disabled",false);
+			$('#criterion4').prop("disabled",false);
+			$('#discussion4').prop("disabled",false);
+			$('#learning4').prop("disabled",false);
+
+
+
+		});
+
+
+
+		// $('#discussion4').on('change',function(){
+			
+		// 	var criteria = $('#criterion4').val();
+		// 	var discussion = $('#discussion4').val();
+
+		// 	//alert(ParseInt(criteria));
+		// 	if(parseInt(criteria)>parseInt(discussion)){
+		// 	 $('#cus55').prop("disabled",false);
+		// 		}
+		// 	 });
+
+		// $('#cust4').on('change',function(){
+		// 	$('#prob4').focus();
+		// 	$('#prob4').prop("disabled",false);
+		// 	$('#solution4').prop("disabled",false);
+		// 	$('#assump4').prop("disabled",false);
+		// 	$('#criterion4').prop("disabled",false);
+		// 	$('#discussion4').prop("disabled",false);
+		// 	$('#learning4').prop("disabled",false);
 </script>
+
+
 
 		
