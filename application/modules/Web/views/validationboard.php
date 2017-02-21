@@ -386,8 +386,11 @@ window.onload = function (){
 
 			$('#learning1').on('change',function(){
 
+				if($('#cust2').val()!=''){
 				$('#assump2').prop("disabled",false);
 				$('#assump2').focus();
+				}
+				
 			});
 
 			$('#assump2').on('change',function(){
@@ -411,8 +414,10 @@ window.onload = function (){
 
 			$('#learning2').on('change',function(){
 
+				if($('#cust3').val()!=''){
 				$('#assump3').prop("disabled",false);
 				$('#assump3').focus();
+				}
 			});
 
 			$('#assump3').on('change',function(){
