@@ -32,9 +32,9 @@
 
     		// redirecting
 
-    		$('#template1,#template2').click(function(){
+    		$('#template1').click(function(){
 
-    			window.location.href = '<?php echo base_url();?>Web/loading';
+    			window.location.href = '<?php echo base_url();?>Web/Download';
     		});
 
 

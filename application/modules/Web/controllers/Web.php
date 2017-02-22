@@ -288,18 +288,34 @@ class Web extends MY_Controller{
 
 
     function pitchdeck(){
+        header("Location: http://localhost/PitchItUp/powerpoint/Tests/02presentation.php?id=".$this->session->userdata['team_id']);
+        exit;
+         //  //load the download helper
+         //  $this->load->helper('download');
+         //  //set the textfile's content 
+         // $data = file_get_contents(base_url('02presentation.pptx'));
+         //  //set the textfile's name
+         //  $name = 'samplesir.pptx';
+         //  //use this function to force the session/browser to download the created file
+         //  force_download($name, $data);
+      
+        //$this->load->view('pitchdeck');
 
-          //load the download helper
-          $this->load->helper('download');
-          //set the textfile's content 
-         $data = file_get_contents(base_url('02presentation.pptx'));
-          //set the textfile's name
-          $name = 'samplesir.pptx';
+    }
+
+    function Download(){
+          $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
+            $word1 = $ideadetails->solution;$arr1 = explode(' -',trim($word1)); if((sizeof($arr1)-1)>=0){ $solution = ucfirst($arr1[0]); }
+
+            $this->load->helper('download');
+            $name = $solution.".pptx";
+
+            
+           $data = file_get_contents(base_url().'powerpoint/Tests/'.$name);
+        
           //use this function to force the session/browser to download the created file
           force_download($name, $data);
-
-      //$this->load->view('pitchdeck');
-
+      
     }
 
 
