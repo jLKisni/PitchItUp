@@ -19,7 +19,7 @@ class Web extends MY_Controller{
         'title'=>'Main page'
       );
       $this->load->view('Default/main_header',$data);
-      $this->load->view('Default/main_nav');
+      $this->load->view('Default/indexnav');
       $this->load->view('index');
       $this->load->view('Default/main_footer');
     }

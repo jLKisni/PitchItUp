@@ -22,7 +22,7 @@
 											
 			</div></br></br>
             <ul class = "pager">
-                <li class = "previous"><a href = "<?php echo base_url();?>Web/valueprop">Previous</li></a>
+                <li class = "previous"><a href = "<?php echo base_url();?>Web/bmc">Previous</li></a>
                 
             </ul>
 		</div>

@@ -98,9 +98,7 @@ class Auth extends MY_Controller{
       'username'=>$usersdata['username'],
       'password'=>md5($usersdata['password'])
     );
-    $error_msg = array(
-        'error_msg'=>'<div class="alert alert-danger" role="alert">Incorrect Password !</div>');
-      
+   
     $success = $this->M_auth->login($userdetails);
     if($success == 'Users'){
        redirect('Web/wlcome_msg');
@@ -110,7 +108,9 @@ class Auth extends MY_Controller{
       redirect('Web/Administrator/');
     }
     else{
-    
+     $error_msg = array(
+        'error_msg'=>'<div class="alert alert-danger" role="alert">Incorrect Password or Username . Try Again !</div>');
+      
       $this->load->view('Default/main_header',$data);
       $this->load->view('Default/login_nav');
       $this->load->view('Web/login',$error_msg);

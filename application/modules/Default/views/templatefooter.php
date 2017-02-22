@@ -321,7 +321,7 @@
                     'substitutes':substitutes
                 };
 
-                //console.log(valueprop);
+                console.log(valueprop);
                 var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
 
                 $.post(url,{data:valueprop},function(result){

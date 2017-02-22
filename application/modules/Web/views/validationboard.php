@@ -21,7 +21,7 @@
                     <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="cust1" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?>" disabled>
+					  <input class="form-control" id="cust1" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?>" disabled>
 					  																						
 					</div>
 				</div>
@@ -70,7 +70,7 @@
   <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="cust2" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);} }?>" disabled>
+					  <input class="form-control" id="cust2" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);} }?>" disabled>
 					</div>
 				</div>
 
@@ -119,7 +119,7 @@
   <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(' ',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);} }?>" disabled>
+					  <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);} }?>" disabled>
 					</div>
 				</div>
 
@@ -454,7 +454,13 @@ window.onload = function (){
 			//alert(ParseInt(criteria));
 			if(parseInt(criteria)>parseInt(discussion)){
 			 $('#cust2').prop("disabled",false);
-				}
+			}
+			// else{
+			// 		alert('Need to pivot ');
+			// 		$('#criterion1').val('');
+			// 		$('#discussion1').val('');
+			// 		$('#criterion1').focus();
+			// 	}
 			 });
 
 		$('#cust2').on('change',function(){
@@ -499,7 +505,8 @@ window.onload = function (){
 			//alert(ParseInt(criteria));
 			if(parseInt(criteria)>parseInt(discussion)){
 			 $('#cust4').prop("disabled",false);
-				}
+			}
+
 			 });
 
 		$('#cust4').on('change',function(){

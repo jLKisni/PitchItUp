@@ -93,14 +93,14 @@
    top: 430px; width: 160px; height: 100px;" >
 					<div class="form-group">
 					 <font color="Black">Product</font></label>
-					  <input class="form-control" id="idealcust" style = "resize: none; text-align:center; height:40px" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
+					  <input class="form-control" id="product" style = "resize: none; text-align:center; height:40px" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 						<div class="col-md-2" style="position:absolute; left: 174px;
    top: 455px; width: 160px; height: 100px;" >
 					<div class="form-group">
 					 <font color="Black">Ideal Customer</font></label>
-					 <input class="form-control" id="idealcust" style = "resize: none; text-align:center; height:40px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
+					 <input class="form-control" id="customer" style = "resize: none; text-align:center; height:40px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 
