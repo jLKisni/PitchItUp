@@ -25,7 +25,7 @@
 					<div class="form-group">
 					  <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "What problem you have recognized needs solving?">
 					  <font color="Black">Problem</font></label>
-					  <textarea class="form-control" rows="9" id="problem" style = "resize: none;"><?php if(isset($ideagen)){echo $ideagen->problem;}else{}?></textarea>
+					  <textarea class="form-control" rows="9" id="problem" style = "resize: none;" placeholder="example"><?php if(isset($ideagen)){echo $ideagen->problem;}else{}?></textarea>
 					</div>
 				</div>
 
@@ -43,7 +43,7 @@
 					<div class="form-group">
 					<label for="behavior" data-toggle="tooltip" data-placement="bottom" title = "What are the behavior of the people who encounter the problem?">
 					<font color="Black">Behavior</font></label>
-					  <textarea class="form-control" rows="9" id="behavior" style = "resize: none;"  disabled><?php if(isset($ideagen)){echo $ideagen->behavior;}?></textarea>
+					  <textarea class="form-control" rows="9" id="behavior" style = "resize: none;"  placeholder="example" disabled><?php if(isset($ideagen)){echo $ideagen->behavior;}?></textarea>
 					</div>
 				</div>
 
@@ -52,7 +52,7 @@
 					<div class="form-group">
 					<label for="solution" data-toggle="tooltip" data-placement="bottom" title = "What belief must you have that can solve the problem?">
 					<font color="Black">Solution</font></label>
-					  <textarea class="form-control" rows="9" id="solution" style = "resize: none;"  disabled><?php if(isset($ideagen)){echo $ideagen->solution;}?></textarea>
+					  <textarea class="form-control" rows="9" id="solution" style = "resize: none;"  placeholder="example" disabled><?php if(isset($ideagen)){echo $ideagen->solution;}?></textarea>
 					</div>
 				</div>
 

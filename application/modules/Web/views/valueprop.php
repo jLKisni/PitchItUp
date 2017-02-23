@@ -21,7 +21,7 @@
 					<div class="form-group">
 					   <label for="fears" data-toggle="tooltip" data-placement="bottom" title = "The dark side of making a decision, fear of making a mistake, fear of missing out, fear of loss and dozens of other related fears.">
 					   <font color="Black">Fears</font></label>
-					  <textarea class="form-control" rows="4" id="fears" style = "resize: none;"  ><?php if(isset($valueprop)){echo $valueprop->fears;}else{}?></textarea>
+					  <textarea class="form-control" rows="4" id="fears" style = "resize: none;" placeholder="example" ><?php if(isset($valueprop)){echo $valueprop->fears;}else{}?></textarea>
 					</div>
 				</div>
 
@@ -30,7 +30,7 @@
 					<div class="form-group">
 					  <label for="experience" data-toggle="tooltip" data-placement="bottom" title = "The way that owning your product makes the customer feel.">
 					  <font color="Black">Experience</font></label>
-					  <textarea class="form-control" rows="13" id="experience" style = "resize: none;" disabled><?php if(isset($valueprop)){echo $valueprop->experience;}?></textarea>
+					  <textarea class="form-control" rows="13" id="experience" style = "resize: none;"  placeholder="example" disabled><?php if(isset($valueprop)){echo $valueprop->experience;}?></textarea>
 					</div>
 				</div>
 
@@ -39,7 +39,7 @@
 					<div class="form-group">
 					  <label for="wants" data-toggle="tooltip" data-placement="bottom" title = "The emotional drivers of decision making are things that we want to be, do or have.">
 					  <font color="Black">Wants</font></label>
-					  <textarea class="form-control" rows="4" id="wants" style = "resize: none;"  disabled><?php if(isset($valueprop)){echo $valueprop->wants;}?></textarea>
+					  <textarea class="form-control" rows="4" id="wants" style = "resize: none;" placeholder="example" disabled><?php if(isset($valueprop)){echo $valueprop->wants;}?></textarea>
 					</div>
 				</div>
 
@@ -48,7 +48,7 @@
 					<div class="form-group">
 					  <label for="benefits" data-toggle="tooltip" data-placement="bottom" title = "What your product does for the customer.">
 					  <font color="Black">Benefits</font></label>
-					  <textarea class="form-control" rows="4" id="benefits" style = "resize: none;" disabled><?php if(isset($valueprop)){echo $valueprop->benefits;}?></textarea>
+					  <textarea class="form-control" rows="4" id="benefits" style = "resize: none;" placeholder="example" disabled><?php if(isset($valueprop)){echo $valueprop->benefits;}?></textarea>
 					</div>
 				</div>
 			 <div class="col-md-2" style="position:absolute; left: 605px;
@@ -56,7 +56,7 @@
 					<div class="form-group">
 					  <label for="needs" data-toggle="tooltip" data-placement="bottom" title = "The rational things that the customer needs to get done.">
 					  <font color="Black">Needs</font></label>
-					  <textarea class="form-control" rows="4" id="needs" style = "resize: none;"  disabled><?php if(isset($valueprop)){echo $valueprop->needs;}?></textarea>
+					  <textarea class="form-control" rows="4" id="needs" style = "resize: none;"  placeholder="example" disabled><?php if(isset($valueprop)){echo $valueprop->needs;}?></textarea>
 
 					</div>
 				</div>
@@ -67,7 +67,7 @@
 					<div class="form-group">
 					  <label for="features" data-toggle="tooltip" data-placement="bottom" title = "A factual description of how your product works.">
 					  <font color="Black">Features</font></label>
-					  <textarea class="form-control" rows="4" id="features" style = "resize: none;" disabled><?php if(isset($valueprop)){echo $valueprop->features;}?></textarea>
+					  <textarea class="form-control" rows="4" id="features" style = "resize: none;" placeholder="example" disabled><?php if(isset($valueprop)){echo $valueprop->features;}?></textarea>
 					</div>
 				</div>
 
@@ -76,7 +76,7 @@
 					<div class="form-group">
 					  <label for="substitutes" data-toggle="tooltip" data-placement="bottom" title = "These aren’t the obvious competitors, instead look for the existing coping behaviours.">
 					  <font color="Black">Substitutes</font></label>
-					  <textarea class="form-control" rows="2" id="substitutes" style = "resize: none;" disabled><?php if(isset($valueprop)){echo $valueprop->substitutes;}?></textarea>
+					  <textarea class="form-control" rows="2" id="substitutes" style = "resize: none;" placeholder="example" disabled><?php if(isset($valueprop)){echo $valueprop->substitutes;}?></textarea>
 					</div>
 				</div>
 
@@ -100,7 +100,7 @@
    top: 455px; width: 160px; height: 100px;" >
 					<div class="form-group">
 					 <font color="Black">Ideal Customer</font></label>
-					 <input class="form-control" id="customer" style = "resize: none; text-align:center; height:40px" value="<?php $word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
+					 <input class="form-control" id="customer" style = "resize: none; text-align:center; height:40px" value="<?php $word = $ideagen->people;$arr = explode(',',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 

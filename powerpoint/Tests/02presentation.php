@@ -338,6 +338,19 @@ $textRun->getFont()->setBold(true);
 $textRun->getFont()->setSize(36);
 $textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '000000' ) );
 
+// Create a shape (text)
+//echo date('H:i:s') . " Create a shape (rich text)\n";
+$shape = $currentSlide->createRichTextShape();
+$shape->setHeight(100);
+$shape->setWidth(930);
+$shape->setOffsetX(60);
+$shape->setOffsetY(80);
+$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
+
+$textRun = $shape->createTextRun('- '.$valueprop['substitutes']);
+$textRun->getFont()->setSize(28);
+$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '000000' ) );
+
 
 // Save PowerPoint 2007 file
 //echo date('H:i:s') . " Write to PowerPoint2007 format\n";
