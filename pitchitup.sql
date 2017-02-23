@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2017 at 02:40 PM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- Generation Time: Feb 23, 2017 at 10:47 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -37,7 +37,6 @@ CREATE TABLE `bmc` (
   `key_partners` varchar(255) NOT NULL,
   `cost_structures` varchar(50) NOT NULL,
   `revenue_streams` varchar(100) NOT NULL,
-  `bmcphoto` varchar(255) NOT NULL,
   `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -45,8 +44,8 @@ CREATE TABLE `bmc` (
 -- Dumping data for table `bmc`
 --
 
-INSERT INTO `bmc` (`bmc_id`, `cust_segment`, `cust_relationship`, `channels`, `value_proposition`, `key_activities`, `key_sources`, `key_partners`, `cost_structures`, `revenue_streams`, `bmcphoto`, `team_id`) VALUES
-(1, 'hustler\nhacker', 'gjby', 'gbg', 'hvhbsduv', 'kybubit', 'kjhut', 'uiybiiu', 'niyuynue', 'biut', '', 44);
+INSERT INTO `bmc` (`bmc_id`, `cust_segment`, `cust_relationship`, `channels`, `value_proposition`, `key_activities`, `key_sources`, `key_partners`, `cost_structures`, `revenue_streams`, `team_id`) VALUES
+(10, 'akshd \nasdasd\n\n', 'asdsa', 'asdsa', 'asdsa', 'sadasd', 'asdasd', 'asdasd', 'asdasasd', 'asdas', 40);
 
 -- --------------------------------------------------------
 
@@ -56,11 +55,19 @@ INSERT INTO `bmc` (`bmc_id`, `cust_segment`, `cust_relationship`, `channels`, `v
 
 CREATE TABLE `gen_pitchdeck` (
   `pitchdeck_id` int(11) NOT NULL,
-  `num_pitchdeck` int(11) NOT NULL,
+  `valueprop_id` int(11) NOT NULL,
   `idea_id` int(11) NOT NULL,
   `valid_id` int(11) NOT NULL,
-  `bmc_id` int(11) NOT NULL
+  `bmc_id` int(11) NOT NULL,
+  `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gen_pitchdeck`
+--
+
+INSERT INTO `gen_pitchdeck` (`pitchdeck_id`, `valueprop_id`, `idea_id`, `valid_id`, `bmc_id`, `team_id`) VALUES
+(2, 1, 14, 48, 10, 40);
 
 -- --------------------------------------------------------
 
@@ -87,7 +94,6 @@ CREATE TABLE `idea_genboard` (
   `people` varchar(255) NOT NULL,
   `behavior` varchar(255) NOT NULL,
   `solution` varchar(255) NOT NULL,
-  `ideaphoto` varchar(255) NOT NULL,
   `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -95,8 +101,8 @@ CREATE TABLE `idea_genboard` (
 -- Dumping data for table `idea_genboard`
 --
 
-INSERT INTO `idea_genboard` (`idea_id`, `problem`, `people`, `behavior`, `solution`, `ideaphoto`, `team_id`) VALUES
-(16, 'ingceg,incegiea', 'hustler \n\nhacker', 'using separate documents', 'PitchItup, jhcgsfb', '', 44);
+INSERT INTO `idea_genboard` (`idea_id`, `problem`, `people`, `behavior`, `solution`, `team_id`) VALUES
+(14, 'having hard time , dakog ulok\n', 'akshd \nasdasd\n\n', 'gwapa \ncute \nlovely ', 'PitchItup - A pitch deck nindot generator', 40);
 
 -- --------------------------------------------------------
 
@@ -122,12 +128,11 @@ CREATE TABLE `members` (
 
 INSERT INTO `members` (`mem_id`, `FirstName`, `LastName`, `role`, `username`, `password`, `team_id`, `timestamp`, `member_status`) VALUES
 (49, 'Admin', 'Admin', 'Admin', 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72', 0, '2017-02-18 14:47:28', 0),
-(51, 'cantiveros', 'angel', 'Hustler', 'angelbelove', '202cb962ac59075b964b07152d234b70', 40, '2017-02-21 08:28:42', 1),
+(51, 'cantiveros', 'angel', 'Hustler', 'angelbelove', '202cb962ac59075b964b07152d234b70', 40, '2017-02-22 20:54:24', 0),
 (52, 'sherleen', 'golisao', 'Hipster', 'sherleen123', '81dc9bdb52d04dc20036dbd8313ed055', 40, '2017-02-19 22:01:51', 0),
 (53, 'ochea', 'sham', 'Hipster', 'shamochea', '202cb962ac59075b964b07152d234b70', 41, '2017-02-20 14:26:12', 1),
 (54, 'Eviota', 'Renan Anthony', 'Hipster', 'haha22', '014d6cc7a4ed554175bab9318e9a1b64', 42, '2017-02-19 23:02:42', 0),
-(55, 'Carungay', 'Hannah Jade', 'Hustler', 'dimple.nanah', 'ed3e50121fb8296cd8c71f8e592e2e64', 43, '2017-02-19 23:07:06', 0),
-(56, 'cantiveros', 'angelica joy', 'Hustler', 'angel123', '202cb962ac59075b964b07152d234b70', 44, '2017-02-20 23:35:51', 0);
+(55, 'Carungay', 'Hannah Jade', 'Hustler', 'dimple.nanah', 'ed3e50121fb8296cd8c71f8e592e2e64', 43, '2017-02-19 23:07:06', 0);
 
 -- --------------------------------------------------------
 
@@ -160,10 +165,7 @@ INSERT INTO `member_registration` (`memreg_id`, `mem_firstname`, `mem_lastname`,
 (33, 'Jan Karl', 'Cuizon', 'Hacker', 0, 42),
 (34, 'Hannah Jade', 'Carungay', 'Hustler', 0, 43),
 (35, 'Patrick Jason', 'Abella', 'Hipster', 0, 43),
-(36, 'Jhon Carlo', 'Vano', 'Hacker', 0, 43),
-(37, 'angelica joy', 'cantiveros', 'Hustler', 0, 44),
-(38, 'Sherleen', 'Golisao', 'Hipster', 0, 44),
-(39, 'Shamie', 'Ochea', 'Hipster', 0, 44);
+(36, 'Jhon Carlo', 'Vano', 'Hacker', 0, 43);
 
 -- --------------------------------------------------------
 
@@ -175,20 +177,18 @@ CREATE TABLE `team` (
   `team_id` int(11) NOT NULL,
   `team_name` varchar(100) NOT NULL,
   `size` int(11) NOT NULL,
-  `status` int(11) NOT NULL,
-  `teamphoto` varchar(255) NOT NULL
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `team`
 --
 
-INSERT INTO `team` (`team_id`, `team_name`, `size`, `status`, `teamphoto`) VALUES
-(40, 'pitchitup', 0, 0, ''),
-(41, 'talers', 0, 0, ''),
-(42, 'Team Bahug Taler', 0, 0, ''),
-(43, 'PATCH', 0, 0, ''),
-(44, 'itghurls', 0, 0, '');
+INSERT INTO `team` (`team_id`, `team_name`, `size`, `status`) VALUES
+(40, 'Team Bahug Taler', 0, 0),
+(41, 'talers', 0, 0),
+(42, 'PitchItUp', 0, 0),
+(43, 'PATCH', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -198,7 +198,6 @@ INSERT INTO `team` (`team_id`, `team_name`, `size`, `status`, `teamphoto`) VALUE
 
 CREATE TABLE `validation_board` (
   `valid_id` int(11) NOT NULL,
-  `validphoto` varchar(255) NOT NULL,
   `stage` int(11) NOT NULL,
   `customer` varchar(100) DEFAULT NULL,
   `problem` varchar(255) DEFAULT NULL,
@@ -242,10 +241,8 @@ CREATE TABLE `validation_board` (
 -- Dumping data for table `validation_board`
 --
 
-INSERT INTO `validation_board` (`valid_id`, `validphoto`, `stage`, `customer`, `problem`, `solution`, `risk_assumpt`, `solution_criteria`, `results`, `learnings`, `customer2`, `problem2`, `solution2`, `risk_assumpt2`, `solution_criteria2`, `results2`, `learnings2`, `customer3`, `problem3`, `solution3`, `risk_assumpt3`, `solution_criteria3`, `results3`, `learnings3`, `customer4`, `problem4`, `solution4`, `risk_assumpt4`, `solution_criteria4`, `results4`, `learnings4`, `customer5`, `problem5`, `solution5`, `risk_assumpt5`, `solution_criteria5`, `results5`, `learnings5`, `team_id`) VALUES
-(66, '0', 0, NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 44),
-(67, '0', 0, NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 44),
-(68, '0', 0, NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 44);
+INSERT INTO `validation_board` (`valid_id`, `stage`, `customer`, `problem`, `solution`, `risk_assumpt`, `solution_criteria`, `results`, `learnings`, `customer2`, `problem2`, `solution2`, `risk_assumpt2`, `solution_criteria2`, `results2`, `learnings2`, `customer3`, `problem3`, `solution3`, `risk_assumpt3`, `solution_criteria3`, `results3`, `learnings3`, `customer4`, `problem4`, `solution4`, `risk_assumpt4`, `solution_criteria4`, `results4`, `learnings4`, `customer5`, `problem5`, `solution5`, `risk_assumpt5`, `solution_criteria5`, `results5`, `learnings5`, `team_id`) VALUES
+(48, 0, NULL, NULL, NULL, NULL, 'asd', 'asd', 'asd', NULL, NULL, NULL, NULL, 'asd', 'asd', 'asd', NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 40);
 
 -- --------------------------------------------------------
 
@@ -255,7 +252,6 @@ INSERT INTO `validation_board` (`valid_id`, `validphoto`, `stage`, `customer`, `
 
 CREATE TABLE `value_prop` (
   `valueprop_id` int(11) NOT NULL,
-  `valuephoto` varchar(255) NOT NULL,
   `wants` varchar(255) NOT NULL,
   `needs` varchar(255) NOT NULL,
   `fears` varchar(255) NOT NULL,
@@ -268,6 +264,13 @@ CREATE TABLE `value_prop` (
   `substitutes` varchar(255) NOT NULL,
   `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `value_prop`
+--
+
+INSERT INTO `value_prop` (`valueprop_id`, `wants`, `needs`, `fears`, `benefits`, `experience`, `features`, `company`, `product`, `ideal_cust`, `substitutes`, `team_id`) VALUES
+(1, 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'Team Bahug Taler', 'PitchItup', 'Akshd asdasd', 'asd', 40);
 
 --
 -- Indexes for dumped tables
@@ -335,12 +338,12 @@ ALTER TABLE `value_prop`
 -- AUTO_INCREMENT for table `bmc`
 --
 ALTER TABLE `bmc`
-  MODIFY `bmc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `bmc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `gen_pitchdeck`
 --
 ALTER TABLE `gen_pitchdeck`
-  MODIFY `pitchdeck_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pitchdeck_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `history`
 --
@@ -350,32 +353,32 @@ ALTER TABLE `history`
 -- AUTO_INCREMENT for table `idea_genboard`
 --
 ALTER TABLE `idea_genboard`
-  MODIFY `idea_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idea_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `member_registration`
 --
 ALTER TABLE `member_registration`
-  MODIFY `memreg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `memreg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT for table `team`
 --
 ALTER TABLE `team`
-  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `validation_board`
 --
 ALTER TABLE `validation_board`
-  MODIFY `valid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `valid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `value_prop`
 --
 ALTER TABLE `value_prop`
-  MODIFY `valueprop_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `valueprop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

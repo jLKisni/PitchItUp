@@ -288,8 +288,15 @@ class Web extends MY_Controller{
 
 
     function pitchdeck(){
-        header("Location: http://localhost/PitchItUp/powerpoint/Tests/02presentation.php?id=".$this->session->userdata['team_id']);
-        exit;
+
+        $success = $this->Web_m->addPitchdeck();
+
+        if($success){
+           header("Location: http://localhost/PitchItUp/powerpoint/Tests/02presentation.php?id=".$this->session->userdata['team_id']);
+           exit;
+        }
+
+       
          //  //load the download helper
          //  $this->load->helper('download');
          //  //set the textfile's content 

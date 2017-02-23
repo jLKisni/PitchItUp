@@ -45,6 +45,19 @@ function getAccounts(){
   }
 }
 
+function addPitchdeck(){
+
+  $sql = "insert into gen_pitchdeck (valueprop_id,idea_id,valid_id,bmc_id,team_id) values(?,?,?,?,?)";
+  $query = $this->db->query($sql,array($this->session->tempdata('valuepropid'),$this->session->tempdata('ideaid'),$this->session->tempdata('validid'),$this->session->tempdata('bmcid'),$this->session->userdata('team_id')));
+
+  if($query){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
 
 
 function deactivateAccount($id){

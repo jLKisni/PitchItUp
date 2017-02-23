@@ -15,6 +15,13 @@
 			$query = $this->db->query($sql,array($data['problem'],$data['people'],$data['behavior'],$data['solution'],$this->session->userdata('team_id')));
 
 			if($query){
+
+
+				 $session = array(
+            		'ideaid'=>$this->db->insert_id()
+          		);
+
+          		$this->session->set_tempdata($session);
 				return true;
 			}
 			
@@ -27,6 +34,12 @@
 			$query = $this->db->query($sql,array($data['segment'],$data['relationship'],$data['channels'],$data['proposition'],$data['activities'],$data['resources'],$data['partners'],$data['structure'],$data['streams'],$this->session->userdata('team_id')));
 
 			if($query){
+				 $session = array(
+            		'bmcid'=>$this->db->insert_id()
+          		);
+				 
+          		$this->session->set_tempdata($session);
+
 				return true;
 			}
 		}
@@ -39,6 +52,13 @@
 			$query = $this->db->query($sql,array($data['customer'],$data['problem'],$data['solution'],$data['risk_assumpt'],$data['solution_criteria'],$data['results'],$data['learnings'],$data['customer2'],$data['problem2'],$data['solution2'],$data['risk_assumpt2'],$data['solution_criteria2'],$data['results2'],$data['learnings2'],$data['customer3'],$data['problem3'],$data['solution3'],$data['risk_assumpt3'],$data['solution_criteria3'],$data['results3'],$data['learnings3'],$this->session->userdata('team_id')));
 
 			if($query){
+
+
+				 $session = array(
+            		'validid'=>$this->db->insert_id()
+          		);
+				 
+          		$this->session->set_tempdata($session);
 				return true;
 			}
 		}
@@ -47,6 +67,12 @@
 			$query = $this->db->insert('value_prop',$data);
 
 			if($query){
+
+				$session = array(
+            		'valuepropid'=>$this->db->insert_id()
+          		);
+				 
+          		$this->session->set_tempdata($session);
 				return true;
 			}
 		}
