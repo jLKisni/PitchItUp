@@ -325,6 +325,22 @@ class Web extends MY_Controller{
       
     }
 
+    function DownloadProduct(){
+          $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
+            $word1 = $ideadetails->solution;$arr1 = explode(' -',trim($word1)); if((sizeof($arr1)-1)>=0){ $solution = ucfirst($arr1[0]); }
+
+            $this->load->helper('download');
+            $name = $solution."product.pptx";
+
+            
+           $data = file_get_contents(base_url().'powerpoint/Tests/'.$name);
+        
+          //use this function to force the session/browser to download the created file
+          force_download($name, $data);
+      
+    }
+
+
 
 
 
