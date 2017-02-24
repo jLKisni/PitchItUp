@@ -22,6 +22,7 @@
     		$('#pres1').hover(function(){
     			$('#template2').hide('slow');
     			$('#template1').slideDown();
+                $('#pdf1').slideDown();
     		});
 
     		$('#pres2').hover(function(){
