@@ -84,6 +84,25 @@
 		}
 
 
+		function viewPitchDeck($team_id){
+
+
+		   $this->db->select('*');
+		   $this->db->from('gen_pitchdeck');
+		   $this->db->join('idea_genboard','idea_genboard.idea_id = gen_pitchdeck.idea_id');
+		   $query = $this->db->get();
+		  if($query->num_rows()>0){
+
+		      $row = $query->result_array();
+
+		      return $row;
+		  }
+
+			
+		}
+
+
+
 	}
 
 

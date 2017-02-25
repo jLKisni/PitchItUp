@@ -47,15 +47,24 @@ function getAccounts(){
 
 function addPitchdeck(){
 
-  $sql = "insert into gen_pitchdeck (valueprop_id,idea_id,valid_id,bmc_id,team_id) values(?,?,?,?,?)";
-  $query = $this->db->query($sql,array($this->session->tempdata('valuepropid'),$this->session->tempdata('ideaid'),$this->session->tempdata('validid'),$this->session->tempdata('bmcid'),$this->session->userdata('team_id')));
+  $sql1 = "select * from gen_pitchdeck where valueprop_id = ? and idea_id = ? and valid_id = ? and bmc_id = ? and team_id = ? ";
+  $query1 = $this->db->query($sql1,array($this->session->tempdata('valuepropid'),$this->session->tempdata('ideaid'),$this->session->tempdata('validid'),$this->session->tempdata('bmcid'),$this->session->userdata('team_id')));
 
-  if($query){
+  if($query1->num_rows()>0){
     return true;
   }
   else{
-    return false;
+     $sql = "insert into gen_pitchdeck (valueprop_id,idea_id,valid_id,bmc_id,team_id) values(?,?,?,?,?)";
+      $query = $this->db->query($sql,array($this->session->tempdata('valuepropid'),$this->session->tempdata('ideaid'),$this->session->tempdata('validid'),$this->session->tempdata('bmcid'),$this->session->userdata('team_id')));
+
+      if($query){
+        return true;
+      }
+      else{
+        return false;
+      }
   }
+ 
 }
 
 

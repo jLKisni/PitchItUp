@@ -27,7 +27,7 @@
 								</li>
 								<li class="divider"></li>
 								<li>
-									<a href="<?php echo base_url();?>Web/documents">My Documents <span class="glyphicon glyphicon-folder-open pull-right"></span></a>
+									<a href="<?php echo base_url();?>Web/interface_m">My Documents <span class="glyphicon glyphicon-folder-open pull-right"></span></a>
 								</li>
 							</ul>
 					

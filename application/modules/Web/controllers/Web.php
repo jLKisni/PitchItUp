@@ -71,42 +71,51 @@ class Web extends MY_Controller{
     }
 
     function Interface_m(){
+        $pitchdeck = $this->PitchDeck_view_m->viewPitchDeck($this->session->userdata('team_id'));
 
-      $data = array(
-        'title'=>'Login'
+       $data = array(
+        'title'=>'Select Presentation',
+        'pitchdeck'=>$pitchdeck
       );
+       
+   
       $this->load->view('Default/main_header',$data);
       $this->load->view('Default/create_nav');
-      $this->load->view('interface');
+      $this->load->view('interface',$data);
       $this->load->view('Default/templatefooter');
     }
 
     function create(){
-      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
 
-      if($ideadetails!=false){
-        $data = array(
-        'title'=>'Create idea Generation Board',
-        'ideagen'=>$ideadetails
-        );
+      
+         $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
+
+        if($ideadetails!=false){
+          $data = array(
+          'title'=>'Create idea Generation Board',
+          'ideagen'=>$ideadetails
+          );
 
 
-        $this->load->view('Default/main_header',$data);
-        $this->load->view('Default/create_nav');
-        $this->load->view('create');
-        $this->load->view('Default/templatefooter');
+          $this->load->view('Default/main_header',$data);
+          $this->load->view('Default/create_nav');
+          $this->load->view('create');
+          $this->load->view('Default/templatefooter');
 
-      }
-      else{
-        $data2 = array(
-        'title'=>'Create idea Generation Board'
-        );
-        $this->load->view('Default/main_header',$data2);
-        $this->load->view('Default/create_nav');
-        $this->load->view('create');
-        $this->load->view('Default/templatefooter');
-        
-      }
+        }
+        else{
+          $data2 = array(
+          'title'=>'Create idea Generation Board'
+          );
+          $this->load->view('Default/main_header',$data2);
+          $this->load->view('Default/create_nav');
+          $this->load->view('create');
+          $this->load->view('Default/templatefooter');
+          
+        }
+
+
+
       
     }
 
@@ -239,12 +248,17 @@ class Web extends MY_Controller{
 
 
     function myPresentation(){
+
+      $pitchdeck = $this->PitchDeck_view_m->viewPitchDeck($this->session->userdata('team_id'));
+
        $data = array(
-        'title'=>'Select Template'
+        'title'=>'Select Template',
+        'pitchdeck'=>$pitchdeck
       );
+
       $this->load->view('Default/main_header',$data);
       $this->load->view('Default/create_nav');
-      $this->load->view('myPresentation');
+      $this->load->view('myPresentation',$data);
       $this->load->view('Default/templatefooter');
     }
 

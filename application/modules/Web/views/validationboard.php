@@ -49,14 +49,14 @@
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="criterion1" style = "resize: none;"  placeholder="example" disabled><?php if(isset($validation)){ echo $validation->solution_criteria;}?></textarea>
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize: none;"  placeholder="example" value="value="<?php if(isset($validation)){ echo $validation->solution_criteria;}?>"" disabled>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="discussion1" style = "resize: none;" placeholder="example" disabled><?php if(isset($validation)){ echo $validation->results;}?></textarea>
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion1" style = "resize: none;" placeholder="example" value="<?php if(isset($validation)){ echo $validation->results;}?>" disabled>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 190px; 
