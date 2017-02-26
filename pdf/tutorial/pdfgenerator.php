@@ -34,7 +34,7 @@ function Footer()
 
 
 $ideagen = ideagen($_GET['id']);
-$team = getteam($_GET['id']);
+$team = getteampitchdeck($_GET['id']);
 $valueprop = valueprop($_GET['id']);
 $bmc = bmc($_GET['id']);
 

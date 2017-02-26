@@ -1,12 +1,21 @@
 <?php
 
-class Web extends MY_Controller{
+class Presentation extends MY_Controller{
 
     function __construct(){
       parent::__construct();
 
-      $this->load->model('Web/PitchDeck_view_m');
-      $this->load->model('Web/Web_m');
+      $session = array(
+        'valuepropid'=>$this->session->tempdata('valuepropid'),
+        'ideaid'=>$this->session->tempdata('ideaid'),
+        'validid'=>$this->session->tempdata('validid'),
+        'bmcid'=>$this->session->tempdata('bmcid'),
+        'pitchdeckid'=>$this->session->tempdata('pitchdeckid')
+        )
+
+      $this->session->unset_tempdata($session);
+      $this->load->model('Presentation/PitchDeck_view_m');
+      $this->load->model('Presentation/Web_m');
       $this->load->helper('url'); 
       
     }
@@ -85,104 +94,113 @@ class Web extends MY_Controller{
       $this->load->view('Default/templatefooter');
     }
 
-    function create(){
+    function create($pitchdeckid){
 
       
-          $data2 = array(
-          'title'=>'Create idea Generation Board'
+         $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($pitchdeckid);
+
+          $data = array(
+          'title'=>'Create idea Generation Board',
+          'ideagen'=>$ideadetails,
+          'pitchdeckid'=>$pitchdeckid
           );
-          $this->load->view('Default/main_header',$data2);
+
+
+          $this->load->view('Default/main_header',$data);
           $this->load->view('Default/create_nav');
           $this->load->view('create');
-          $this->load->view('Default/templatefooter');
+          $this->load->view('presentationfooter');
+
+      
+
+
 
       
     }
 
-    function BMC(){
+    function BMC($pitchdeckid){
 
-      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
-      
-
-   
-
-        $data2 = array(
+      $bmcdetails = $this->PitchDeck_view_m->viewBMC($pitchdeckid);
+      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($pitchdeckid);
+     
+        $data = array(
         'title'=>'Create Business Model Canvass',
-        'ideagen'=>$ideadetails
+        'bmc'=>$bmcdetails,
+        'ideagen'=>$ideadetails,
+        'pitchdeckid'=>$pitchdeckid
         );
 
-        $this->load->view('Default/main_header',$data2);
+        $this->load->view('Default/main_header',$data);
         $this->load->view('Default/create_nav');
         $this->load->view('BMC');
-        $this->load->view('Default/templatefooter');
-      
+        $this->load->view('presentationfooter');
+
       
     }
 
 
-    function validationboard(){
-      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
+    function validationboard($pitchdeckid){
+      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($pitchdeckid);
+      $validationboard = $this->PitchDeck_view_m->viewValidationBoard($pitchdeckid);
+      
+     
+          $data = array(
+            'title'=>'Create Validation Board',
+            'validation'=>$validationboard,
+            'ideagen'=>$ideadetails,
+            'pitchdeckid'=>$pitchdeckid
+          );
+          $this->load->view('Default/main_header',$data);
+          $this->load->view('Default/create_nav');
+          $this->load->view('validationboard');
+          $this->load->view('presentationfooter');  
     
 
-      print_r($ideadetails);
-         // $data = array(
-         //    'title'=>'Create Validation Board',
-         //    'ideagen'=>$ideadetails
-         //  );
-
-
-         //  $this->load->view('Default/main_header',$data);
-         //  $this->load->view('Default/create_nav');
-         //  $this->load->view('validationboard',$data);
-         //  $this->load->view('Default/templatefooter');  
-     
-
     }
 
-     function valueprop(){
+     function valueprop($pitchdeckid){
 
-      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
+      $valuepropdetails = $this->PitchDeck_view_m->viewValueProp($pitchdeckid);
+      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($pitchdeckid);
       $team = $this->PitchDeck_view_m->viewTeam($this->session->userdata('team_id'));
       //print_r($valuepropdetails);
 
-
-         $data2 = array(
-        'title'=>'Create Value Proposition',
+         $data = array(
+        'title'=>'Update Value Proposition',
+        'valueprop'=>$valuepropdetails,
         'ideagen'=>$ideadetails,
-        'team'=>$team
+        'team'=>$team,
+        'pitchdeckid'=>$pitchdeckid
           );
-
-          $this->load->view('Default/main_header',$data2);
+          $this->load->view('Default/main_header',$data);
           $this->load->view('Default/create_nav');
           $this->load->view('valueprop');
-          $this->load->view('Default/templatefooter');
-
-
-    
-
+          $this->load->view('presentationfooter');
      
     }
 
-    function template(){
+    function template($pitchdeckid){
 
       $data = array(
-        'title'=>'Select Template'
+        'title'=>'Select Template',
+        'pitchdeckid'=>$pitchdeckid
       );
       $this->load->view('Default/templateheader',$data);
       $this->load->view('Default/create_nav');
       $this->load->view('template');
-      $this->load->view('Default/templatefooter');
+      $this->load->view('presentationfooter');
     }
 
-    function loading(){
+    function loading($pitchdeckid){
 
       $data = array(
         'title'=>'Just wait for a while !',
+        'pitchdeckid'=>$pitchdeckid
       );
       $this->load->view('Default/main_header',$data);
       $this->load->view('Default/create_nav');
       $this->load->view('loading');
-      $this->load->view('Default/templatefooter');
+      $this->load->view('presentationfooter');
    
     }
 
@@ -241,31 +259,15 @@ class Web extends MY_Controller{
 
 
 
-    function pitchdeck(){
+    function pitchdeck($pitchdeckid){
 
-        $success = $this->Web_m->addPitchdeck();
-
-        if($success){
-           header("Location: http://localhost/PitchItUp/powerpoint/Tests/02presentation.php?id=".$this->session->tempdata['pitchdeckid']);
+           header("Location: http://localhost/PitchItUp/powerpoint/Tests/mypresentation.php?id=".$pitchdeckid);
            exit;
-        }
-
-       
-         //  //load the download helper
-         //  $this->load->helper('download');
-         //  //set the textfile's content 
-         // $data = file_get_contents(base_url('02presentation.pptx'));
-         //  //set the textfile's name
-         //  $name = 'samplesir.pptx';
-         //  //use this function to force the session/browser to download the created file
-         //  force_download($name, $data);
-      
-        //$this->load->view('pitchdeck');
 
     }
 
     function Download(){
-            $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
+          $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
             $word1 = $ideadetails->solution;$arr1 = explode(' -',trim($word1)); if((sizeof($arr1)-1)>=0){ $solution = ucfirst($arr1[0]); }
 
             $this->load->helper('download');
@@ -280,7 +282,7 @@ class Web extends MY_Controller{
     }
 
     function DownloadProduct(){
-          $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
+          $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
             $word1 = $ideadetails->solution;$arr1 = explode(' -',trim($word1)); if((sizeof($arr1)-1)>=0){ $solution = ucfirst($arr1[0]); }
 
             $this->load->helper('download');

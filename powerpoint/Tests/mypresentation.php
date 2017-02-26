@@ -11,7 +11,7 @@ set_include_path(get_include_path() . PATH_SEPARATOR . '../Classes/');
 
 
 $ideagen = ideagen($_GET['id']);
-$team = getteam($_GET['id']);
+$team = getteampitchdeck($_GET['id']);
 $valueprop = valueprop($_GET['id']);
 $bmc = bmc($_GET['id']);
 
@@ -356,7 +356,7 @@ $textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '000000' ) );
 //echo date('H:i:s') . " Write to PowerPoint2007 format\n";
 $objWriter = PHPPowerPoint_IOFactory::createWriter($objPHPPowerPoint, 'PowerPoint2007');
 $objWriter->save($solution.".pptx");
-header("Location: http://localhost/PitchItUp/powerpoint/Tests/presentation.php?id=".$_GET['id']);
+header("Location: http://localhost/PitchItUp/powerpoint/Tests/mypresentationproduct.php?id=".$_GET['id']);
            
 
 

@@ -8,10 +8,10 @@
 		}
 
 
-		function viewIdeaGen($team_id){
+		function viewIdeaGen(){
 
-			$sql = 'select * from idea_genboard where team_id = ?';
-			$query = $this->db->query($sql,array($team_id));
+			$sql = 'select * from idea_genboard where idea_id = ?';
+			$query = $this->db->query($sql,array($this->session->tempdata('ideaid')));
 
 			if($query->num_rows()>0){
 				$row = $query->row();
@@ -53,9 +53,9 @@
 
 
 
-		function viewValidationBoard($team_id){
-			$sql = 'select * from validation_board where team_id = ?';
-			$pivot = $this->db->query($sql,array($team_id));
+		function viewValidationBoard(){
+			$sql = 'select * from validation_board where valid_id = ?';
+			$pivot = $this->db->query($sql,array($this->session->tempdata('valid_id')));
 
 			if($pivot->num_rows()>0){
 				$row = $pivot->row();

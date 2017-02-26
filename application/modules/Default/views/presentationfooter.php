@@ -55,27 +55,29 @@
 
         $('#ideagen').click(function(){
 
-
                 var problem = $('#problem').val();
                 var people = $('#people').val();
                 var behavior = $('#behavior').val();
                 var solution = $('#solution').val();
-                
+                var idea_id = $('#ideagen_id').val();
+                var pitchdeckid = $('#pitchdeckid').val();
+
                 var ideagen = {
                     'problem': problem,
                     'people' : people,
                     'behavior':behavior,
-                    'solution':solution
+                    'solution':solution,
+                    'idea_id' : idea_id
                 };
 
-                var url = "<?php echo base_url();?>Web/PitchDeck/addIdeaGen";
-                $.post(url,{data:ideagen},function(result){
-                    console.log(result);
-                });
+                    var url = "<?php echo base_url();?>Web/updatePitchDeck/updateIdeaGen/";
+                    $.post(url,{data:ideagen},function(result){
+                        console.log(result);
+                    });
 
-                 window.location.href = "<?php echo base_url()?>Web/validationboard";
-                 
-         
+                    window.location.href = "<?php echo base_url()?>Presentation/validationboard/"+pitchdeckid;
+                     
+           
     
          });
 
@@ -94,21 +96,18 @@
 
         $('#validationboard').click(function(){
 
-
-           
-
-            var cust_pivot1 = $('#cust1').val();
-            var cust_pivot2 = $('#cust2').val();
-            var cust_pivot3 = $('#cust3').val();
-            var cust_prob1 = $('#prob1').val();
-            var cust_prob2 = $('#prob2').val();
-            var cust_prob3 = $('#prob3').val();
-            var cust_solution1 = $('#solution1').val();
-            var cust_solution2 = $('#solution2').val();
-            var cust_solution3 = $('#solution3').val();
-            var risk_assump1 = $('#assump1').val();
-            var risk_assump2 = $('#assump2').val();
-            var risk_assump3 = $('#assump3').val();
+            var cust_pivot1 = $('#cust_pivot1').val();
+            var cust_pivot2 = $('#cust_pivot2').val();
+            var cust_pivot3 = $('#cust_pivot3').val();
+            var cust_prob1 = $('#cust_prob1').val();
+            var cust_prob2 = $('#cust_prob2').val();
+            var cust_prob3 = $('#cust_prob3').val();
+            var cust_solution1 = $('#cust_solution1').val();
+            var cust_solution2 = $('#cust_solution2').val();
+            var cust_solution3 = $('#cust_solution3').val();
+            var risk_assump1 = $('#risk_assump1').val();
+            var risk_assump2 = $('#risk_assump2').val();
+            var risk_assump3 = $('#risk_assump3').val();
             var criterion1 = $('#criterion1').val();
             var criterion2 = $('#criterion2').val();
             var criterion3 = $('#criterion3').val();
@@ -118,7 +117,8 @@
             var learning1 = $('#learning1').val();
             var learning2 = $('#learning2').val();
             var learning3 = $('#learning3').val();
-
+            var valid_id = $('#valid_id').val();
+            var pitchdeckid = $('#pitchdeckid').val();
 
             var validationboard = {
                 'cust_pivot1' : cust_pivot1,
@@ -141,22 +141,21 @@
                 'discussion3' : discussion3,
                 'learning1' : learning1,
                 'learning2' : learning2,
-                'learning3' : learning3
+                'learning3' : learning3,
+                'valid_id': valid_id
 
             };
 
-            //console.log(validationboard);
-            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
 
             $.post(url,{data:validationboard},function(result){
-                   if(result==1 || result == '1'){
-                    console.log(result);
-                  
-                }
-                
+                   console.log(result);
             });
-                window.location.href = "<?php echo base_url()?>Web/valueprop"; 
-          
+                window.location.href = "<?php echo base_url()?>Presentation/valueprop/"+pitchdeckid; 
+
+           
 
 
         });
@@ -188,6 +187,9 @@
                 var customer = $('#customer').val();
                 var substitutes = $('#substitutes').val();
 
+                var valueprop_id = $('#valueprop_id').val();
+                var pitchdeckid = $('#pitchdeckid').val();
+
                 var valueprop = {
                     'benefits':benefits,
                     'wants':wants,
@@ -198,17 +200,20 @@
                     'company':company,
                     'product':product,
                     'customer':customer,
-                    'substitutes':substitutes
+                    'substitutes':substitutes,
+                    'valueprop_id':valueprop_id
                 };
 
-                console.log(valueprop);
-                var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+                //console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValueProp"; 
 
                 $.post(url,{data:valueprop},function(result){
-                    console.log(result);
+                      console.log(result);
                 });
 
-                 window.location.href = "<?php echo base_url()?>Web/bmc";
+                  window.location.href = "<?php echo base_url()?>Presentation/bmc/"+pitchdeckid;
+
+          
 
 
             
@@ -227,7 +232,6 @@
 
         $('#bmc').click(function(){
 
-
                     var resources = $('#resources').val();
                     var channels = $('#channels').val();
                     var structure = $('#structure').val();
@@ -237,7 +241,8 @@
                     var proposition = $('#proposition').val();
                     var relationship = $('#relationship').val();
                     var segment = $('#segment').val();
-
+                    var bmc_id = $('#bmc_id').val();
+                    var pitchdeckid = $('#pitchdeckid').val();
                     var bmc = {
                         'partners': partners,
                         'activities' : activities,
@@ -247,16 +252,18 @@
                         'resources': resources,
                         'channels' : channels,
                         'structure': structure,
-                        'streams': streams
+                        'streams': streams,
+                        'bmc_id': bmc_id
                     };
 
-                    var url = "<?php echo base_url();?>Web/PitchDeck/addBMC";
+                    // console.log(bmc);
+                    var url = "<?php echo base_url();?>Web/updatePitchDeck/updateBMC";
                     $.post(url,{data:bmc},function(result){
-                         console.log(result);
+                    console.log(result);
                     });
-                    window.location.href = "<?php echo base_url()?>Web/loading";
+                    window.location.href = "<?php echo base_url()?>Presentation/Presentation/loading/"+pitchdeckid;
 
-             
+
 
            
        

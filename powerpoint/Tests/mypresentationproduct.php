@@ -11,7 +11,7 @@ set_include_path(get_include_path() . PATH_SEPARATOR . '../Classes/');
 
 
 $ideagen = ideagen($_GET['id']);
-$team = getteam($_GET['id']);
+$team = getteampitchdeck($_GET['id']);
 $valueprop = valueprop($_GET['id']);
 $bmc = bmc($_GET['id']);
 
@@ -88,24 +88,13 @@ $currentSlide = problemSlide($objPHPPowerPoint); // local function
 // Create a shape (text)
 //echo date('H:i:s') . " Create a shape (rich text)\n";
 $shape = $currentSlide->createRichTextShape();
-$shape->setHeight(100);
-$shape->setWidth(930);
-$shape->setOffsetX(100);
-$shape->setOffsetY(250);
-$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
-
-$textRun = $shape->createTextRun('What is the Problem ?');
-$textRun->getFont()->setBold(true);
-$textRun->getFont()->setSize(48);
-$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '0000000' ) );
-
 // Create a shape (text)
 //echo date('H:i:s') . " Create a shape (rich text)\n";
 $shape = $currentSlide->createRichTextShape();
 $shape->setHeight(600);
-$shape->setWidth(930);
-$shape->setOffsetX(100);
-$shape->setOffsetY(400);
+$shape->setWidth(550);
+$shape->setOffsetX(610);
+$shape->setOffsetY(200);
 $shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
 
 $textRun = $shape->createTextRun('- '.$problem);
@@ -127,35 +116,21 @@ $currentSlide = solutionSlide($objPHPPowerPoint); // local function
 // Create a shape (text)
 //echo date('H:i:s') . " Create a shape (rich text)\n";
 $shape = $currentSlide->createRichTextShape();
-$shape->setHeight(100);
-$shape->setWidth(930);
-$shape->setOffsetX(50);
-$shape->setOffsetY(200);
-$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
-
-$textRun = $shape->createTextRun('Our Solution ');
-$textRun->getFont()->setBold(true);
-$textRun->getFont()->setSize(48);
-$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '0000000' ) );
-
-// Create a shape (text)
-//echo date('H:i:s') . " Create a shape (rich text)\n";
-$shape = $currentSlide->createRichTextShape();
 $shape->setHeight(600);
-$shape->setWidth(930);
-$shape->setOffsetX(50);
+$shape->setWidth(850);
+$shape->setOffsetX(100);
 $shape->setOffsetY(400);
 $shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
 
 $textRun = $shape->createTextRun("\"".$solution."\"");
 $textRun->getFont()->setBold(true);
-$textRun->getFont()->setSize(42);
+$textRun->getFont()->setSize(40);
 $textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '0000000' ) );
 
 $shape->createBreak();
 
 $textRun = $shape->createTextRun(ucfirst($ideagen['solution']) );
-$textRun->getFont()->setSize(36);
+$textRun->getFont()->setSize(26);
 $textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '0000000' ) );
 
 
@@ -169,7 +144,7 @@ $shape = $currentSlide->createRichTextShape();
 $shape->setHeight(100);
 $shape->setWidth(930);
 $shape->setOffsetX(30);
-$shape->setOffsetY(350);
+$shape->setOffsetY(380);
 $shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
 
 $textRun = $shape->createTextRun('Benefits :');
@@ -198,7 +173,7 @@ $shape = $currentSlide->createRichTextShape();
 $shape->setHeight(100);
 $shape->setWidth(930);
 $shape->setOffsetX(700);
-$shape->setOffsetY(350);
+$shape->setOffsetY(380);
 $shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
 
 $textRun = $shape->createTextRun('Features :');
@@ -220,146 +195,13 @@ $textRun->getFont()->setSize(36);
 $textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '0000000' ) );
 
 
-// Create templated slide
-//echo date('H:i:s') . " Create templated slide\n";
-$currentSlide = marketSlide($objPHPPowerPoint); // local function
-
-// Create a shape (text)
-//echo date('H:i:s') . " Create a shape (rich text)\n";
-$shape = $currentSlide->createRichTextShape();
-$shape->setHeight(100);
-$shape->setWidth(930);
-$shape->setOffsetX(30);
-$shape->setOffsetY(50);
-$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
-
-$textRun = $shape->createTextRun('The Market ');
-$textRun->getFont()->setBold(true);
-$textRun->getFont()->setSize(36);
-$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( 'FFFFFFFF' ) );
-
-
-// Create a shape (text)
-//echo date('H:i:s') . " Create a shape (rich text)\n";
-$shape = $currentSlide->createRichTextShape();
-$shape->setHeight(100);
-$shape->setWidth(930);
-$shape->setOffsetX(800);
-$shape->setOffsetY(200);
-$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
-
-$textRun = $shape->createTextRun('Channels :');
-$textRun->getFont()->setBold(true);
-$textRun->getFont()->setSize(36);
-$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( 'FFFFFFFF' ) );
-
-// Create a shape (text)
-//echo date('H:i:s') . " Create a shape (rich text)\n";
-$shape = $currentSlide->createRichTextShape();
-$shape->setHeight(600);
-$shape->setWidth(930);
-$shape->setOffsetX(800);
-$shape->setOffsetY(300);
-$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
-
-$textRun = $shape->createTextRun('- '.$bmc['channels']);
-$textRun->getFont()->setSize(25);
-$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( 'FFFFFFFF' ) );
-
-$currentSlide = workSlide($objPHPPowerPoint); // local function
-
-// Create a shape (text)
-//echo date('H:i:s') . " Create a shape (rich text)\n";
-$shape = $currentSlide->createRichTextShape();
-$shape->setHeight(100);
-$shape->setWidth(930);
-$shape->setOffsetX(30);
-$shape->setOffsetY(500);
-$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
-
-$textRun = $shape->createTextRun('- '.$bmc['value_proposition']);
-$textRun->getFont()->setSize(48);
-$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( 'FFFFFFFF' ) );
-
-
-
-$currentSlide = streamsSlide($objPHPPowerPoint); // local function
-// Create a shape (text)
-//echo date('H:i:s') . " Create a shape (rich text)\n";
-$shape = $currentSlide->createRichTextShape();
-$shape->setHeight(100);
-$shape->setWidth(930);
-$shape->setOffsetX(330);
-$shape->setOffsetY(50);
-$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_RIGHT );
-
-$textRun = $shape->createTextRun('How to make money ?');
-$textRun->getFont()->setSize(36);
-$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( 'FFFFFFFF' ) );
-
-$shape = $currentSlide->createRichTextShape();
-$shape->setHeight(100);
-$shape->setWidth(930);
-$shape->setOffsetX(10);
-$shape->setOffsetY(300);
-$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_RIGHT );
-
-$textRun = $shape->createTextRun('Revenue Streams :');
-$textRun->getFont()->setBold(true);
-$textRun->getFont()->setSize(36);
-$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '000000' ) );
-
-// Create a shape (text)
-//echo date('H:i:s') . " Create a shape (rich text)\n";
-$shape = $currentSlide->createRichTextShape();
-$shape->setHeight(600);
-$shape->setWidth(930);
-$shape->setOffsetX(-80);
-$shape->setOffsetY(400);
-$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_RIGHT );
-
-$textRun = $shape->createTextRun('- '.$bmc['revenue_streams']);
-$textRun->getFont()->setSize(28);
-$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '000000' ) );
-
-$currentSlide = competitorSlide($objPHPPowerPoint); // local function
-
-// Create a shape (text)
-//echo date('H:i:s') . " Create a shape (rich text)\n";
-$shape = $currentSlide->createRichTextShape();
-$shape->setHeight(100);
-$shape->setWidth(930);
-$shape->setOffsetX(30);
-$shape->setOffsetY(10);
-$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
-
-$textRun = $shape->createTextRun('Competitors Analysist: ');
-$textRun->getFont()->setBold(true);
-$textRun->getFont()->setSize(36);
-$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '000000' ) );
-
-// Create a shape (text)
-//echo date('H:i:s') . " Create a shape (rich text)\n";
-$shape = $currentSlide->createRichTextShape();
-$shape->setHeight(100);
-$shape->setWidth(930);
-$shape->setOffsetX(60);
-$shape->setOffsetY(80);
-$shape->getAlignment()->setHorizontal( PHPPowerPoint_Style_Alignment::HORIZONTAL_LEFT );
-
-$textRun = $shape->createTextRun('- '.$valueprop['substitutes']);
-$textRun->getFont()->setSize(28);
-$textRun->getFont()->setColor( new PHPPowerPoint_Style_Color( '000000' ) );
 
 
 // Save PowerPoint 2007 file
 //echo date('H:i:s') . " Write to PowerPoint2007 format\n";
 $objWriter = PHPPowerPoint_IOFactory::createWriter($objPHPPowerPoint, 'PowerPoint2007');
-$objWriter->save($solution.".pptx");
-header("Location: http://localhost/PitchItUp/powerpoint/Tests/presentation.php?id=".$_GET['id']);
-           
-
-
+$objWriter->save($solution."product.pptx");
+header("Location: http://localhost/PitchItUp/Presentation/template/".$_GET['id']);
         
 // Echo memory peak usage
 //echo date('H:i:s') . " Peak memory usage: " . (memory_get_peak_usage(true) / 1024 / 1024) . " MB\r\n";
@@ -377,10 +219,10 @@ header("Location: http://localhost/PitchItUp/powerpoint/Tests/presentation.php?i
  */
 function createTemplatedSlide(PHPPowerPoint $objPHPPowerPoint)
 {
-	// Create slide
-	$slide = $objPHPPowerPoint->createSlide();
-	
-	// Add background image
+    // Create slide
+    $slide = $objPHPPowerPoint->createSlide();
+    
+    // Add background image
     $shape = $slide->createDrawingShape();
     $shape->setName('Background');
     $shape->setDescription('Background');
@@ -404,7 +246,7 @@ function problemSlide(PHPPowerPoint $objPHPPowerPoint)
     $shape = $slide->createDrawingShape();
     $shape->setName('Background');
     $shape->setDescription('Background');
-    $shape->setPath('./images/problem.png');
+    $shape->setPath('./images/problems.png');
     $shape->setWidth(950);
     $shape->setHeight(720);
     $shape->setOffsetX(0);
@@ -426,7 +268,7 @@ function solutionSlide(PHPPowerPoint $objPHPPowerPoint)
     $shape = $slide->createDrawingShape();
     $shape->setName('Background');
     $shape->setDescription('Background');
-    $shape->setPath('./images/solution.png');
+    $shape->setPath('./images/solutions.png');
     $shape->setWidth(950);
     $shape->setHeight(720);
     $shape->setOffsetX(0);
@@ -447,7 +289,7 @@ function introductionSLide(PHPPowerPoint $objPHPPowerPoint)
     $shape = $slide->createDrawingShape();
     $shape->setName('Background');
     $shape->setDescription('Background');
-    $shape->setPath('./images/introduction.png');
+    $shape->setPath('./images/team.png');
     $shape->setWidth(950);
     $shape->setHeight(720);
     $shape->setOffsetX(0);
@@ -469,7 +311,7 @@ function benefitsSlide(PHPPowerPoint $objPHPPowerPoint)
     $shape = $slide->createDrawingShape();
     $shape->setName('Background');
     $shape->setDescription('Background');
-    $shape->setPath('./images/benefits.png');
+    $shape->setPath('./images/benefit.png');
     $shape->setWidth(950);
     $shape->setHeight(720);
     $shape->setOffsetX(0);

@@ -1,19 +1,17 @@
-
 <?php
 
-
-	class PitchDeck extends MY_Controller{
+	class updatePitchDeck extends MY_Controller{	
 
 		function __construct(){
-
 			parent::__construct();
-
-			$this->load->model('PitchDeck_m');
+		
+			$this->load->model('updatePitchDeck_m');
 		}
 
 
 
-		function addIdeaGen(){
+
+		function updateIdeaGen(){
 
 			$ideagen = $this->input->post('data');
 
@@ -21,43 +19,46 @@
 				'problem'=>$ideagen['problem'],
 				'people'=>$ideagen['people'],
 				'behavior'=>$ideagen['behavior'],
-				'solution'=>$ideagen['solution']
+				'solution'=>$ideagen['solution'],
+				'idea_id'=>$ideagen['idea_id']
 				);
 
-			// echo json_encode($details);
-			$success = $this->PitchDeck_m->addIdeaGen($details);
+			//echo json_encode($details);
+			$success = $this->updatePitchDeck_m->updateIdeaGen($details);
 
 			if($success){
 				redirect('Web/BMC');
 			}
 		}
-		
 
-		function addBMC(){
 
-			$ideagen = $this->input->post('data');
+		function updateBMC(){
 
-			$details = array(
-				'partners'=>$ideagen['partners'],
-				'activities'=>$ideagen['activities'],
-				'proposition'=>$ideagen['proposition'],
-				'relationship'=>$ideagen['relationship'],
-				'segment'=>$ideagen['segment'],
-				'resources'=>$ideagen['resources'],
-				'channels'=>$ideagen['channels'],
-				'structure'=>$ideagen['structure'],
-				'streams'=>$ideagen['streams']
-				);
+			$bmc = $this->input->post('data');
 
 			
-			$success = $this->PitchDeck_m->addBMC($details);
+			$details = array(
+				'partners'=>$bmc['partners'],
+				'activities'=>$bmc['activities'],
+				'proposition'=>$bmc['proposition'],
+				'relationship'=>$bmc['relationship'],
+				'segment'=>$bmc['segment'],
+				'resources'=>$bmc['resources'],
+				'channels'=>$bmc['channels'],
+				'structure'=>$bmc['structure'],
+				'streams'=>$bmc['streams'],
+				'bmc_id'=>$bmc['bmc_id']
+				);
 
-			if($success){
-				redirect('Web/validationboard');
-			}
+			$success = $this->updatePitchDeck_m->updateBMC($details);
+			//echo json_encode($success);
+			echo $success;
+
 		}
 
-		function addValueProp(){
+
+
+		function updateValueProp(){
 
 			$valueprop = $this->input->post('data');
 
@@ -71,19 +72,21 @@
 				'company'=>$valueprop['company'],
 				'product'=>$valueprop['product'],
 				'ideal_cust'=>$valueprop['customer'],
-				'substitutes'=>$valueprop['substitutes']
+				'substitutes'=>$valueprop['substitutes'],
+				'valueprop_id'=>$valueprop['valueprop_id']
 				);
 
+			//echo json_encode($details);
 
-			
-			$success = $this->PitchDeck_m->addValueProp($details);
-			echo $success;
-			// if($success){
-			// 	redirect('Web/template');
-			// }
+			$success = $this->updatePitchDeck_m->updateValueProp($details);
+
+			if($success){
+				redirect('Web/template');
+			}
 		}
 
-		function addValidationBoard(){
+
+		function updateValidationBoard(){
 
 			$validationboard = $this->input->post('data');
 
@@ -108,14 +111,20 @@
 							'risk_assumpt3' =>$validationboard['risk_assump3'],
 							'solution_criteria3' => $validationboard['criterion3'],
 							'results3' => $validationboard['discussion3'],
-							'learnings3' => $validationboard['learning3']           
+							'learnings3' => $validationboard['learning3'],
+							'valid_id'=> $validationboard['valid_id']           
 				);
 
-			 //echo json_encode($details);
-			$success = $this->PitchDeck_m->addValidationBoard($details);
+			//echo json_encode($details);
+			$success = $this->updatePitchDeck_m->updateValidationBoard($details);
 
-			echo $success;
+			if($success){
+				redirect('Web/validationboard');
+			}
+
 		}
+		
+
 
 	}
 

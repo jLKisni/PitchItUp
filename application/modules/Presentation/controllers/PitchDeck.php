@@ -71,7 +71,8 @@
 				'company'=>$valueprop['company'],
 				'product'=>$valueprop['product'],
 				'ideal_cust'=>$valueprop['customer'],
-				'substitutes'=>$valueprop['substitutes']
+				'substitutes'=>$valueprop['substitutes'],
+				'team_id'=>$this->session->userdata('team_id')
 				);
 
 

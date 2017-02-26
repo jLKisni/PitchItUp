@@ -2,6 +2,8 @@
      <div class="header-content">
           <div class="header-content-inner">
           	<form>
+			<input type="hidden" id="bmc_id" value="<?php if(isset($bmc)){ echo $bmc->bmc_id;}else{echo 0;}?>"/>
+			<input type="hidden" id="pitchdeckid" value="<?php if(isset($pitchdeckid)){ echo $pitchdeckid;}else{echo 0;}?>"/>
 			
            <div class="col-sm-4 text-center">
                    
@@ -29,7 +31,7 @@
 					<div class="form-group">
 					  <label for="Value Proposition" data-toggle="tooltip" data-placement="bottom" title = "This shows the aspects that the product meets regarding user needs. It also makes it possible to focus our product on issues such as whether the product will be free, low cost, high end or if it will have an attractive design.">
 					  <font color="Black">Value Proposition</font></label>
-					  <textarea class="form-control" rows="13" id="proposition" style = "resize: none;"  placeholder="example" ></textarea>
+					  <textarea class="form-control" rows="13" id="proposition" style = "resize: none;"  placeholder="example" disabled><?php if(isset($bmc)){echo $bmc->value_proposition;}?></textarea>
 					</div>
 				</div>
 
@@ -38,7 +40,7 @@
 					<div class="form-group">
 					  <label for="Channels" data-toggle="tooltip" data-placement="bottom" title = "It deals with the methods and mechanisms by which the value proposition (product) will be sold or supplied to customers.">
 					  <font color="Black">Channels</font></label>
-					  <textarea class="form-control" rows="5" id="channels" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="5" id="channels" style = "resize: none;"  placeholder="example" disabled><?php if(isset($bmc)){echo $bmc->channels;}?></textarea>
 					</div>
 				</div>
 
@@ -47,7 +49,7 @@
 					<div class="form-group">
 					  <label for="Customer Relationship" data-toggle="tooltip" data-placement="bottom" title = "This shows how the company will interact with customers and how it will influence them.">
 					  <font color="Black">Customer Relationship</font></label>
-					  <textarea class="form-control" rows="5" id="relationship" style = "resize: none;" placeholder="example" disabled ></textarea>
+					  <textarea class="form-control" rows="5" id="relationship" style = "resize: none;" placeholder="example" disabled ><?php if(isset($bmc)){echo $bmc->cust_relationship;}?></textarea>
 					</div>
 				</div>
 
@@ -56,7 +58,7 @@
 					<div class="form-group">
 					  <label for="Revenue Streams" data-toggle="tooltip" data-placement="bottom" title = "This deals with everything related to the way the company manages to convert its value proposition into revenues. Direct selling is only one option, as there are other revenue strategies, such as the freemium model, in-app (for applications), etc.">
 					  <font color="Black">Revenue Streams</font></label>
-					  <textarea class="form-control" rows="4" id="streams" style = "resize: none;" placeholder="example"  disabled></textarea>
+					  <textarea class="form-control" rows="4" id="streams" style = "resize: none;" placeholder="example"  disabled><?php if(isset($bmc)){echo $bmc->revenue_streams;}?></textarea>
 					</div>
 				</div>
 
@@ -65,7 +67,7 @@
 					<div class="form-group">
 					  <label for="Key Resources" data-toggle="tooltip" data-placement="bottom" title = "Study of the basic and essential resources for the business model to be able to run smoothly.">
 					  <font color="Black">Key Resources</font></label>
-					  <textarea class="form-control" rows="5" id="resources" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="5" id="resources" style = "resize: none;"  placeholder="example" disabled><?php if(isset($bmc)){echo $bmc->key_sources;}?></textarea>
 					</div>
 				</div>
 
@@ -74,7 +76,7 @@
 					<div class="form-group">
 					  <label for="Key Activities" data-toggle="tooltip" data-placement="bottom" title = "Actions to take within the company to ensure that the value proposition can be delivered to the customer in the best way possible.">
 					  <font color="Black">Key Activities</font></label>
-					  <textarea class="form-control" rows="5" id="activities" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="5" id="activities" style = "resize: none;"  placeholder="example" disabled><?php if(isset($bmc)){echo $bmc->key_activities;}?></textarea>
 					</div>W
 				</div>
 
@@ -83,7 +85,7 @@
 					<div class="form-group">
 					  <label for="Key Partners" data-toggle="tooltip" data-placement="bottom" title = "Associations that our company can make with outside companies to enhance the value proposition and to ensure that it reaches the consumer with full guarantees.">
 					  <font color="Black">Key Partners</font></label>
-					  <textarea class="form-control" rows="13" id="partners" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="13" id="partners" style = "resize: none;"  placeholder="example" disabled><?php if(isset($bmc)){echo $bmc->key_partners;}?></textarea>
 					</div>
 				</div>
 
@@ -92,7 +94,7 @@
 					<div class="form-group">
 					  <label for="Cost Structure" data-toggle="tooltip" data-placement="bottom" title = "In this last section we talk about creating a cost structure (fixed and variable) to allow the new company to develop its business viably.">
 					  <font color="Black">Cost Structure</font></label>
-					  <textarea class="form-control" rows="4" id="structure" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="4" id="structure" style = "resize: none;"  placeholder="example" disabled><?php if(isset($bmc)){echo $bmc->cost_structures;}?></textarea>
 					</div>
 				</div>
 
@@ -101,7 +103,7 @@
    top: 14px; width: 250px;" >
 					<div class="form-group">
 					<!--   <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Key Partners</font></label> -->
-					  <input class="form-control" rows="1" id="comment" style = "resize: none; text-align:center;" value="<?php if(isset($ideagen)){ $word = $ideagen->solution;$arr = explode(' -',trim($word));echo ucfirst($arr[0]); }else{echo '';}?>" disabled>
+					  <input class="form-control" rows="1" id="comment" style = "resize: none; text-align:center;" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 
@@ -123,12 +125,12 @@
 
 <div style="position:absolute; left: 1000px;
    top: 250px; width: 200px;"> 
-				<button  type="button" style="color:black; width: 100px; height:50px; display:none;" id="bmc" >Generate Pitchdeck</button>
+				<button  type="button" style="color:black; width: 100px; height:50px; display:none;" id="bmc" >Generate Pitch Deck</button>
 			</div>
 
 			<div style="position:absolute; right: 330px;
    top: 250px; width: 200px;"> 
-				<button  type="button"  onclick="history.go(-1); return false;"  style="color:black; width: 100px; height:50px; ">Previous</button>
+				<button  type="button"  onclick="window.location.href='<?php echo base_url();?>Presentation/valueprop/<?php echo $pitchdeckid;?>'"  style="color:black; width: 100px; height:50px; ">Previous</button>
 			</div>
 	</div>
 

@@ -2,6 +2,9 @@
         <div class="header-content">
             <div class="header-content-inner">
 <div class="header-content-inner">
+            <input type="hidden" id="valid_id" value="<?php if(isset($validation)){echo $validation->valid_id;}else{echo 0;}?>">   
+			<input type="hidden" id="pitchdeckid" value="<?php if(isset($pitchdeckid)){ echo $pitchdeckid;}else{echo 0;}?>"/>
+			
 		<!--butangig code dre para sa validation board-->
 		
             <div class="col-sm-4 text-center">
@@ -20,7 +23,7 @@
                     <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="cust1" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }else{echo '';}?>" disabled/>
+					  <input class="form-control" id="cust1" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?>" disabled>
 					  																						
 					</div>
 				</div>
@@ -28,40 +31,40 @@
 				   <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					 <textarea class="form-control" id="prob1" style = "resize: none; text-align:center; height:54px" disabled><?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }else{echo '';}?></textarea>
+					 <textarea class="form-control" id="prob1" style = "resize: none; text-align:center; height:54px" disabled><?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?></textarea>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" id="solution1" style = "resize: none; text-align:center; height:54px" disabled><?php if(isset($ideagen)){$word = $ideagen->solution;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }else{echo '';}?> </textarea>
+					  <textarea class="form-control" id="solution1" style = "resize: none; text-align:center; height:54px" disabled><?php if(isset($ideagen)){$word = $ideagen->solution;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }?> </textarea>
 					</div>
 				</div>
 
 		     <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump1" style = "resize: none;" placeholder="example"  ></textarea>
+					  <textarea class="form-control" rows="2" id="assump1" style = "resize: none;" placeholder="example" disabled ><?php if(isset($validation)){ echo $validation->risk_assumpt;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize: none;"  placeholder="example" />
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize: none;"  placeholder="example" value="value="<?php if(isset($validation)){ echo $validation->solution_criteria;}?>"" disabled>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion1" style = "resize: none;" placeholder="example"  />
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion1" style = "resize: none;" placeholder="example" value="<?php if(isset($validation)){ echo $validation->results;}?>" disabled>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning1" style = "resize: none;" placeholder="example" ></textarea>
+					  <textarea class="form-control" rows="2" id="learning1" style = "resize: none;" placeholder="example" disabled><?php if(isset($validation)){ echo $validation->learnings;}?></textarea>
 					</div>
 				</div>
 
@@ -69,47 +72,47 @@
   <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="cust2" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);} }else{echo '';}?>" disabled>
+					  <input class="form-control" id="cust2" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);} }?>" disabled>
 					</div>
 				</div>
 
 				   <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					   <textarea class="form-control" id="prob2" style = "resize: none; text-align:center; height:54px" disabled><?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);}  }else{echo '';}?></textarea>
+					   <textarea class="form-control" id="prob2" style = "resize: none; text-align:center; height:54px" disabled><?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);}  }?></textarea>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" id="solution2" style = "resize: none; text-align:center; height:54px"  disabled><?php if(isset($ideagen)){$word = $ideagen->solution;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);}  }else{echo '';}?></textarea>
+					  <textarea class="form-control" id="solution2" style = "resize: none; text-align:center; height:54px" value="" disabled><?php if(isset($ideagen)){$word = $ideagen->solution;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=1){echo ucfirst($arr[1]);}  }?></textarea>
 					</div>
 				</div>
 
 		     <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump2" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="2" id="assump2" style = "resize: none;"  placeholder="example" disabled><?php if(isset($validation)){ echo $validation->risk_assumpt2;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="criterion2" style = "resize: none;" placeholder="example" disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="criterion2" style = "resize: none;" placeholder="example" disabled ><?php if(isset($validation)){ echo $validation->solution_criteria2;}?></textarea>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="discussion2" style = "resize: none;" placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="2" id="discussion2" style = "resize: none;" placeholder="example" disabled><?php if(isset($validation)){ echo $validation->results2;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning2" style = "resize: none;" placeholder="example" disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="learning2" style = "resize: none;" placeholder="example" disabled ><?php if(isset($validation)){ echo $validation->learnings2;}?></textarea>
 					</div>
 				</div>
 
@@ -118,46 +121,46 @@
   <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 128px; width: 175px; " >
 					<div class="form-group">
-					  <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);} }else{echo '';}?>" disabled>
+					  <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);} }?>" disabled>
 					</div>
 				</div>
 
 				   <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 186px; width: 175px; " >
 					<div class="form-group">
-					   <textarea class="form-control" id="prob3" style = "resize: none; text-align:center; height:54px"  disabled><?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);} }else{echo '';}?></textarea>
+					   <textarea class="form-control" id="prob3" style = "resize: none; text-align:center; height:54px" value="" disabled><?php if(isset($ideagen)){$word = $ideagen->problem;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);} }?></textarea>
 					</div>
 				</div>
 
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 244px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" id="solution3" style = "resize: none; text-align:center; height:54px"  disabled><?php if(isset($ideagen)){$word = $ideagen->solution;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);}  }else{echo '';}?></textarea></div>
+					  <textarea class="form-control" id="solution3" style = "resize: none; text-align:center; height:54px" value="" disabled><?php if(isset($ideagen)){$word = $ideagen->solution;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=2){echo ucfirst($arr[2]);}  }?></textarea></div>
 				</div>
 
 		     <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump3" style = "resize: none;" placeholder="example" disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="assump3" style = "resize: none;" placeholder="example" disabled ><?php if(isset($validation)){ echo $validation->risk_assumpt3;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="criterion3" style = "resize: none;" placeholder="example" disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="criterion3" style = "resize: none;" placeholder="example" disabled ><?php if(isset($validation)){ echo $validation->solution_criteria3;}?></textarea>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="discussion3" style = "resize: none;"  placeholder="example"disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="discussion3" style = "resize: none;"  placeholder="example"disabled ><?php if(isset($validation)){ echo $validation->results3;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning3" style = "resize: none;"  placeholder="example"disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="learning3" style = "resize: none;"  placeholder="example"disabled ><?php if(isset($validation)){ echo $validation->learnings3;}?></textarea>
 					</div>
 				</div>
 
@@ -166,6 +169,7 @@
    top: 128px; width: 175px; " >
 					<div class="form-group">
 						<textarea class="form-control" rows="2" id="comment" style = "resize: none;" disabled ></textarea>
+					    <!-- <input class="form-control" id="cust3" style = "resize: none; text-align:center; height:54px" value="<?php if(isset($ideagen))$word = $ideagen->people;$arr = explode(' ',trim($word));echo ucfirst($arr[3]); ?>" disabled> -->
 					</div>
 				</div>
 
@@ -269,7 +273,7 @@
    top: 15px; width: 220px; " >
 					<div class="form-group">
 					   <font color="Black">Startup Idea </font>
-					  	 <input class="form-control" rows="1" id="comment" style = "resize: none; text-align:center;" value="<?php if(isset($ideagen)){ $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); }else{ echo '';}?>" disabled>
+					  					  <input class="form-control" rows="1" id="comment" style = "resize: none; text-align:center;" value="<?php $word = $ideagen->solution;$arr = explode(' ',trim($word));echo ucfirst($arr[0]); ?>" disabled>
 					</div>
 				</div>
 
@@ -277,7 +281,7 @@
    top: 15px; width: 100px; " >
 					<div class="form-group">
 					<font color="Black">Stage#</font>
-					<input type="number" name="stage" min="1" max="5"class="form-control" rows="1" id="stage" style = "resize: none;" placeholder="1"><?php if(isset($validation)){ echo $validation->stage;}else{echo 0;}?>
+					<input type="number" name="stage" min="1" max="5"class="form-control" rows="1" id="stage" style = "resize: none;" placeholder="1"><?php if(isset($validation)){ echo $validation->stage;}?>
 					  <!-- <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea> -->
 					</div>
 				</div>
@@ -295,7 +299,7 @@
 
 	<div style="position:absolute; right: 330px;
    top: 250px; width: 200px;"> 
-				<button  type="button"  onclick="history.go(-1); return false;" style="color:black; width: 100px; height:50px;">Previous</button>
+				<button  type="button"  onclick="window.location.href='<?php echo base_url();?>Presentation/create/<?php echo $pitchdeckid;?>'" style="color:black; width: 100px; height:50px;">Previous</button>
 			</div>
 
 	</div>

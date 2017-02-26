@@ -58,12 +58,6 @@ function addPitchdeck(){
       $query = $this->db->query($sql,array($this->session->tempdata('valuepropid'),$this->session->tempdata('ideaid'),$this->session->tempdata('validid'),$this->session->tempdata('bmcid'),$this->session->userdata('team_id')));
 
       if($query){
-
-         $session = array(
-                  'pitchdeckid'=>$this->db->insert_id()
-                );
-
-                $this->session->set_tempdata($session);
         return true;
       }
       else{
