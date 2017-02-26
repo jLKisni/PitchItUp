@@ -448,17 +448,25 @@ window.onload = function (){
 			
 			var criteria = $('#criterion1').val();
 			var discussion = $('#discussion1').val();
+			var average1 = criteria / 2;
+
 
 			//alert(ParseInt(criteria));
-			if(parseInt(criteria)>parseInt(discussion)){
+			if(parseInt(discussion)>=average1){
 			 $('#cust2').prop("disabled",false);
+			 $('#prob2').prop("disabled",false);
+			$('#solution2').prop("disabled",false);
+			$('#assump2').prop("disabled",false);
+			$('#criterion2').prop("disabled",false);
+			$('#discussion2').prop("disabled",false);
+			$('#learning2').prop("disabled",false);
 			}
-			// else{
-			// 		alert('Need to pivot ');
-			// 		$('#criterion1').val('');
-			// 		$('#discussion1').val('');
-			// 		$('#criterion1').focus();
-			// 	}
+			else{
+					alert('Need to pivot ');
+					$('#criterion1').val('');
+					$('#discussion1').val('');
+					$('#criterion1').focus();
+				}
 			 });
 
 		$('#cust2').on('change',function(){
@@ -476,11 +484,26 @@ window.onload = function (){
 			
 			var criteria = $('#criterion2').val();
 			var discussion = $('#discussion2').val();
+			var average2 = criteria / 2;
 
 			//alert(ParseInt(criteria));
-			if(parseInt(criteria)>parseInt(discussion)){
+			if(parseInt(discussion)>=average2){
 			 $('#cust3').prop("disabled",false);
-				}
+			$('#prob3').prop("disabled",false);
+			$('#solution3').prop("disabled",false);
+			$('#assump3').prop("disabled",false);
+			$('#criterion3').prop("disabled",false);
+			$('#discussion3').prop("disabled",false);
+			$('#learning3').prop("disabled",false);
+
+			}
+			else{
+
+				alert('Need to pivot ');
+					$('#criterion2').val('');
+					$('#discussion2').val('');
+					$('#criterion2').focus();
+			}
 			 });
 
 		$('#cust3').on('change',function(){
@@ -499,10 +522,16 @@ window.onload = function (){
 			
 			var criteria = $('#criterion3').val();
 			var discussion = $('#discussion3').val();
-
+			var average2 = criteria / 2;
 			//alert(ParseInt(criteria));
-			if(parseInt(criteria)>parseInt(discussion)){
-			 $('#cust4').prop("disabled",false);
+			if(parseInt(discussion)>=average1){
+			
+			}
+			else{
+				alert('Need to pivot ');
+					$('#criterion3').val('');
+					$('#discussion3').val('');
+					$('#criterion3').focus();
 			}
 
 			 });

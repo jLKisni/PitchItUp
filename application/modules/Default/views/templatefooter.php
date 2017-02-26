@@ -1,7 +1,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-
+    <script src="<?php echo base_url();?>assets/js/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>assets/js/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="<?php echo base_url();?>assets/vendor/scrollreveal/scrollreveal.min.js"></script>

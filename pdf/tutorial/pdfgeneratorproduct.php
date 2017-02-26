@@ -38,7 +38,7 @@ $team = getteam($_GET['id']);
 $valueprop = valueprop($_GET['id']);
 $bmc = bmc($_GET['id']);
 
-$word = $ideagen['problem'];$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=1){ $problem = ucfirst($arr[0]); $problem2 = ucfirst($arr[1]);}
+$word = $ideagen['problem'];$arr = explode(',',trim($word)); if((sizeof($arr)-1)==1){ $problem = ucfirst($arr[0]); $problem2 = ucfirst($arr[1]); $problem3 = '';}elseif((sizeof($arr)-1)==2) {$problem = ucfirst($arr[0]); $problem2 = ucfirst($arr[1]); $problem3 = '';}else {$problem = $ideagen['problem']; $problem2 = ''; $problem3 = '';}
 
 $word1 = $ideagen['solution'];$arr1 = explode(' -',trim($word1)); if((sizeof($arr1)-1)>=0){ $solution = ucfirst($arr1[0]); }
 
@@ -60,6 +60,9 @@ $pdf->SetFont('Times','',12);
 $pdf->Cell(30,10,'- '.$problem,0,1);
 
 $pdf->Cell(30,5,'- '.ucfirst($problem2),0,0);
+$pdf->Ln(5);
+$pdf->Cell(30,5,'- '.ucfirst($problem3),0,0);
+
 
 
 $pdf->Ln(10);

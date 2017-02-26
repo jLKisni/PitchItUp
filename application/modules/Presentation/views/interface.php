@@ -26,14 +26,14 @@
 					<?php if(!empty($pitchdeck)){?>
                     <?php foreach($pitchdeck as $row):?>
 
-                    <?php $word = $row['solution'];$arr = explode(' -',trim($word)); if((sizeof($arr)-1)>=1){ $problem = ucfirst($arr[0]);}?>
+                    <?php $word = $row['solution'];$arr = explode(' -',trim($word)); if((sizeof($arr)-1)>=1){ $problem = ucfirst($arr[0]);}else{$problem = $row['solution'];}?>
             		<div class="row">
 
             			<div class="col-sm-12" >
             				<!-- style="background-color:#fff; height:auto; -->
             				
 	            				<div class="col-sm-3">
-	            					<a href="<?php echo base_url();?>Presentation/create/<?php echo $row['pitchdeck_id'];?>"><span style="color: #fff; text-decoration:bold; position:absolute; left: 37%;top:50%; "><?php echo $problem;?></span>
+	            					<a href="<?php echo base_url();?>Presentation/create/<?php echo $row['pitchdeck_id'];?>"><span style="color: #fff; text-decoration:bold; position:absolute; left: 37%;top:50%; "><?php echo ucfirst($problem);?></span>
 	            						<img src= "<?php echo base_url();?>assets/img/template1.png" class="folder" style = "width: 200px; height: 200px;" id="pres1" class="presentation_hover" ></a>
 	            					
 	            				</div>

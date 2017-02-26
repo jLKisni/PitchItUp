@@ -72,7 +72,7 @@ class Web extends MY_Controller{
 
     function Interface_m(){
         $pitchdeck = $this->PitchDeck_view_m->viewPitchDeck($this->session->userdata('team_id'));
-
+        // print_r($pitchdeck);  
        $data = array(
         'title'=>'Select Presentation',
         'pitchdeck'=>$pitchdeck
@@ -100,7 +100,7 @@ class Web extends MY_Controller{
     }
 
     function BMC(){
-
+      //echo $this->session->tempdata('ideaid').'validation id '. $this->session->tempdata('validid'). 'valuepropid = '.$this->session->tempdata('valuepropid');
       $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
       
 
@@ -122,25 +122,25 @@ class Web extends MY_Controller{
 
     function validationboard(){
       $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
-    
+          
+      //echo $this->session->tempdata('ideaid');
+      //print_r($ideadetails);
+         $data = array(
+            'title'=>'Create Validation Board',
+            'ideagen'=>$ideadetails
+          );
 
-      print_r($ideadetails);
-         // $data = array(
-         //    'title'=>'Create Validation Board',
-         //    'ideagen'=>$ideadetails
-         //  );
 
-
-         //  $this->load->view('Default/main_header',$data);
-         //  $this->load->view('Default/create_nav');
-         //  $this->load->view('validationboard',$data);
-         //  $this->load->view('Default/templatefooter');  
+          $this->load->view('Default/main_header',$data);
+          $this->load->view('Default/create_nav');
+          $this->load->view('validationboard',$data);
+          $this->load->view('Default/templatefooter');  
      
 
     }
 
      function valueprop(){
-
+      //echo $this->session->tempdata('ideaid').'validation id '. $this->session->tempdata('validid');
       $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
       $team = $this->PitchDeck_view_m->viewTeam($this->session->userdata('team_id'));
       //print_r($valuepropdetails);
@@ -156,10 +156,6 @@ class Web extends MY_Controller{
           $this->load->view('Default/create_nav');
           $this->load->view('valueprop');
           $this->load->view('Default/templatefooter');
-
-
-    
-
      
     }
 
@@ -172,6 +168,18 @@ class Web extends MY_Controller{
       $this->load->view('Default/create_nav');
       $this->load->view('template');
       $this->load->view('Default/templatefooter');
+    }
+
+    function templatepresentation($pitchdeck){
+
+      $data = array(
+        'title'=>'Select Template',
+        'pitchdeckid'=>$pitchdeck
+      );
+      $this->load->view('Default/templateheader',$data);
+      $this->load->view('Default/create_nav');
+      $this->load->view('templatepresentation');
+      $this->load->view('Default/downloadfooter');
     }
 
     function loading(){
@@ -190,26 +198,30 @@ class Web extends MY_Controller{
     function myPresentation(){
 
       $pitchdeck = $this->PitchDeck_view_m->viewPitchDeck($this->session->userdata('team_id'));
-
+        // print_r($pitchdeck);  
        $data = array(
-        'title'=>'Select Template',
+        'title'=>'Select Presentation',
         'pitchdeck'=>$pitchdeck
       );
 
       $this->load->view('Default/main_header',$data);
       $this->load->view('Default/create_nav');
       $this->load->view('myPresentation',$data);
-      $this->load->view('Default/templatefooter');
+      $this->load->view('downloadfooter');
     }
 
 
     function history(){
+      $historydetails = $this->PitchDeck_view_m->viewHistory($this->session->userdata('team_id'));
+
+      //print_r($historydetails);
        $data = array(
-        'title'=>'My History'
+        'title'=>'My History',
+        'historydetails'=>$historydetails
       );
       $this->load->view('Default/main_header',$data);
       $this->load->view('Default/create_nav');
-      $this->load->view('history');
+      $this->load->view('history',$data);
       $this->load->view('Default/templatefooter');
     }
 
@@ -246,7 +258,7 @@ class Web extends MY_Controller{
         $success = $this->Web_m->addPitchdeck();
 
         if($success){
-           header("Location: http://localhost/PitchItUp/powerpoint/Tests/02presentation.php?id=".$this->session->tempdata['pitchdeckid']);
+           header("Location: http://localhost/PitchItUp/powerpoint/Tests/02presentation.php?id=".$this->session->userdata['pitchdeckid']);
            exit;
         }
 
@@ -292,6 +304,48 @@ class Web extends MY_Controller{
           //use this function to force the session/browser to download the created file
           force_download($name, $data);
       
+    }
+
+
+     function Download1($pitchdeckid){
+            $ideadetails = $this->PitchDeck_view_m->viewIdeaGenTemplate($pitchdeckid);
+            $word1 = $ideadetails->solution;$arr1 = explode(' -',trim($word1)); if((sizeof($arr1)-1)>=0){ $solution = ucfirst($arr1[0]); }
+
+            $this->load->helper('download');
+            $name = $solution.".pptx";
+
+            
+           $data = file_get_contents(base_url().'powerpoint/Tests/'.$name);
+        
+          //use this function to force the session/browser to download the created file
+          force_download($name, $data);
+      
+    }
+
+    function DownloadProduct1($pitchdeckid){
+          $ideadetails = $this->PitchDeck_view_m->viewIdeaGenTemplate($pitchdeckid);
+            $word1 = $ideadetails->solution;$arr1 = explode(' -',trim($word1)); if((sizeof($arr1)-1)>=0){ $solution = ucfirst($arr1[0]); }
+
+            $this->load->helper('download');
+            $name = $solution."product.pptx"; 
+
+            
+           $data = file_get_contents(base_url().'powerpoint/Tests/'.$name);
+        
+          //use this function to force the session/browser to download the created file
+          force_download($name, $data);
+      
+    }
+
+    function deleteDocument($pitchdeckid){
+
+      $success = $this->Web_m->deleteDocument($pitchdeckid);
+
+      if($success){
+        echo $success;
+      }
+
+
     }
 
 

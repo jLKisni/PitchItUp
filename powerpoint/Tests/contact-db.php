@@ -34,14 +34,23 @@ function ideagen($id){
 function getteam($id){
 
 	$db = contact_db();
-	$sql = "select * from team where team_id = ?";
-	$cmd = $db->prepare($sql);
-	$cmd->execute(array($id));
-	$row = $cmd->fetch();
-	$db = null;
+	$sql1 = "select * from gen_pitchdeck where pitchdeck_id = ?";
+	$cmd1 = $db->prepare($sql1);
+	$cmd1->execute(array($id));
+	$rows = $cmd1->fetch();
+	
 
-	return $row;
+		if($rows){
 
+		$db = contact_db();
+		$sql = "select * from team where team_id = ?";
+		$cmd = $db->prepare($sql);
+		$cmd->execute(array($rows['team_id']));
+		$row = $cmd->fetch();
+		$db = null;
+
+		return $row;
+		}
 }
 
 function getteampitchdeck($id){

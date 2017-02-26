@@ -5,15 +5,15 @@ class Presentation extends MY_Controller{
     function __construct(){
       parent::__construct();
 
-      $session = array(
-        'valuepropid'=>$this->session->tempdata('valuepropid'),
-        'ideaid'=>$this->session->tempdata('ideaid'),
-        'validid'=>$this->session->tempdata('validid'),
-        'bmcid'=>$this->session->tempdata('bmcid'),
-        'pitchdeckid'=>$this->session->tempdata('pitchdeckid')
-        )
+      // $session = array(
+      //   'valuepropid'=>$this->session->tempdata('valuepropid'),
+      //   'ideaid'=>$this->session->tempdata('ideaid'),
+      //   'validid'=>$this->session->tempdata('validid'),
+      //   'bmcid'=>$this->session->tempdata('bmcid'),
+      //   'pitchdeckid'=>$this->session->tempdata('pitchdeckid')
+      //   );
 
-      $this->session->unset_tempdata($session);
+      // $this->session->unset_tempdata($session);
       $this->load->model('Presentation/PitchDeck_view_m');
       $this->load->model('Presentation/Web_m');
       $this->load->helper('url'); 
@@ -260,7 +260,7 @@ class Presentation extends MY_Controller{
 
 
     function pitchdeck($pitchdeckid){
-
+           $success = $this->Web_m->addHistory($pitchdeckid);
            header("Location: http://localhost/PitchItUp/powerpoint/Tests/mypresentation.php?id=".$pitchdeckid);
            exit;
 

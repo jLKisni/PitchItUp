@@ -58,6 +58,9 @@ function addPitchdeck(){
       $query = $this->db->query($sql,array($this->session->tempdata('valuepropid'),$this->session->tempdata('ideaid'),$this->session->tempdata('validid'),$this->session->tempdata('bmcid'),$this->session->userdata('team_id')));
 
       if($query){
+
+        $sql2 = "insert into history (pitchdeck_id) values (?)";
+        $query2 = $this->db->query($sql2,array($this->db->insert_id()));
         return true;
       }
       else{
@@ -65,6 +68,22 @@ function addPitchdeck(){
       }
   }
  
+}
+
+
+function addHistory($pitchdeckid){
+
+   $sql = "insert into history (pitchdeck_id,hist_memid) values (?,?)";
+   $query = $this->db->query($sql,array($pitchdeckid,$this->session->userdata('userid')));
+
+   if($query){
+
+    return true;
+
+   }
+   else{
+    return false;
+   }
 }
 
 
