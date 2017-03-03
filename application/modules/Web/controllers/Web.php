@@ -87,24 +87,54 @@ class Web extends MY_Controller{
 
     function create(){
 
-      
-          $data2 = array(
-          'title'=>'Create idea Generation Board'
-          );
-          $this->load->view('Default/main_header',$data2);
-          $this->load->view('Default/create_nav');
-          $this->load->view('create');
-          $this->load->view('Default/templatefooter');
+       $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
 
+      if($ideadetails!=false){
+        $data = array(
+        'title'=>'Create idea Generation Board',
+        'ideagen'=>$ideadetails
+        );
+
+
+        $this->load->view('Default/main_header',$data);
+        $this->load->view('Default/create_nav');
+        $this->load->view('create');
+        $this->load->view('Default/templatefooter');
+
+      }
+      else{
+        $data2 = array(
+        'title'=>'Create idea Generation Board'
+        );
+        $this->load->view('Default/main_header',$data2);
+        $this->load->view('Default/create_nav');
+        $this->load->view('create');
+        $this->load->view('Default/templatefooter');
+        
+      }
       
     }
 
     function BMC(){
-      //echo $this->session->tempdata('ideaid').'validation id '. $this->session->tempdata('validid'). 'valuepropid = '.$this->session->tempdata('valuepropid');
-      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
+      $bmcdetails = $this->PitchDeck_view_m->viewBMC($this->session->userdata('team_id'));
+      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
       
 
-   
+      if($bmcdetails!=false){
+
+        $data = array(
+        'title'=>'Create Business Model Canvass',
+        'bmc'=>$bmcdetails,
+        'ideagen'=>$ideadetails
+        );
+
+        $this->load->view('Default/main_header',$data);
+        $this->load->view('Default/create_nav');
+        $this->load->view('BMC');
+        $this->load->view('Default/templatefooter');
+
+      }
+      else{
 
         $data2 = array(
         'title'=>'Create Business Model Canvass',
@@ -115,36 +145,62 @@ class Web extends MY_Controller{
         $this->load->view('Default/create_nav');
         $this->load->view('BMC');
         $this->load->view('Default/templatefooter');
+      }
+      
       
       
     }
 
 
     function validationboard(){
-      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
-          
-      //echo $this->session->tempdata('ideaid');
-      //print_r($ideadetails);
+      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
+      $validationboard = $this->PitchDeck_view_m->viewValidationBoard($this->session->userdata('team_id'));
+      
+      if($validationboard!=false){
+          $data = array(
+            'title'=>'Create Validation Board',
+            'validation'=>$validationboard,
+            'ideagen'=>$ideadetails
+          );
+          $this->load->view('Default/main_header',$data);
+          $this->load->view('Default/create_nav');
+          $this->load->view('validationboard');
+          $this->load->view('Default/templatefooter');  
+      }
+      else{
          $data = array(
             'title'=>'Create Validation Board',
             'ideagen'=>$ideadetails
           );
-
-
           $this->load->view('Default/main_header',$data);
           $this->load->view('Default/create_nav');
-          $this->load->view('validationboard',$data);
+          $this->load->view('validationboard');
           $this->load->view('Default/templatefooter');  
-     
+      }
 
     }
 
      function valueprop(){
-      //echo $this->session->tempdata('ideaid').'validation id '. $this->session->tempdata('validid');
-      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
+      $valuepropdetails = $this->PitchDeck_view_m->viewValueProp($this->session->userdata('team_id'));
+      $ideadetails = $this->PitchDeck_view_m->viewIdeaGen($this->session->userdata('team_id'));
       $team = $this->PitchDeck_view_m->viewTeam($this->session->userdata('team_id'));
       //print_r($valuepropdetails);
 
+
+      if($valuepropdetails != false){
+
+         $data = array(
+        'title'=>'Update Value Proposition',
+        'valueprop'=>$valuepropdetails,
+        'ideagen'=>$ideadetails,
+        'team'=>$team
+          );
+          $this->load->view('Default/main_header',$data);
+          $this->load->view('Default/create_nav');
+          $this->load->view('valueprop');
+          $this->load->view('Default/templatefooter');
+
+      }else{
 
          $data2 = array(
         'title'=>'Create Value Proposition',
@@ -156,6 +212,9 @@ class Web extends MY_Controller{
           $this->load->view('Default/create_nav');
           $this->load->view('valueprop');
           $this->load->view('Default/templatefooter');
+
+
+      }
      
     }
 
@@ -193,6 +252,18 @@ class Web extends MY_Controller{
       $this->load->view('Default/templatefooter');
    
     }
+
+    // function howto(){
+
+    //    $data = array(
+    //     'title'=>'How To !',
+    //   );
+    //   $this->load->view('Default/main_header',$data);
+    //   $this->load->view('Default/create_nav');
+    //   $this->load->view('howto');
+    //   $this->load->view('Default/templatefooter');
+   
+    // }
 
 
     function myPresentation(){
@@ -277,13 +348,16 @@ class Web extends MY_Controller{
     }
 
     function Download(){
-            $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
+
+        // echo $this->session->userdata('idea_id');
+            $ideadetails = $this->PitchDeck_view_m->viewIdeaGenTemp($this->session->userdata('idea_id'));
+
             $word1 = $ideadetails->solution;$arr1 = explode(' -',trim($word1)); if((sizeof($arr1)-1)>=0){ $solution = ucfirst($arr1[0]); }
 
             $this->load->helper('download');
             $name = $solution.".pptx";
 
-            
+            echo $name;
            $data = file_get_contents(base_url().'powerpoint/Tests/'.$name);
         
           //use this function to force the session/browser to download the created file
@@ -292,7 +366,7 @@ class Web extends MY_Controller{
     }
 
     function DownloadProduct(){
-          $ideadetails = $this->PitchDeck_view_m->viewIdeaGen();
+            $ideadetails = $this->PitchDeck_view_m->viewIdeaGenTemp($this->session->userdata('idea_id'));
             $word1 = $ideadetails->solution;$arr1 = explode(' -',trim($word1)); if((sizeof($arr1)-1)>=0){ $solution = ucfirst($arr1[0]); }
 
             $this->load->helper('download');

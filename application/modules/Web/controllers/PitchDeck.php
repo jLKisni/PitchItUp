@@ -27,9 +27,9 @@
 			// echo json_encode($details);
 			$success = $this->PitchDeck_m->addIdeaGen($details);
 
-			if($success){
-				redirect('Web/BMC');
-			}
+			// if($success){
+			// 	redirect('Web/BMC');
+			// }
 		}
 		
 
@@ -71,7 +71,8 @@
 				'company'=>$valueprop['company'],
 				'product'=>$valueprop['product'],
 				'ideal_cust'=>$valueprop['customer'],
-				'substitutes'=>$valueprop['substitutes']
+				'substitutes'=>$valueprop['substitutes'],
+				'team_id'=>$this->session->userdata('team_id')
 				);
 
 
@@ -85,6 +86,7 @@
 
 		function addValidationBoard(){
 
+			// echo $this->session->userdata('ungen_id');
 			$validationboard = $this->input->post('data');
 
 			$details = array(
@@ -108,10 +110,11 @@
 							'risk_assumpt3' =>$validationboard['risk_assump3'],
 							'solution_criteria3' => $validationboard['criterion3'],
 							'results3' => $validationboard['discussion3'],
-							'learnings3' => $validationboard['learning3']           
+							'learnings3' => $validationboard['learning3'],
+							'stage' => $validationboard['stage'],         
 				);
 
-			 //echo json_encode($details);
+			 // echo json_encode($details);
 			$success = $this->PitchDeck_m->addValidationBoard($details);
 
 			echo $success;

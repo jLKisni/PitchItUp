@@ -3,7 +3,7 @@
             <div class="header-content-inner">
 <div class="header-content-inner">
 		<!--butangig code dre para sa validation board-->
-		
+			 <input type="hidden" id="valid_id" value="<?php if(isset($validation)){echo $validation->valid_id;}?>">
             <div class="col-sm-4 text-center">
                    
                     <img src = "<?php echo base_url();?>assets/img/Valid.png" style = "width: 1000px; height: 550px;">
@@ -42,26 +42,26 @@
 		     <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump1" style = "resize:none; text-align:center; height:54px" placeholder="Problem Exist"  ></textarea>
+					  <textarea class="form-control" rows="2" id="assump1" style = "resize:none; text-align:center; height:54px" placeholder="Problem Exist"  ><?php if(isset($validation)){ echo $validation->risk_assumpt;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize:none; text-align:center; height:54px"  placeholder="10/10" />
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize:none; text-align:center; height:54px"  placeholder="10/10" value="<?php if(isset($validation)){ echo $validation->solution_criteria;}?>"/>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion1" style = "resize:none; text-align:center; height:54px" placeholder="8/10"  />
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion1" style = "resize:none; text-align:center; height:54px" placeholder="8/10"  value="<?php if(isset($validation)){ echo $validation->results;}?>"/>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning1" style = "resize: none;" placeholder="I learn that startup founders want to make their work easier" ></textarea>
+					  <textarea class="form-control" rows="2" id="learning1" style = "resize: none;" placeholder="I learn that startup founders want to make their work easier" ><?php if(isset($validation)){ echo $validation->learnings;}?></textarea>
 					</div>
 				</div>
 
@@ -90,26 +90,26 @@
 		     <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump2" style = "resize: none;"  placeholder="" disabled></textarea>
+					  <textarea class="form-control" rows="2" id="assump2" style = "resize: none;"  placeholder="" disabled><?php if(isset($validation)){ echo $validation->risk_assumpt2;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					 <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize:none; text-align:center; height:54px"  placeholder="" / disabled>
+					 <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize:none; text-align:center; height:54px"  placeholder=""  value="<?php if(isset($validation)){ echo $validation->solution_criteria2;}?>"/>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					 <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion2"style = "resize:none; text-align:center; height:54px" placeholder=""  />
+					 <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion2"style = "resize:none; text-align:center; height:54px" placeholder=""  value="<?php if(isset($validation)){ echo $validation->results2;}?>"/>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning2" style = "resize: none;" placeholder="" disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="learning2" style = "resize: none;" placeholder=""  ><?php if(isset($validation)){ echo $validation->learnings2;}?></textarea>
 					</div>
 				</div>
 
@@ -138,26 +138,26 @@
 		     <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump3" style = "resize: none;" placeholder="" disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="assump3" style = "resize: none;" placeholder="" disabled ><?php if(isset($validation)){ echo $validation->risk_assumpt3;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					 <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion3" style = "resize:none; text-align:center; height:54px"  placeholder="" / disabled>
+					 <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion3" style = "resize:none; text-align:center; height:54px"  placeholder="" value="<?php if(isset($validation)){ echo $validation->solution_criteria3;}?>"  />
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion3"style = "resize:none; text-align:center; height:54px" placeholder=""  />
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion3"style = "resize:none; text-align:center; height:54px" placeholder="" value="<?php if(isset($validation)){ echo $validation->results3;}?>" />
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning3" style = "resize: none;"  placeholder=""disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="learning3" style = "resize: none;"  placeholder=""  ><?php if(isset($validation)){ echo $validation->learnings2;}?></textarea>
 					</div>
 				</div>
 
@@ -277,7 +277,7 @@
    top: 15px; width: 100px; " >
 					<div class="form-group">
 					<font color="Black">Stage#</font>
-					<input type="number" name="stage" min="1" max="5"class="form-control" rows="1" id="stage" style = "resize: none;" placeholder="1"><?php if(isset($validation)){ echo $validation->stage;}else{echo 0;}?>
+					<input type="number"  min="1" max="5"class="form-control" rows="1" id="stage" style = "resize: none;" placeholder="1" value="<?php if(isset($validation)){ echo $validation->stage;}else{echo 0;}?>">
 					  <!-- <textarea class="form-control" rows="1" id="comment" style = "resize: none;"  ></textarea> -->
 					</div>
 				</div>
@@ -356,90 +356,1728 @@ window.onload = function (){
 			$('#stage').focus();
 			
 			$('#stage').on('change',function(){
-				
-				$('#assump1').prop("disabled",false);
+			
+			if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var stage = $('#stage').val();
+            var valid_id = $('#valid_id').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+                $('#assump1').prop("disabled",false);
 				$('#assump1').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+              $('#assump1').prop("disabled",false);
+				$('#assump1').focus();
+            }
+				
 			});
 
 			$('#assump1').on('change',function(){
 
-				$('#criterion1').prop("disabled",false);
+
+				if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+                $('#criterion1').prop("disabled",false);
 				$('#criterion1').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+             $('#criterion1').prop("disabled",false);
+				$('#criterion1').focus();
+            }
+
+				
 			});
 
 			$('#criterion1').on('change',function(){
-				
-				$('#discussion1').prop("disabled",false);
+
+
+					if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+                $('#discussion1').prop("disabled",false);
 				$('#discussion1').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                // window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+          		$('#discussion1').prop("disabled",false);
+				$('#discussion1').focus();
+            }
+
+				
+				
 			 });
 
 			$('#discussion1').on('change',function(){
 
 	//-------------------------------------------------------------//
+				if($('#valid_id').val()!=0){
 
-				$('#learning1').prop("disabled",false);
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+                $('#learning1').prop("disabled",false);
 				$('#learning1').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                // window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+          		$('#learning1').prop("disabled",false);
+				$('#learning1').focus();
+            }
+
+				
 			});
 
 			$('#learning1').on('change',function(){
 
-				if($('#cust2').val()!=''){
-				$('#assump2').prop("disabled",false);
-				$('#assump2').focus();
-				}
+				if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+               $('#cust2').prop("disabled",false);
+          		$('#prob2').prop("disabled",false);
+          		$('#criterion2').prop("disabled",false);
+          		$('#solution2').prop("disabled",false);
+				$('#cust2').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                // window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+          		$('#cust2').prop("disabled",false);
+          		$('#prob2').prop("disabled",false);
+          		$('#criterion2').prop("disabled",false);
+          		$('#solution2').prop("disabled",false);
+				$('#cust2').focus();
+            }
+
+
+				
+				
 				
 			});
 
 			$('#assump2').on('change',function(){
 
-				$('#criterion2').prop("disabled",false);
+				if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+               $('#criterion2').prop("disabled",false);
 				$('#criterion2').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                // window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+          		$('#criterion2').prop("disabled",false);
+				$('#criterion2').focus();
+            }
+
+
+
+				
 			});
 
 			$('#criterion2').on('change',function(){
 
-				$('#discussion2').prop("disabled",false);
+				if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+               $('#discussion2').prop("disabled",false);
 				$('#discussion2').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                // window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+          		$('#discussion2').prop("disabled",false);
+				$('#discussion2').focus();
+            }
+
+
+
+				
 			});
 
 			$('#discussion2').on('change',function(){
 
-				$('#learning2').prop("disabled",false);
+				if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+               $('#learning2').prop("disabled",false);
 				$('#learning2').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                // window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+          		$('#learning2').prop("disabled",false);
+				$('#learning2').focus();
+            }
+
+
+				
 			});
 ///-----------------------------------------------------------------------------------///
 
 			$('#learning2').on('change',function(){
 
-				if($('#cust3').val()!=''){
-				$('#assump3').prop("disabled",false);
-				$('#assump3').focus();
-				}
+				if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+               $('#cust3').prop("disabled",false);
+          		$('#prob3').prop("disabled",false);
+          		$('#criterion3').prop("disabled",false);
+          		$('#solution3').prop("disabled",false);
+				$('#cust3').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                // window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+          		$('#cust3').prop("disabled",false);
+          		$('#prob3').prop("disabled",false);
+          		$('#criterion3').prop("disabled",false);
+          		$('#solution3').prop("disabled",false);
+				$('#cust3').focus();
+            }
+
 			});
 
 			$('#assump3').on('change',function(){
 
-				$('#criterion3').prop("disabled",false);
+				if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+               $('#criterion3').prop("disabled",false);
 				$('#criterion3').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                // window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+          		$('#criterion3').prop("disabled",false);
+				$('#criterion3').focus();
+            }
+
+				
 			});
 
 			$('#criterion3').on('change',function(){
-				
-				$('#discussion3').prop("disabled",false);
+				if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+               $('#discussion3').prop("disabled",false);
 				$('#discussion3').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                // window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+          		$('#discussion3').prop("disabled",false);
+				$('#discussion3').focus();
+            }
+
+				
 			 });
 
 			$('#discussion3').on('change',function(){
 
-				$('#learning3').prop("disabled",false);
+				if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+               $('#learning3').prop("disabled",false);
 				$('#learning3').focus();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                // window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+          		$('#learning3').prop("disabled",false);
+				$('#learning3').focus();
+            }
+
+
+				
 			});
 
 //--------------------------------------------------------------------------------//////
 
 			$('#learning3').on('focus',function(){
+				if($('#valid_id').val()!=0){
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+            var valid_id = $('#valid_id').val();
+            var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'valid_id': valid_id,
+                'stage':stage
+
+            };
+
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                   // console.log(result);
+            });
+                 // window.location.href = "<?php echo base_url()?>Web/validationboard" 
+              $('#validation').show();
+            }else{
+
+            var cust_pivot1 = $('#cust1').val();
+            var cust_pivot2 = $('#cust2').val();
+            var cust_pivot3 = $('#cust3').val();
+            var cust_prob1 = $('#prob1').val();
+            var cust_prob2 = $('#prob2').val();
+            var cust_prob3 = $('#prob3').val();
+            var cust_solution1 = $('#solution1').val();
+            var cust_solution2 = $('#solution2').val();
+            var cust_solution3 = $('#solution3').val();
+            var risk_assump1 = $('#assump1').val();
+            var risk_assump2 = $('#assump2').val();
+            var risk_assump3 = $('#assump3').val();
+            var criterion1 = $('#criterion1').val();
+            var criterion2 = $('#criterion2').val();
+            var criterion3 = $('#criterion3').val();
+            var discussion1 = $('#discussion1').val();
+            var discussion2 = $('#discussion2').val();
+            var discussion3 = $('#discussion3').val();
+            var learning1 = $('#learning1').val();
+            var learning2 = $('#learning2').val();
+            var learning3 = $('#learning3').val();
+             var stage = $('#stage').val();
+
+            var validationboard = {
+                'cust_pivot1' : cust_pivot1,
+                'cust_pivot2' : cust_pivot2,
+                'cust_pivot3' : cust_pivot3,
+                'cust_prob1' : cust_prob1,
+                'cust_prob2' : cust_prob2,
+                'cust_prob3' : cust_prob3,
+                'cust_solution1' : cust_solution1,
+                'cust_solution2' : cust_solution2,
+                'cust_solution3' : cust_solution3,
+                'risk_assump1' : risk_assump1,
+                'risk_assump2' : risk_assump2,
+                'risk_assump3' : risk_assump3,
+                'criterion1' : criterion1,
+                'criterion2' : criterion2,
+                'criterion3' : criterion3,
+                'discussion1' : discussion1,
+                'discussion2' : discussion2,
+                'discussion3' : discussion3,
+                'learning1' : learning1,
+                'learning2' : learning2,
+                'learning3' : learning3,
+                'stage':stage
+            };
+
+            // console.log(validationboard);
+            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+
+            $.post(url,{data:validationboard},function(result){
+                
+            	// console.log(result);
+                // window.location.href = "<?php echo base_url()?>Web/validationboard"
+                
+            });
+          		$('#validation').show();
+            }
+
 				
-				$('#validation').show();
 			});
 
 //--------------------------------------------------------//
@@ -522,9 +2160,9 @@ window.onload = function (){
 			
 			var criteria = $('#criterion3').val();
 			var discussion = $('#discussion3').val();
-			var average2 = criteria / 2;
+			var average3 = criteria / 2;
 			//alert(ParseInt(criteria));
-			if(parseInt(discussion)>=average1){
+			if(parseInt(discussion)>=average3){
 			
 			}
 			else{

@@ -57,22 +57,22 @@
         $('#ideagen').click(function(){
 
 
-                var problem = $('#problem').val();
-                var people = $('#people').val();
-                var behavior = $('#behavior').val();
-                var solution = $('#solution').val();
+                // var problem = $('#problem').val();
+                // var people = $('#people').val();
+                // var behavior = $('#behavior').val();
+                // var solution = $('#solution').val();
                 
-                var ideagen = {
-                    'problem': problem,
-                    'people' : people,
-                    'behavior':behavior,
-                    'solution':solution
-                };
+                // var ideagen = {
+                //     'problem': problem,
+                //     'people' : people,
+                //     'behavior':behavior,
+                //     'solution':solution
+                // };
 
-                var url = "<?php echo base_url();?>Web/PitchDeck/addIdeaGen";
-                $.post(url,{data:ideagen},function(result){
-                    console.log(result);
-                });
+                // var url = "<?php echo base_url();?>Web/PitchDeck/addIdeaGen";
+                // $.post(url,{data:ideagen},function(result){
+                //     console.log(result);
+                // });
 
                  window.location.href = "<?php echo base_url()?>Web/validationboard";
                  
@@ -98,64 +98,64 @@
 
            
 
-            var cust_pivot1 = $('#cust1').val();
-            var cust_pivot2 = $('#cust2').val();
-            var cust_pivot3 = $('#cust3').val();
-            var cust_prob1 = $('#prob1').val();
-            var cust_prob2 = $('#prob2').val();
-            var cust_prob3 = $('#prob3').val();
-            var cust_solution1 = $('#solution1').val();
-            var cust_solution2 = $('#solution2').val();
-            var cust_solution3 = $('#solution3').val();
-            var risk_assump1 = $('#assump1').val();
-            var risk_assump2 = $('#assump2').val();
-            var risk_assump3 = $('#assump3').val();
-            var criterion1 = $('#criterion1').val();
-            var criterion2 = $('#criterion2').val();
-            var criterion3 = $('#criterion3').val();
-            var discussion1 = $('#discussion1').val();
-            var discussion2 = $('#discussion2').val();
-            var discussion3 = $('#discussion3').val();
-            var learning1 = $('#learning1').val();
-            var learning2 = $('#learning2').val();
-            var learning3 = $('#learning3').val();
+            // var cust_pivot1 = $('#cust1').val();
+            // var cust_pivot2 = $('#cust2').val();
+            // var cust_pivot3 = $('#cust3').val();
+            // var cust_prob1 = $('#prob1').val();
+            // var cust_prob2 = $('#prob2').val();
+            // var cust_prob3 = $('#prob3').val();
+            // var cust_solution1 = $('#solution1').val();
+            // var cust_solution2 = $('#solution2').val();
+            // var cust_solution3 = $('#solution3').val();
+            // var risk_assump1 = $('#assump1').val();
+            // var risk_assump2 = $('#assump2').val();
+            // var risk_assump3 = $('#assump3').val();
+            // var criterion1 = $('#criterion1').val();
+            // var criterion2 = $('#criterion2').val();
+            // var criterion3 = $('#criterion3').val();
+            // var discussion1 = $('#discussion1').val();
+            // var discussion2 = $('#discussion2').val();
+            // var discussion3 = $('#discussion3').val();
+            // var learning1 = $('#learning1').val();
+            // var learning2 = $('#learning2').val();
+            // var learning3 = $('#learning3').val();
 
 
-            var validationboard = {
-                'cust_pivot1' : cust_pivot1,
-                'cust_pivot2' : cust_pivot2,
-                'cust_pivot3' : cust_pivot3,
-                'cust_prob1' : cust_prob1,
-                'cust_prob2' : cust_prob2,
-                'cust_prob3' : cust_prob3,
-                'cust_solution1' : cust_solution1,
-                'cust_solution2' : cust_solution2,
-                'cust_solution3' : cust_solution3,
-                'risk_assump1' : risk_assump1,
-                'risk_assump2' : risk_assump2,
-                'risk_assump3' : risk_assump3,
-                'criterion1' : criterion1,
-                'criterion2' : criterion2,
-                'criterion3' : criterion3,
-                'discussion1' : discussion1,
-                'discussion2' : discussion2,
-                'discussion3' : discussion3,
-                'learning1' : learning1,
-                'learning2' : learning2,
-                'learning3' : learning3
+            // var validationboard = {
+            //     'cust_pivot1' : cust_pivot1,
+            //     'cust_pivot2' : cust_pivot2,
+            //     'cust_pivot3' : cust_pivot3,
+            //     'cust_prob1' : cust_prob1,
+            //     'cust_prob2' : cust_prob2,
+            //     'cust_prob3' : cust_prob3,
+            //     'cust_solution1' : cust_solution1,
+            //     'cust_solution2' : cust_solution2,
+            //     'cust_solution3' : cust_solution3,
+            //     'risk_assump1' : risk_assump1,
+            //     'risk_assump2' : risk_assump2,
+            //     'risk_assump3' : risk_assump3,
+            //     'criterion1' : criterion1,
+            //     'criterion2' : criterion2,
+            //     'criterion3' : criterion3,
+            //     'discussion1' : discussion1,
+            //     'discussion2' : discussion2,
+            //     'discussion3' : discussion3,
+            //     'learning1' : learning1,
+            //     'learning2' : learning2,
+            //     'learning3' : learning3
 
-            };
+            // };
 
-            //console.log(validationboard);
-            var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
+            // //console.log(validationboard);
+            // var url = "<?php echo base_url();?>Web/PitchDeck/addValidationBoard"; 
 
-            $.post(url,{data:validationboard},function(result){
-                   if(result==1 || result == '1'){
-                    console.log(result);
+            // $.post(url,{data:validationboard},function(result){
+            //        if(result==1 || result == '1'){
+            //         console.log(result);
                   
-                }
+            //     }
                 
-            });
+            // });
                 window.location.href = "<?php echo base_url()?>Web/valueprop"; 
           
 
@@ -177,37 +177,37 @@
         $('#valueprop').click(function(){
 
 
-                var benefits = $('#benefits').val();
-                var wants = $('#wants').val();
-                var features = $('#features').val();
-                var needs = $('#needs').val();
-                var experience = $('#experience').val();
-                var fears = $('#fears').val();
+                // var benefits = $('#benefits').val();
+                // var wants = $('#wants').val();
+                // var features = $('#features').val();
+                // var needs = $('#needs').val();
+                // var experience = $('#experience').val();
+                // var fears = $('#fears').val();
 
-                var company = $('#company').val();
-                var product = $('#product').val();
-                var customer = $('#customer').val();
-                var substitutes = $('#substitutes').val();
+                // var company = $('#company').val();
+                // var product = $('#product').val();
+                // var customer = $('#customer').val();
+                // var substitutes = $('#substitutes').val();
 
-                var valueprop = {
-                    'benefits':benefits,
-                    'wants':wants,
-                    'features':features,
-                    'needs':needs,
-                    'experience':experience,
-                    'fears':fears,
-                    'company':company,
-                    'product':product,
-                    'customer':customer,
-                    'substitutes':substitutes
-                };
+                // var valueprop = {
+                //     'benefits':benefits,
+                //     'wants':wants,
+                //     'features':features,
+                //     'needs':needs,
+                //     'experience':experience,
+                //     'fears':fears,
+                //     'company':company,
+                //     'product':product,
+                //     'customer':customer,
+                //     'substitutes':substitutes
+                // };
 
-                console.log(valueprop);
-                var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+                // console.log(valueprop);
+                // var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
 
-                $.post(url,{data:valueprop},function(result){
-                    console.log(result);
-                });
+                // $.post(url,{data:valueprop},function(result){
+                //     console.log(result);
+                // });
 
                  window.location.href = "<?php echo base_url()?>Web/bmc";
 

@@ -112,7 +112,8 @@
 							'solution_criteria3' => $validationboard['criterion3'],
 							'results3' => $validationboard['discussion3'],
 							'learnings3' => $validationboard['learning3'],
-							'valid_id'=> $validationboard['valid_id']           
+							'valid_id'=> $validationboard['valid_id'],
+							'stage'=> $validationboard['stage']            
 				);
 
 			//echo json_encode($details);

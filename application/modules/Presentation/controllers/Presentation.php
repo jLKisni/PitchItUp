@@ -112,11 +112,9 @@ class Presentation extends MY_Controller{
           $this->load->view('presentationfooter');
 
       
-
-
-
-      
     }
+
+   
 
     function BMC($pitchdeckid){
 

@@ -3,7 +3,7 @@
             <div class="header-content-inner">
 				
             <div class="col-sm-4 text-center">
-                   
+                   		<input type="hidden" id="valueprop_id" value="<?php if(isset($valueprop)){ echo $valueprop->valueprop_id;}else{echo 0;}?>"/>
                         <img src = "<?php echo base_url();?>assets/img/Value.png" style = "width: 1000px; height: 550px;">
 
 
@@ -20,7 +20,7 @@
 					<div class="form-group">
 					   <label for="fears" data-toggle="tooltip" data-placement="bottom" title = "The dark side of making a decision, fear of making a mistake, fear of missing out, fear of loss and dozens of other related fears.">
 					   <font color="Black">Fears</font></label>
-					  <textarea class="form-control" rows="4" id="fears" style = "resize: none;" placeholder="Wrong choice of pitch deck, Too much time thinking of contents for slide" ></textarea>
+					  <textarea class="form-control" rows="4" id="fears" style = "resize: none;" placeholder="Wrong choice of pitch deck, Too much time thinking of contents for slide" ><?php if(isset($valueprop)){echo $valueprop->fears;}else{}?></textarea>
 					</div>
 				</div>
 
@@ -30,7 +30,7 @@
 					  <label for="experience" data-toggle="tooltip" data-placement="bottom" title = "The way that owning your product makes the customer feel.">
 					  <font color="Black">Experience</font></label>
 					  <textarea class="form-control" rows="13" id="experience" style = "resize: none;"  placeholder="Free to choose pitch deck template, Automatically generate pitch deck
-" disabled></textarea>
+" disabled><?php if(isset($valueprop)){echo $valueprop->experience;}?></textarea>
 					</div>
 				</div>
 
@@ -40,7 +40,7 @@
 					  <label for="wants" data-toggle="tooltip" data-placement="bottom" title = "The emotional drivers of decision making are things that we want to be, do or have.">
 					  <font color="Black">Wants</font></label>
 					  <textarea class="form-control" rows="4" id="wants" style = "resize: none;" placeholder="Manage pitch deck, Download to PowerPoint or pdf file, Shareable
-" disabled></textarea>
+" disabled><?php if(isset($valueprop)){echo $valueprop->wants;}?></textarea>
 					</div>
 				</div>
 
@@ -50,7 +50,7 @@
 					  <label for="benefits" data-toggle="tooltip" data-placement="bottom" title = "What your product does for the customer.">
 					  <font color="Black">Benefits</font></label>
 					  <textarea class="form-control" rows="4" id="benefits" style = "resize: none;" placeholder="Simple, Automatic
-" disabled></textarea>
+" disabled><?php if(isset($valueprop)){echo $valueprop->benefits;}?></textarea>
 					</div>
 				</div>
 			 <div class="col-md-2" style="position:absolute; left: 605px;
@@ -59,7 +59,7 @@
 					  <label for="needs" data-toggle="tooltip" data-placement="bottom" title = "The rational things that the customer needs to get done.">
 					  <font color="Black">Needs</font></label>
 					  <textarea class="form-control" rows="4" id="needs" style = "resize: none;"  placeholder="Import to separate file, Save documents used, Save pitch deck presentation
-" disabled></textarea>
+" disabled><?php if(isset($valueprop)){echo $valueprop->needs;}?></textarea>
 
 					</div>
 				</div>
@@ -71,7 +71,7 @@
 					  <label for="features" data-toggle="tooltip" data-placement="bottom" title = "A factual description of how your product works.">
 					  <font color="Black">Features</font></label>
 					  <textarea class="form-control" rows="4" id="features" style = "resize: none;" placeholder="Download to PowerPoint or pdf file, Auto save, Has separate file for documents
-" disabled></textarea>
+" disabled><?php if(isset($valueprop)){echo $valueprop->features;}?></textarea>
 					</div>
 				</div>
 
@@ -154,44 +154,620 @@ window.onload = function (){
 			$('#fears').focus();
 			
 			$('#fears').on('change',function(){
-				
-				$('#experience').prop("disabled",false);
+
+				 if($('#valueprop_id').val() != 0){
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop_id = $('#valueprop_id').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes,
+                    'valueprop_id':valueprop_id
+                };
+
+                //console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                      console.log(result);
+                });
+
+                  // window.location.href = "<?php echo base_url()?>Web/valueprop";
+                 $('#experience').prop("disabled",false);
 				$('#experience').focus();
+
+            }else{
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes
+                };
+
+                console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                    console.log(result);
+                });
+
+                 window.location.href = "<?php echo base_url()?>Web/valueprop";
+
+                 $('#experience').prop("disabled",false);
+				$('#experience').focus();
+
+
+            }
+				
+				
 			});
 
 			$('#experience').on('change',function(){
 
+				if($('#valueprop_id').val() != 0){
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop_id = $('#valueprop_id').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes,
+                    'valueprop_id':valueprop_id
+                };
+
+                //console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                      console.log(result);
+                });
+
+                  // window.location.href = "<?php echo base_url()?>Web/valueprop";
+                
 				$('#wants').prop("disabled",false);
 				$('#wants').focus();
+
+            }else{
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes
+                };
+
+                console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                    console.log(result);
+                });
+
+                 window.location.href = "<?php echo base_url()?>Web/valueprop";
+
+                 
+				$('#wants').prop("disabled",false);
+				$('#wants').focus();
+
+
+            }
+
 			});
 
 			$('#wants').on('change',function(){
 				
+
+				if($('#valueprop_id').val() != 0){
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop_id = $('#valueprop_id').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes,
+                    'valueprop_id':valueprop_id
+                };
+
+                //console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                      console.log(result);
+                });
+
+                  // window.location.href = "<?php echo base_url()?>Web/valueprop";
+                
 				$('#benefits').prop("disabled",false);
 				$('#benefits').focus();
+
+            }else{
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes
+                };
+
+                console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                    console.log(result);
+                });
+
+                 window.location.href = "<?php echo base_url()?>Web/valueprop";
+
+                 
+				$('#benefits').prop("disabled",false);
+				$('#benefits').focus();
+
+
+            }
+				
 			 });
 
 			$('#benefits').on('change',function(){
+				if($('#valueprop_id').val() != 0){
 
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop_id = $('#valueprop_id').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes,
+                    'valueprop_id':valueprop_id
+                };
+
+                //console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                      console.log(result);
+                });
+
+                  // window.location.href = "<?php echo base_url()?>Web/valueprop";
+                
 					$('#needs').prop("disabled",false);
 				$('#needs').focus();
+
+            }else{
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes
+                };
+
+                console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                    console.log(result);
+                });
+
+                 window.location.href = "<?php echo base_url()?>Web/valueprop";
+
+                 
+					$('#needs').prop("disabled",false);
+				$('#needs').focus();
+
+
+            }
+				
 			});
 
 			$('#needs').on('change',function(){
+				if($('#valueprop_id').val() != 0){
 
-				$('#features').prop("disabled",false);
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop_id = $('#valueprop_id').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes,
+                    'valueprop_id':valueprop_id
+                };
+
+                //console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                      console.log(result);
+                });
+
+                  // window.location.href = "<?php echo base_url()?>Web/valueprop";
+                
+					$('#features').prop("disabled",false);
 				$('#features').focus();
+
+            }else{
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes
+                };
+
+                console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                    console.log(result);
+                });
+
+                 window.location.href = "<?php echo base_url()?>Web/valueprop";
+
+                 
+					$('#features').prop("disabled",false);
+				$('#features').focus();
+
+
+            }
+				
 			});
 
 			$('#features').on('change',function(){
+				if($('#valueprop_id').val() != 0){
 
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop_id = $('#valueprop_id').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes,
+                    'valueprop_id':valueprop_id
+                };
+
+                //console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                      console.log(result);
+                });
+
+                  // window.location.href = "<?php echo base_url()?>Web/valueprop";
+                
 				$('#substitutes').prop("disabled",false);
 				$('#substitutes').focus();
+
+            }else{
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes
+                };
+
+                console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                    console.log(result);
+                });
+
+                 window.location.href = "<?php echo base_url()?>Web/valueprop";
+
+                 
+				$('#substitutes').prop("disabled",false);
+				$('#substitutes').focus();
+
+
+            }
+				
 			});
 
 			$('#substitutes').on('focus',function(){
-				
+				if($('#valueprop_id').val() != 0){
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop_id = $('#valueprop_id').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes,
+                    'valueprop_id':valueprop_id
+                };
+
+                //console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/updatePitchDeck/updateValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                      console.log(result);
+                });
+
+                  // window.location.href = "<?php echo base_url()?>Web/valueprop";
+                
 				$('#valueprop').show();
+
+            }else{
+
+                var benefits = $('#benefits').val();
+                var wants = $('#wants').val();
+                var features = $('#features').val();
+                var needs = $('#needs').val();
+                var experience = $('#experience').val();
+                var fears = $('#fears').val();
+
+                var company = $('#company').val();
+                var product = $('#product').val();
+                var customer = $('#customer').val();
+                var substitutes = $('#substitutes').val();
+
+                var valueprop = {
+                    'benefits':benefits,
+                    'wants':wants,
+                    'features':features,
+                    'needs':needs,
+                    'experience':experience,
+                    'fears':fears,
+                    'company':company,
+                    'product':product,
+                    'customer':customer,
+                    'substitutes':substitutes
+                };
+
+                console.log(valueprop);
+                var url = "<?php echo base_url();?>Web/PitchDeck/addValueProp"; 
+
+                $.post(url,{data:valueprop},function(result){
+                    console.log(result);
+                });
+
+                 window.location.href = "<?php echo base_url()?>Web/valueprop";
+
+                 
+				$('#valueprop').show();
+
+
+            }
+				
 			});
 
 </script>

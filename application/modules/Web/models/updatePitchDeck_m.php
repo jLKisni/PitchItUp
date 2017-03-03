@@ -18,13 +18,23 @@
 
 			if($query){
 
+				$sql1 = "select * from ungen_pitchdeck where idea_id = ? ";
+				$query1 = $this->db->query($sql1,array($data['idea_id']));
 
-				 $session = array(
-            		'ideaid'=>$data['idea_id']
-          		);
-				 
-          		$this->session->set_tempdata($session);
-				return true;
+				if($query1->num_rows()>0){
+					$row = $query1->row();
+					$session = array(
+	            		'ungen_id'=>$row->ungen_id
+	          		);
+					 
+	          		$this->session->set_userdata($session);
+
+					return true;
+
+				}
+
+				
+				
 			}
 			
 			
@@ -58,29 +68,48 @@
 
 			if($query){
 
-				 $session = array(
-            		'valuepropid'=>$data['valueprop_id']
-          		);
-				 
-          		$this->session->set_tempdata($session);
-				return true;
+				$sql1 = "select * from ungen_pitchdeck where valueprop_id = ? ";
+				$query1 = $this->db->query($sql1,array($data['valueprop_id']));
+
+				if($query1->num_rows()>0){
+
+					$row = $query1->row();
+					$session = array(
+	            		'ungen_id'=>$row->ungen_id
+	          		);
+					 
+	          		$this->session->set_userdata($session);
+
+					return true;
+
+				}
 			}
 		}
 
 
 		function updateValidationBoard($data){
 
-			$sql = "update validation_board set customer = ? , problem = ? , solution = ? , risk_assumpt = ? , solution_criteria = ? , results = ? , learnings = ? , customer2 = ? , problem2 = ? , solution2 = ? , risk_assumpt2 = ? , solution_criteria2 = ? , results2 = ? , learnings2 = ? , customer3 = ? , problem3 = ? , solution3 = ? , risk_assumpt3 = ? , solution_criteria3 = ? , results3 = ? , learnings3 = ? where valid_id = ?";
-			$query = $this->db->query($sql,array($data['customer'],$data['problem'],$data['solution'],$data['risk_assumpt'],$data['solution_criteria'],$data['results'],$data['learnings'],$data['customer2'],$data['problem2'],$data['solution2'],$data['risk_assumpt2'],$data['solution_criteria2'],$data['results2'],$data['learnings2'],$data['customer3'],$data['problem3'],$data['solution3'],$data['risk_assumpt3'],$data['solution_criteria3'],$data['results3'],$data['learnings3'],$data['valid_id']));
+			$sql = "update validation_board set stage= ? , customer = ? , problem = ? , solution = ? , risk_assumpt = ? , solution_criteria = ? , results = ? , learnings = ? , customer2 = ? , problem2 = ? , solution2 = ? , risk_assumpt2 = ? , solution_criteria2 = ? , results2 = ? , learnings2 = ? , customer3 = ? , problem3 = ? , solution3 = ? , risk_assumpt3 = ? , solution_criteria3 = ? , results3 = ? , learnings3 = ? where valid_id = ?";
+			$query = $this->db->query($sql,array($data['stage'],$data['customer'],$data['problem'],$data['solution'],$data['risk_assumpt'],$data['solution_criteria'],$data['results'],$data['learnings'],$data['customer2'],$data['problem2'],$data['solution2'],$data['risk_assumpt2'],$data['solution_criteria2'],$data['results2'],$data['learnings2'],$data['customer3'],$data['problem3'],$data['solution3'],$data['risk_assumpt3'],$data['solution_criteria3'],$data['results3'],$data['learnings3'],$data['valid_id']));
 
 			if($query){
 
-				 $session = array(
-            		'validid'=>$data['valid_id']
-          		);
-				 
-          		$this->session->set_tempdata($session);
-				return true;
+				$sql1 = "select * from ungen_pitchdeck where valid_id = ? ";
+				$query1 = $this->db->query($sql1,array($data['valid_id']));
+
+				if($query1->num_rows()>0){
+
+					$row = $query1->row();
+					$session = array(
+	            		'ungen_id'=>$row->ungen_id
+	          		);
+					 
+	          		$this->session->set_userdata($session);
+
+					return true;
+
+				}
+
 			}
 		}	
 
