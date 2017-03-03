@@ -42,26 +42,26 @@
 		     <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump1" style = "resize: none;" placeholder="example"  ></textarea>
+					  <textarea class="form-control" rows="2" id="assump1" style = "resize:none; text-align:center; height:54px" placeholder="Problem Exist"  ></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize: none;"  placeholder="example" />
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize:none; text-align:center; height:54px"  placeholder="10/10" />
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion1" style = "resize: none;" placeholder="example"  />
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion1" style = "resize:none; text-align:center; height:54px" placeholder="8/10"  />
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning1" style = "resize: none;" placeholder="example" ></textarea>
+					  <textarea class="form-control" rows="2" id="learning1" style = "resize: none;" placeholder="I learn that startup founders want to make their work easier" ></textarea>
 					</div>
 				</div>
 
@@ -90,26 +90,26 @@
 		     <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump2" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="2" id="assump2" style = "resize: none;"  placeholder="" disabled></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="criterion2" style = "resize: none;" placeholder="example" disabled ></textarea>
+					 <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize:none; text-align:center; height:54px"  placeholder="" / disabled>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="discussion2" style = "resize: none;" placeholder="example" disabled></textarea>
+					 <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion2"style = "resize:none; text-align:center; height:54px" placeholder=""  />
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning2" style = "resize: none;" placeholder="example" disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="learning2" style = "resize: none;" placeholder="" disabled ></textarea>
 					</div>
 				</div>
 
@@ -138,26 +138,26 @@
 		     <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump3" style = "resize: none;" placeholder="example" disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="assump3" style = "resize: none;" placeholder="" disabled ></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="criterion3" style = "resize: none;" placeholder="example" disabled ></textarea>
+					 <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion3" style = "resize:none; text-align:center; height:54px"  placeholder="" / disabled>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="discussion3" style = "resize: none;"  placeholder="example"disabled ></textarea>
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion3"style = "resize:none; text-align:center; height:54px" placeholder=""  />
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning3" style = "resize: none;"  placeholder="example"disabled ></textarea>
+					  <textarea class="form-control" rows="2" id="learning3" style = "resize: none;"  placeholder=""disabled ></textarea>
 					</div>
 				</div>
 

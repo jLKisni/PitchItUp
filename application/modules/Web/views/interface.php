@@ -55,7 +55,7 @@
                 	
                      </div>	
                      <br/>
-				<p id = "text2" class = "text-center"><a href = "<?php echo base_url();?>Web/create" class = "btn btn-primary btn-xl page-scroll" role = "button">Create New</a><p>
+				<p id = "text2" class = "text-center"><a href = "<?php echo base_url();?>Web/create" class = "btn btn-primary btn-xl page-scroll" role = "button">Create</a><p>
 				
 
             </div>

@@ -19,15 +19,15 @@
 						<a href="thumbnail.html" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" data-placement="bottom" title = "menu"><span class="glyphicon glyphicon-th" style = "font-size: 1.2em;"></span></a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="<?php echo base_url();?>Web/myPresentation">My Presentation <span class="glyphicon glyphicon-duplicate pull-right"></span></a>
+									<a href="<?php echo base_url();?>Web/myPresentation">My Presentation <!-- <span class="glyphicon glyphicon-duplicate pull-right"></span> --></a>
 								</li>
 								<li class="divider"></li>
 								<li>
-									<a href="<?php echo base_url();?>Web/history">My History <span class="glyphicon glyphicon-time pull-right"></span></a>
+									<a href="<?php echo base_url();?>Web/history">My History <!-- <span class="glyphicon glyphicon-time pull-right"> --></span></a>
 								</li>
 								<li class="divider"></li>
 								<li>
-									<a href="<?php echo base_url();?>Web/interface_m">My Documents <span class="glyphicon glyphicon-folder-open pull-right"></span></a>
+									<a href="<?php echo base_url();?>Web/interface_m">My Documents <!-- <span class="glyphicon glyphicon-folder-open pull-right"> --></span></a>
 								</li>
 							</ul>
 					

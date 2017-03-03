@@ -20,8 +20,10 @@
 					<div class="form-group">
 					  <label for="Customer Segments" data-toggle="tooltip" data-placement="bottom" title = "This element provides the knowledge that the company has on users. It also provides information about their preferences, tastes, expectations and makes it possible to decide whether it is focused on a majority or a specific audience.">
 					  <font color="Black">Customer Segments</font></label>
-					  <textarea class="form-control" rows="13" id="segment" style = "resize: none;"  disabled><?php if(isset($ideagen)){echo $ideagen->people;}?></textarea>
-					</div>
+					  <textarea class="form-control" rows="2" id="segment" style = "resize: none; background-color:violet;"  disabled><?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[0]);}  }else{echo '';}?></textarea>
+					  <br/> <textarea class="form-control" rows="2" id="segment" style = "resize: none; background-color:pink;"  disabled><?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[1]);}  }else{echo '';}?></textarea>
+					  <br/> <textarea class="form-control" rows="2" id="segment" style = "resize: none; background-color:pink;"  disabled><?php if(isset($ideagen)){$word = $ideagen->people;$arr = explode(',',trim($word)); if((sizeof($arr)-1)>=0){echo ucfirst($arr[2]);}  }else{echo '';}?></textarea>
+				 </div>
 				</div>
 
 				<div class="col-md-2" style="position:absolute; left: 410px;
@@ -29,7 +31,8 @@
 					<div class="form-group">
 					  <label for="Value Proposition" data-toggle="tooltip" data-placement="bottom" title = "This shows the aspects that the product meets regarding user needs. It also makes it possible to focus our product on issues such as whether the product will be free, low cost, high end or if it will have an attractive design.">
 					  <font color="Black">Value Proposition</font></label>
-					  <textarea class="form-control" rows="13" id="proposition" style = "resize: none;"  placeholder="example" ></textarea>
+					  <textarea class="form-control" rows="13" id="proposition" style = "resize: none;"  placeholder="Generate pitch deck, Auto save feature, Downloadable to PowerPoint or pdf
+" ></textarea>
 					</div>
 				</div>
 
@@ -38,7 +41,8 @@
 					<div class="form-group">
 					  <label for="Channels" data-toggle="tooltip" data-placement="bottom" title = "It deals with the methods and mechanisms by which the value proposition (product) will be sold or supplied to customers.">
 					  <font color="Black">Channels</font></label>
-					  <textarea class="form-control" rows="5" id="channels" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="5" id="channels" style = "resize: none;"  placeholder="https://www.pitchitup.com, www.google.com
+" disabled></textarea>
 					</div>
 				</div>
 
@@ -47,7 +51,7 @@
 					<div class="form-group">
 					  <label for="Customer Relationship" data-toggle="tooltip" data-placement="bottom" title = "This shows how the company will interact with customers and how it will influence them.">
 					  <font color="Black">Customer Relationship</font></label>
-					  <textarea class="form-control" rows="5" id="relationship" style = "resize: none;" placeholder="example" disabled ></textarea>
+					  <textarea class="form-control" rows="5" id="relationship" style = "resize: none;" placeholder="Subscription, Automated services, Auto generate pitch deck" disabled ></textarea>
 					</div>
 				</div>
 
@@ -56,7 +60,9 @@
 					<div class="form-group">
 					  <label for="Revenue Streams" data-toggle="tooltip" data-placement="bottom" title = "This deals with everything related to the way the company manages to convert its value proposition into revenues. Direct selling is only one option, as there are other revenue strategies, such as the freemium model, in-app (for applications), etc.">
 					  <font color="Black">Revenue Streams</font></label>
-					  <textarea class="form-control" rows="4" id="streams" style = "resize: none;" placeholder="example"  disabled></textarea>
+					  <textarea class="form-control" rows="4" id="streams" style = "resize: none;" placeholder="Advertisements, Premium
+
+"  disabled></textarea>
 					</div>
 				</div>
 
@@ -65,7 +71,7 @@
 					<div class="form-group">
 					  <label for="Key Resources" data-toggle="tooltip" data-placement="bottom" title = "Study of the basic and essential resources for the business model to be able to run smoothly.">
 					  <font color="Black">Key Resources</font></label>
-					  <textarea class="form-control" rows="5" id="resources" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="5" id="resources" style = "resize: none;"  placeholder="Platform developers" disabled></textarea>
 					</div>
 				</div>
 
@@ -74,7 +80,7 @@
 					<div class="form-group">
 					  <label for="Key Activities" data-toggle="tooltip" data-placement="bottom" title = "Actions to take within the company to ensure that the value proposition can be delivered to the customer in the best way possible.">
 					  <font color="Black">Key Activities</font></label>
-					  <textarea class="form-control" rows="5" id="activities" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="5" id="activities" style = "resize: none;"  placeholder="Platform Development" disabled></textarea>
 					</div>W
 				</div>
 
@@ -83,7 +89,8 @@
 					<div class="form-group">
 					  <label for="Key Partners" data-toggle="tooltip" data-placement="bottom" title = "Associations that our company can make with outside companies to enhance the value proposition and to ensure that it reaches the consumer with full guarantees.">
 					  <font color="Black">Key Partners</font></label>
-					  <textarea class="form-control" rows="13" id="partners" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="13" id="partners" style = "resize: none;"  placeholder="Microsoft PowerPoint, Startup Companies
+" disabled></textarea>
 					</div>
 				</div>
 
@@ -92,7 +99,8 @@
 					<div class="form-group">
 					  <label for="Cost Structure" data-toggle="tooltip" data-placement="bottom" title = "In this last section we talk about creating a cost structure (fixed and variable) to allow the new company to develop its business viably.">
 					  <font color="Black">Cost Structure</font></label>
-					  <textarea class="form-control" rows="4" id="structure" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="4" id="structure" style = "resize: none;"  placeholder="Platform Maintenance, Platform Development
+" disabled></textarea>
 					</div>
 				</div>
 
@@ -116,8 +124,7 @@
 			<div class="col-md-2" style="position:absolute; left: 900px;
    top: 14px; width:90px;" >
 					<div class="form-group">
-					<!--   <label for="Problem" data-toggle="tooltip" data-placement="bottom" title = "example"><font color="Black">Key Partners</font></label> -->
-					<input type="number" min="1" max="5" name="iteration" class="form-control" rows="1" id="iteration"  style = "resize: none;" placeholder ="1" required><?php if(isset($bmc)){echo $bmc->key_sources;}else{}?>
+					<input type="number" min="1" max="5" name="iteration" class="form-control" rows="1" id="iteration"  style = "resize: none;" placeholder ="1" required>
 					</div>
 				</div>
 

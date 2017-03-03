@@ -45,26 +45,26 @@
 		     <div class="col-md-5" style="position:absolute; left: 190px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump1" style = "resize: none;" placeholder="example" disabled ><?php if(isset($validation)){ echo $validation->risk_assumpt;}?></textarea>
+					  <textarea class="form-control" rows="2" id="assump1" style = "resize: none;" placeholder="problem exist" disabled ><?php if(isset($validation)){ echo $validation->risk_assumpt;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize: none;"  placeholder="example" value="value="<?php if(isset($validation)){ echo $validation->solution_criteria;}?>"" disabled>
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="criterion1" style = "resize: none; text-align:center; height:54px"  placeholder="10/10" value="value="<?php if(isset($validation)){ echo $validation->solution_criteria;}?>"" disabled>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion1" style = "resize: none;" placeholder="example" value="<?php if(isset($validation)){ echo $validation->results;}?>" disabled>
+					  <input type="number" class="form-control" min="1" max="10" rows="2" id="discussion1" style = "resize: none; text-align:center; height:54px" placeholder="8/10" value="<?php if(isset($validation)){ echo $validation->results;}?>" disabled>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 190px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning1" style = "resize: none;" placeholder="example" disabled><?php if(isset($validation)){ echo $validation->learnings;}?></textarea>
+					  <textarea class="form-control" rows="2" id="learning1" style = "resize: none;" placeholder="I learn that startup founders want to make their work easy." disabled><?php if(isset($validation)){ echo $validation->learnings;}?></textarea>
 					</div>
 				</div>
 
@@ -93,26 +93,26 @@
 		     <div class="col-md-5" style="position:absolute; left: 347px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump2" style = "resize: none;"  placeholder="example" disabled><?php if(isset($validation)){ echo $validation->risk_assumpt2;}?></textarea>
+					  <textarea class="form-control" rows="2" id="assump2" style = "resize: none;"  placeholder="" disabled><?php if(isset($validation)){ echo $validation->risk_assumpt2;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="criterion2" style = "resize: none;" placeholder="example" disabled ><?php if(isset($validation)){ echo $validation->solution_criteria2;}?></textarea>
+					  <input type="number" class="form-control" rows="2" id="criterion2"  style = "resize:none; text-align:center; height:54px"placeholder="" disabled ><?php if(isset($validation)){ echo $validation->solution_criteria2;}?>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="discussion2" style = "resize: none;" placeholder="example" disabled><?php if(isset($validation)){ echo $validation->results2;}?></textarea>
+					  <input type="number" class="form-control" rows="2" id="discussion2"  style = "resize:none; text-align:center; height:54px" placeholder="" disabled><?php if(isset($validation)){ echo $validation->results2;}?>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 347px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning2" style = "resize: none;" placeholder="example" disabled ><?php if(isset($validation)){ echo $validation->learnings2;}?></textarea>
+					  <textarea class="form-control" rows="2" id="learning2" style = "resize: none;" placeholder="" disabled ><?php if(isset($validation)){ echo $validation->learnings2;}?></textarea>
 					</div>
 				</div>
 
@@ -141,26 +141,26 @@
 		     <div class="col-md-5" style="position:absolute; left: 506px; 
    top: 302px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="assump3" style = "resize: none;" placeholder="example" disabled ><?php if(isset($validation)){ echo $validation->risk_assumpt3;}?></textarea>
+					  <textarea class="form-control" rows="2" id="assump3" style = "resize: none;" placeholder="" disabled ><?php if(isset($validation)){ echo $validation->risk_assumpt3;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 359px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="criterion3" style = "resize: none;" placeholder="example" disabled ><?php if(isset($validation)){ echo $validation->solution_criteria3;}?></textarea>
+					  <textarea class="form-control" rows="2" id="criterion3" style = "resize: none;" style = "resize:none; text-align:center; height:54px" placeholder="" disabled ><?php if(isset($validation)){ echo $validation->solution_criteria3;}?></textarea>
 					</div>
 				</div>
 			
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 417px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="discussion3" style = "resize: none;"  placeholder="example"disabled ><?php if(isset($validation)){ echo $validation->results3;}?></textarea>
+					  <textarea class="form-control" rows="2" id="discussion3" style = "resize: none;" style = "resize:none; text-align:center; height:54px" placeholder=""disabled ><?php if(isset($validation)){ echo $validation->results3;}?></textarea>
 					</div>
 				</div>
 			<div class="col-md-5" style="position:absolute; left: 506px; 
    top: 475px; width: 175px; " >
 					<div class="form-group">
-					  <textarea class="form-control" rows="2" id="learning3" style = "resize: none;"  placeholder="example"disabled ><?php if(isset($validation)){ echo $validation->learnings3;}?></textarea>
+					  <textarea class="form-control" rows="2" id="learning3" style = "resize: none;"  placeholder=""disabled ><?php if(isset($validation)){ echo $validation->learnings3;}?></textarea>
 					</div>
 				</div>
 

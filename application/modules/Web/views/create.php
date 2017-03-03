@@ -51,7 +51,7 @@
 					<div class="form-group">
 					<label for="solution" data-toggle="tooltip" data-placement="bottom" title = "What belief must you have that can solve the problem?">
 					<font color="Black">Solution</font></label>
-					  <textarea class="form-control" rows="9" id="solution" style = "resize: none;"  placeholder="example" disabled></textarea>
+					  <textarea class="form-control" rows="9" id="solution" style = "resize: none;"  placeholder="PitchITup – A Platform-as-a-Service for Startup Pitch Decks" disabled></textarea>
 					</div>
 				</div>
 
